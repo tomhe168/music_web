@@ -1,0 +1,106 @@
+.audio-wrapper {
+  background-color: rgb(0,0,0);
+  margin: 10px auto;
+  max-width: 670px;
+  height: 70px;
+  /*height: h-100;*/
+  border: 1px solid rgb(225,225,225);
+  border-radius: 20px;
+  color: rgb(255,255,255);
+}
+
+.audio-left {
+  float: left;
+  text-align: center;
+  /*width: 38%;*/
+  height: 100%;
+  width: 20%;
+}
+
+.audio-left img {
+  width: 40px;
+  position: relative;
+  top: 15px;
+  margin: 0;
+  display: initial;
+  cursor: pointer;
+}
+
+.audio-right {
+  margin-right: 2%;
+  float: right;
+  /*width: 55%;*/
+  height: 100%;
+  width: 75%;
+}
+
+.audio-right p {
+  font-size: 29px;
+  height: 60%;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 90%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.progress-bar-bg {
+  background-color: #d9d9d9;
+  position: relative;
+  height: 2px;
+  cursor: pointer;
+  width: 95%;
+}
+
+.progress-bar {
+  background-color: #649fec;
+  width: 0;
+  height: 2px;
+}
+
+.progress-bar-bg span {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #3e87e8;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+.audio-time {
+  overflow: hidden;
+  margin-top: 15px;
+  width: 95%;
+}
+
+.audio-length-total {
+  float: right;
+  font-size: 12px;
+}
+
+.audio-length-current {
+  float: left;
+  font-size: 12px;
+}
+
+svg {
+  float: right;
+}
+
+.blog-aero-hr {
+  color: var(--bs-white);
+  width: 90%;
+}
+
+svg {
+}
+
