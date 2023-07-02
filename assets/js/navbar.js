@@ -9,3 +9,13 @@ $(window).scroll(function() {
         $(".navbar").css("backdrop-filter", "blur(5px)");
     }
 });
+
+$(document).ready(function() {
+  $('.dropdown').on('show.bs.dropdown', function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
+  });
+
+  $('.dropdown').on('hide.bs.dropdown', function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
+  });
+});

@@ -310,3 +310,13 @@ p {
 a {
 }
 
+.dropdown-menu-scroll {
+  transform-origin: top;
+  animation: dropdown-scroll 0.3s ease-in-out forwards;
+}
+
+@keyframes dropdown-scroll {
+  transform: scaleY(0);
+  transform: scaleY(1);
+}
+
