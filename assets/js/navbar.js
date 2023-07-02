@@ -12,10 +12,13 @@ $(window).scroll(function() {
 
 $(document).ready(function() {
   $('.dropdown').on('show.bs.dropdown', function() {
-    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
+    $(this).find('.dropdown-menu').first().stop(true, true).slideDown(200);
+    $("dropdown-menu").css('padding-top', '10px');
+    // $("dropdown-menu").css('width', '120px');
   });
 
   $('.dropdown').on('hide.bs.dropdown', function() {
-    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
+    $(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
+    $("dropdown-menu").css('padding-top', '0px');
   });
 });
