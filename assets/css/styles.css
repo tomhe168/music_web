@@ -761,7 +761,7 @@ a {
   text-align: left;
   font-weight: 600;
   width: 100%;
-  margin-top: 5%;
+  /*margin-top: 5%;*/
 }
 
 @media (max-width: 767px) {
@@ -935,5 +935,11 @@ a {
   height: auto;
   text-align: center;
   object-fit: fill;
+}
+
+#areo-middle-4-img {
+  /*max-width: auto;*/
+  height: 90%;
+  width: auto;
 }
 
