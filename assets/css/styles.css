@@ -170,7 +170,7 @@ p {
 }
 
 #hero-middle {
-  gap: 100px;
+  gap: 115px;
   ont-family: Aleo, serif;
   height: 100vh;
   width: 100%;
@@ -654,7 +654,7 @@ a {
 }
 
 #hero-top {
-  height: 45vh;
+  height: 38vh;
   width: 100%;
 }
 
@@ -668,7 +668,7 @@ a {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../../assets/img/index_new2_副本_副本.webp") center / contain no-repeat;
+  background: url("../../assets/img/index_new2_副本_副本.webp") top / contain no-repeat;
 }
 
 @media (max-width: 767px) {
