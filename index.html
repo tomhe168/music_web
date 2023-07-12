@@ -12,14 +12,22 @@
 
   gtag('config', 'G-4RGYS5DQKX');
 </script><style>
-    #content {
-        display: none;
+    .hidden {
+        visibility: hidden;
+    }
+    .visible {
+        visibility: visible;
+        /* 或者使用透明度动画效果 */
+        /* opacity: 1; */
+        /* transition: opacity 1s; */
     }
 </style>
 
 <script>
 window.onload = function() {
-    document.getElementById('content').style.display = 'block';
+    var content = document.getElementById('content');
+    content.classList.remove('hidden');
+    content.classList.add('visible');
 };
 </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -46,7 +54,7 @@ window.onload = function() {
 </head>
 
 <body style="background: var(--bs-black);">
-    <div id="content">
+    <div id="content" class="hidden">
         <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" id="hero-navbar-1">
             <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon nav-brand-icon"></span><span class="nav-brand-font">NoteScience</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="border-color: var(--bs-white);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1" style="text-align: right;">
@@ -73,7 +81,7 @@ window.onload = function() {
                     <p id="p-hero-middle">Easy Tools Aristry for All</p>
                 </div>
                 <div class="row" style="text-align: center;width: 100%;margin-right: 0px;margin-left: 0px;">
-                    <div class="col"><button class="btn btn-primary" data-aos="fade-up" data-aos-duration="350" data-aos-delay="500" id="btn-start" type="button">COMING SOON...</button></div>
+                    <div class="col"><button class="btn btn-primary" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" id="btn-start" type="button">COMING SOON...</button></div>
                 </div>
             </div>
         </section>
