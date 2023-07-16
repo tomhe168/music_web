@@ -943,3 +943,46 @@ a {
   width: auto;
 }
 
+.email-input {
+  /*background-image: transparent;*/
+  background-color: transparent;
+  /*font-style: color:white;*/
+  border-style: none;
+  color: var(--bs-white);
+}
+
+.email-input:focus {
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: var(--bs-white);
+}
+
+.email-input:invalid {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.email-input:valid {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--bs-white);
+}
+
+.password-input {
+  background-image: transparent;
+  background-color: transparent;
+  font-style: color:white;
+  border-style: none;
+}
+
+input[type='email']::-webkit-input-placeholder {
+  color: white;
+}
+
+input[type='email']::placeholder {
+  color: white;
+}
+
