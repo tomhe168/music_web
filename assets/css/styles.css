@@ -955,7 +955,7 @@ background-image: transparent;background-color: transparent;font-style: color:wh
   border-style: none;
   color: var(--bs-white);
   padding: 0px;
-  font-size: calc(1rem + 0.7vh);
+  font-size: calc(2vh);
 }
 
 @media (max-width: 767px) {
@@ -966,7 +966,7 @@ background-image: transparent;background-color: transparent;font-style: color:wh
     border-style: none;
     color: var(--bs-white);
     padding: 0px;
-    font-size: calc(1rem);
+    font-size: calc(2vh);
   }
 }
 
@@ -1017,7 +1017,7 @@ background-image: transparent;background-color: transparent;font-style: color:wh
   border-style: none;
   color: var(--bs-white);
   padding: 0px;
-  font-size: calc(1rem + 0.7vh);
+  font-size: calc(2vh);
 }
 
 @media (max-width: 767px) {
@@ -1028,7 +1028,7 @@ background-image: transparent;background-color: transparent;font-style: color:wh
     border-style: none;
     color: white;
     padding: 0px;
-    font-size: calc(1rem);
+    font-size: calc(2vh);
   }
 }
 
@@ -1106,12 +1106,12 @@ input[type="password"]::placeholder {
 }
 
 .reg-word-size {
-  font-size: 15px;
+  font-size: calc(1.5vh);
 }
 
 @media (max-width: 767px) {
   .reg-word-size {
-    font-size: 14px;
+    font-size: calc(1.5vh);
   }
 }
 
@@ -1141,7 +1141,7 @@ input[type="password"]::placeholder {
   border-radius: 50px;
   width: 90%;
   height: 50%;
-  font-size: calc(1rem + 0.4vh);
+  font-size: calc(2vh);
   overflow: hidden;
   line-height: normal;
 }
@@ -1151,7 +1151,7 @@ input[type="password"]::placeholder {
     border-radius: 50px;
     width: 90%;
     height: 50%;
-    font-size: calc(1rem);
+    font-size: calc(2vh);
     overflow: hidden;
     line-height: normal;
   }
