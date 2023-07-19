@@ -440,11 +440,6 @@ p {
   gap: 30px;
 }
 
-#aero {
-  width: 75%;
-  margin: 0 auto;
-}
-
 .dropdown-toggle::after {
   /*display: inline-block;*/
   /*margin-left: .255em;*/
@@ -943,19 +938,43 @@ a {
   width: auto;
 }
 
+background-image: transparent;background-color: transparent;font-style: color:white;border-style: none;color: var(--bs-white);padding: 0px;font-size: calc(1rem + 0.7vh);.email-input {
+  /*background-image: transparent;*/
+  background-color: transparent;
+  /*font-style: color:white;*/
+  border-style: none;
+  color: var(--bs-white);
+  padding: 0px;
+  font-size: calc(1rem);
+}
+
 .email-input {
   /*background-image: transparent;*/
   background-color: transparent;
   /*font-style: color:white;*/
   border-style: none;
   color: var(--bs-white);
+  padding: 0px;
+  font-size: calc(1rem + 0.7vh);
+}
+
+@media (max-width: 767px) {
+  .email-input {
+    /*background-image: transparent;*/
+    background-color: transparent;
+    /*font-style: color:white;*/
+    border-style: none;
+    color: var(--bs-white);
+    padding: 0px;
+    font-size: calc(1rem);
+  }
 }
 
 .email-input:focus {
   background-color: transparent;
-  border-color: transparent;
-  outline: none;
-  border: none;
+  /*border-color: transparent;*/
+  /*outline: none;*/
+  /*border: none;*/
   box-shadow: none;
   color: var(--bs-white);
 }
@@ -968,14 +987,49 @@ a {
 .email-input:valid {
   background-color: transparent;
   border-color: transparent;
+  /*color: var(--bs-white);*/
+}
+
+.password-input:focus {
+  /*background-image: transparent;*/
+  /*background-color: transparent;*/
+  /*font-style: color:white;*/
+  /*border-style: none;*/
+  background-color: transparent;
+  /*border-color: transparent;*/
+  /*outline: none;*/
+  /*border: none;*/
+  box-shadow: none;
   color: var(--bs-white);
 }
 
-.password-input {
-  background-image: transparent;
+.password-input:valid {
+  /*background-image: transparent;*/
   background-color: transparent;
-  font-style: color:white;
+  /*font-style: color:white;*/
   border-style: none;
+}
+
+.password-input {
+  /*background-image: transparent;*/
+  background-color: transparent;
+  /*font-style: color:white;*/
+  border-style: none;
+  color: var(--bs-white);
+  padding: 0px;
+  font-size: calc(1rem + 0.7vh);
+}
+
+@media (max-width: 767px) {
+  .password-input {
+    /*background-image: transparent;*/
+    background-color: transparent;
+    /*font-style: color:white;*/
+    border-style: none;
+    color: white;
+    padding: 0px;
+    font-size: calc(1rem);
+  }
 }
 
 input[type='email']::-webkit-input-placeholder {
@@ -984,5 +1038,129 @@ input[type='email']::-webkit-input-placeholder {
 
 input[type='email']::placeholder {
   color: white;
+}
+
+input[type="password"]::placeholder {
+  color: white;
+}
+
+.section-aero {
+  height: 70VH;
+  margin: 0 auto;
+  background: transparent;
+  /*backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);*/
+  z-index: -1;
+}
+
+@media (max-width: 767px) {
+  .section-aero {
+    height: 50VH;
+    margin: 0 auto;
+  }
+}
+
+.div-middle {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+
+@media (max-width: 767px) {
+  .div-middle {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+  }
+}
+
+.reg-hero-container {
+  width: 28%;
+  /*opacity: 0.50;*/
+  height: 60%;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+  .reg-hero-container {
+    width: 100%;
+    /*opacity: 0.50;*/
+    height: 100%;
+    border-radius: 50px;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    background: transparent;
+  }
+}
+
+.reg-hero-row {
+  width: 80%;
+}
+
+@media (max-width: 767px) {
+  .reg-hero-row {
+    width: 74%;
+  }
+}
+
+.reg-word-size {
+  font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .reg-word-size {
+    font-size: 14px;
+  }
+}
+
+.reg-heading-size {
+  font-size: 40px;
+}
+
+@media (max-width: 767px) {
+  .reg-heading-size {
+    font-size: 30px;
+  }
+}
+
+.item {
+  flex: 1;
+}
+
+.item.special3 {
+  flex: 3;
+}
+
+.item.special {
+  flex: 2;
+}
+
+.reg-btn {
+  border-radius: 50px;
+  width: 90%;
+  height: 50%;
+  font-size: calc(1rem + 0.4vh);
+  overflow: hidden;
+  line-height: normal;
+}
+
+@media (max-width: 767px) {
+  .reg-btn {
+    border-radius: 50px;
+    width: 90%;
+    height: 50%;
+    font-size: calc(1rem);
+    overflow: hidden;
+    line-height: normal;
+  }
+}
+
+.keyboard-container {
+}
+
+.dynamic-font {
+  font-size: calc(1rem + 1vw);
 }
 

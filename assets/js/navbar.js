@@ -22,3 +22,28 @@ $(document).ready(function() {
     $("dropdown-menu").css('padding-top', '0px');
   });
 });
+// // Ensure the page is fully loaded before running the script
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Get the viewport height and convert it to pixels
+// let viewportHeight = window.innerHeight + 'px';
+
+// // Set the body height to the viewport height
+// document.body.style.height = viewportHeight;
+// });
+
+var initialViewportHeight = window.innerHeight;
+
+// window.addEventListener('resize', function() {
+//     // if(window.innerHeight <= initialViewportHeight) {
+//         document.body.style.height = initialViewportHeight + 'px';
+//     // } else {
+//     //     document.body.style.height = '100%';
+//     // }
+// });
+
+setTimeout(function () {
+  let viewheight = $(window).height();
+  let viewwidth = $(window).width();
+  let viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0");
+}, 300);

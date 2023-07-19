@@ -28,13 +28,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alkalami&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/audio.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="color: var(--bs-white);background: url(&quot;assets/img/图片%201@1x.png&quot;) center / contain no-repeat, var(--bs-black);">
+<body style="background: var(--bs-black);">
     <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" id="hero-navbar-1">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon nav-brand-icon"></span><span class="nav-brand-font">NoteScience</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="border-color: var(--bs-white);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1" style="text-align: right;">
@@ -53,41 +52,49 @@
             </div>
         </div>
     </nav>
-    <section id="aero">
-        <div id="hero-middle-1" style="height: auto;">
-            <div class="container" data-aos="fade-up" data-aos-duration="500" id="hero-container">
+    <section class="section-aero">
+        <div class="d-flex flex-column justify-content-center div-middle">
+            <div class="container d-flex flex-column justify-content-around align-items-center reg-hero-container" style="font-family: Aleo, serif;">
                 <div class="row">
                     <div class="col">
-                        <h1>Log In</h1>
+                        <h1 class="reg-heading-size">Creat a free account</h1>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row reg-hero-row">
                     <div class="col">
                         <form>
                             <div class="form-group">
-                                <div class="input-group" style="border-style: solid;border-radius: 10px;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/arcoDesign-email%201.svg"></span><input class="form-control email-input" type="email" id="exampleInputEmail1" placeholder="Email"></div>
+                                <div class="input-group" style="border-style: solid;border-radius: 10px;border-color: rgb(255,255,255);"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/arcoDesign-email%201.svg"></span><input class="form-control email-input" type="email" placeholder="Email" style="color: white;padding: 0px;"></div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row reg-hero-row">
                     <div class="col">
                         <form>
                             <div class="form-group">
-                                <div class="input-group" style="border-style: solid;border-radius: 10px;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg"><input class="form-control password-input" type="password" placeholder="Password"></span></div>
+                                <div class="input-group" style="border-style: solid;border-radius: 10px;border-color: rgb(255,255,255);"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg"></span><input class="form-control password-input" type="password" placeholder="Password" style="color: white;padding: 0px;"></div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col"></div>
+                <div class="row reg-hero-row">
+                    <div class="col d-flex flex-row justify-content-start" style="text-align: center;">
+                        <div class="form-check reg-word-size"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="color: var(--bs-white);">I agreeed the agreement</label></div><a class="reg-word-size" href="#">《User use Agreement》</a>
+                    </div>
                 </div>
-                <div class="row"></div>
-                <div class="row"></div>
+                <div class="row reg-hero-row">
+                    <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button" style="border-radius: 50px;width: 100%;">Creat account</button></div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex flex-row justify-content-center" style="text-align: center;padding: 0px;">
+                        <p class="reg-word-size" style="margin: 0px;/*font-size: 16px;*/">ALready have an account?&nbsp;</p><a class="reg-word-size" href="#">Log in</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <footer class="music-footer">
+    <footer class="music-footer" style="margin-top: 0px;">
         <div class="container d-flex flex-column justify-content-center footer-container" style="width: 75%;height: 100%;">
             <hr class="footer-hr" style="margin-bottom: 0px;">
             <div class="flex-div-class">
@@ -102,7 +109,6 @@
         </div>
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="assets/js/navbar.js"></script>
