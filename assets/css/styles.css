@@ -958,8 +958,30 @@ background-image: transparent;background-color: transparent;font-style: color:wh
   font-size: calc(2vh);
 }
 
+.text-input {
+  /*background-image: transparent;*/
+  background-color: transparent;
+  /*font-style: color:white;*/
+  border-style: none;
+  color: var(--bs-white);
+  padding: 0px;
+  font-size: calc(2vh);
+}
+
 @media (max-width: 767px) {
   .email-input {
+    /*background-image: transparent;*/
+    background-color: transparent;
+    /*font-style: color:white;*/
+    border-style: none;
+    color: var(--bs-white);
+    padding: 0px;
+    font-size: calc(2vh);
+  }
+}
+
+@media (max-width: 767px) {
+  .text-input {
     /*background-image: transparent;*/
     background-color: transparent;
     /*font-style: color:white;*/
@@ -979,12 +1001,26 @@ background-image: transparent;background-color: transparent;font-style: color:wh
   color: var(--bs-white);
 }
 
+.text-input:focus {
+  background-color: transparent;
+  /*border-color: transparent;*/
+  /*outline: none;*/
+  /*border: none;*/
+  box-shadow: none;
+  color: var(--bs-white);
+}
+
 .email-input:invalid {
   background-color: transparent;
   border-color: transparent;
 }
 
-.email-input:valid {
+.text-input:invalid {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.text-input:valid {
   background-color: transparent;
   border-color: transparent;
   /*color: var(--bs-white);*/
@@ -1041,6 +1077,10 @@ input[type='email']::placeholder {
 }
 
 input[type="password"]::placeholder {
+  color: white;
+}
+
+input[type="text"]::placeholder {
   color: white;
 }
 
