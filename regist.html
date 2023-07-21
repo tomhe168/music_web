@@ -61,52 +61,54 @@ twq('config','oflly');
             </div>
         </div>
     </nav>
-    <section class="section-aero" style="font-family: Aleo, serif;">
-        <div class="d-flex flex-column justify-content-center div-middle">
-            <div class="container d-flex flex-column justify-content-evenly align-items-center reg-hero-container" style="/*height: 70%;*/">
-                <div class="row item">
-                    <div class="col d-flex flex-column justify-content-end">
-                        <h1 class="reg-heading-size" style="font-size: calc(1rem + 2.5vh);">Create a free account</h1>
-                    </div>
-                </div>
-                <div class="row reg-hero-row item special" style="height: 50%;">
-                    <div class="col d-flex flex-column" style="padding: 0px;">
-                        <div class="row item" style="margin: 0px;">
-                            <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
-                                <form style="height: 50%;width: 100%;">
-                                    <div class="form-group" style="height: 100%;">
-                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="d-xxl-flex input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/arcoDesign-email%201.svg" style="/*font-size: calc(1rem + 100vh);*//*object-fit: cover;*/height: calc(2vh);width: auto;"></span><input class="form-control d-xxl-flex email-input" type="email" placeholder="Email"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row item" style="margin: 0px;height: 50%;">
-                            <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
-                                <form style="height: 50%;">
-                                    <div class="form-group" style="height: 100%;">
-                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg" style="height: calc(2vh);width: auto;"></span><input class="form-control password-input" type="password" placeholder="Password"></div>
-                                    </div>
-                                </form>
-                            </div>
+    <form method="post">
+        <section class="section-aero" style="font-family: Aleo, serif;">
+            <div class="d-flex flex-column justify-content-center div-middle">
+                <div class="container d-flex flex-column justify-content-evenly align-items-center reg-hero-container" style="/*height: 70%;*/">
+                    <div class="row item">
+                        <div class="col d-flex flex-column justify-content-end">
+                            <h1 class="reg-heading-size" style="font-size: calc(1rem + 2.5vh);">Create a free account</h1>
                         </div>
                     </div>
-                </div>
-                <div class="row item">
-                    <div class="col d-flex flex-row justify-content-center" style="text-align: center;padding: 0px;">
-                        <div class="form-check d-flex flex-row justify-content-end align-items-center reg-word-size"><input class="form-check-input reg-word-size" type="checkbox" id="formCheck-1" style="margin: 0px;"><label class="form-check-label reg-word-size" for="formCheck-1" style="color: var(--bs-white);">&nbsp;I agreed the agreement</label></div><a class="d-flex flex-column justify-content-center reg-word-size" href="#" style="text-decoration: none;">《User Use Agreement》</a>
+                    <div class="row reg-hero-row item special" style="height: 50%;">
+                        <div class="col d-flex flex-column" style="padding: 0px;">
+                            <div class="row item" style="margin: 0px;">
+                                <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
+                                    <form style="height: 50%;width: 100%;">
+                                        <div class="form-group" style="height: 100%;">
+                                            <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="d-xxl-flex input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/arcoDesign-email%201.svg" style="/*font-size: calc(1rem + 100vh);*//*object-fit: cover;*/height: calc(2vh);width: auto;"></span><input class="form-control d-xxl-flex email-input" type="email" placeholder="Email" name="email" required=""></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row item" style="margin: 0px;height: 50%;">
+                                <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
+                                    <form style="height: 50%;">
+                                        <div class="form-group" style="height: 100%;">
+                                            <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg" style="height: calc(2vh);width: auto;"></span><input class="form-control password-input" type="password" placeholder="Password" name="password" required=""></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row reg-hero-row item" style="height: 15%;">
-                    <div class="col d-flex flex-column justify-content-center align-items-center" style="text-align: center;padding: 0px;"><button class="btn btn-primary reg-btn" type="button">Creat account</button></div>
-                </div>
-                <div class="row item">
-                    <div class="col d-flex flex-row justify-content-center align-items-center" style="text-align: center;padding: 0px;">
-                        <p class="d-flex flex-column justify-content-center reg-word-size" style="margin: 0px;/*font-size: 16px;*/">Already have an account?&nbsp;&nbsp;</p><a class="d-flex flex-column justify-content-center reg-word-size" href="log-in.html" style="text-decoration: none;">Log In&nbsp;</a>
+                    <div class="row item">
+                        <div class="col d-flex flex-row justify-content-center" style="text-align: center;padding: 0px;">
+                            <div class="form-check d-flex flex-row justify-content-end align-items-center reg-word-size"><input class="form-check-input reg-word-size" type="checkbox" id="formCheck-1" style="margin: 0px;" required=""><label class="form-check-label reg-word-size" for="formCheck-1" style="color: var(--bs-white);">&nbsp;I agreed the agreement</label></div><a class="d-flex flex-column justify-content-center reg-word-size" href="#" style="text-decoration: none;">《User Use Agreement》</a>
+                        </div>
+                    </div>
+                    <div class="row reg-hero-row item" style="height: 15%;">
+                        <div class="col d-flex flex-column justify-content-center align-items-center" style="text-align: center;padding: 0px;"><button class="btn btn-primary reg-btn" type="submit">Creat account</button></div>
+                    </div>
+                    <div class="row item">
+                        <div class="col d-flex flex-row justify-content-center align-items-center" style="text-align: center;padding: 0px;">
+                            <p class="d-flex flex-column justify-content-center reg-word-size" style="margin: 0px;/*font-size: 16px;*/">Already have an account?&nbsp;&nbsp;</p><a class="d-flex flex-column justify-content-center reg-word-size" href="log-in.html" style="text-decoration: none;">Log In&nbsp;</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </form>
     <footer class="music-footer" style="margin-top: 0px;font-family: Aleo, serif;">
         <div class="container d-flex flex-column justify-content-center footer-container" style="width: 75%;height: 100%;">
             <hr class="footer-hr" style="margin-bottom: 0px;">
@@ -121,6 +123,14 @@ twq('config','oflly');
             <p class="footer-p">Copyright&nbsp;© 2023 NoteScience. All rights reserved. For inquiries or collaborations, contact us at: support@notescience.com</p>
         </div>
     </footer>
+    <form style="height: 50%;width: 100%;">
+        <div class="form-group" style="height: 100%;">
+            <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="--bs-body-bg: transparent;background-color: transparent;border-style: none;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-key" style="height: calc(2vh);width: auto;color: var(--bs-white);">
+                        <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"></path>
+                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                    </svg></span><input class="form-control text-input" type="text" placeholder="Code from email"></div>
+        </div>
+    </form>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
