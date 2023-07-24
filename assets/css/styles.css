@@ -1204,3 +1204,16 @@ input[type="text"]::placeholder {
   font-size: calc(1rem + 1vw);
 }
 
+.tooltip-inner {
+  max-width: 100%;
+  width: 100%;
+  /*background-color: transparent;*/
+  /*font: red;*/
+  color: red;
+  /*margin-left: 10%;*/
+  /*margin-top: 50%;*/
+  text-align: center;
+  /*display: inline-block;*/
+  /*position: fixed;*/
+}
+

@@ -47,3 +47,22 @@ setTimeout(function () {
   let viewport = document.querySelector("meta[name=viewport]");
   viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0");
 }, 300);
+
+
+
+// $(document).ready(function() {
+//     // 初始化Tooltip为手动触发
+//     $('[data-toggle="tooltip"]').tooltip({
+//         trigger: 'manual'
+//     });
+
+//     // 显示tooltip
+//     $('#buttonInput').tooltip('show');
+// });
+
+$(document).ready(function() {
+    const errorMsgElement = document.getElementById("errorMsg");
+    if(errorMsgText){
+        $("#errorMsg").show();  // 使用 jQuery 的 show 方法显示错误消息  
+    }
+});
