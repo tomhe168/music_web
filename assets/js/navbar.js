@@ -61,8 +61,142 @@ setTimeout(function () {
 // });
 
 $(document).ready(function() {
-    const errorMsgElement = document.getElementById("errorMsg");
-    if(errorMsgText){
-        $("#errorMsg").show();  // 使用 jQuery 的 show 方法显示错误消息  
-    }
+  const errorMsgText = document.getElementById("errorMsg");
+  if(errorMsgText){
+      $("#errorMsg").show();  // 使用 jQuery 的 show 方法显示错误消息  
+  }
+});
+
+// function validatePassword() {
+//     var password = document.getElementById("passwordInput").value;
+//     var feedback = document.getElementById("feedback");
+
+//     // 正则表达式验证
+//     var hasNumber = /[0-9]/.test(password);
+//     var hasLetter = /[a-zA-Z]/.test(password);
+//     var hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+//     var haslength8 = password.length;
+
+//     if (!hasNumber) {
+//         feedback.textContent = "password must contains at least one number";
+//         return;
+//     }
+
+//     if (!hasLetter) {
+//         feedback.textContent = "password must contain at least one letter";
+//         return;
+//     }
+
+//     if (!hasSymbol) {
+//         feedback.textContent = "password must contain at least one letter";
+//         return;
+//     }
+
+//     if(haslength8 < 8){
+//         feedback.textContent = "password must be at least 8 characters long";
+//         return;
+//     }
+//     feedback.textContent = "密码有效！";
+// }
+
+
+// const passwordInput = document.getElementById("password");
+// const lengthReq = document.getElementById("length");
+// const uppercaseReq = document.getElementById("uppercase");
+// const lowercaseReq = document.getElementById("lowercase");
+// const numberReq = document.getElementById("number");
+
+// passwordInput.addEventListener("input", function() {
+//     const passwordValue = passwordInput.value;
+    
+//     // Check length
+//     if (passwordValue.length >= 8) {
+//         lengthReq.classList.remove("invalid");
+//         lengthReq.classList.add("valid");
+//     } else {
+//         lengthReq.classList.remove("valid");
+//         lengthReq.classList.add("invalid");
+//     }
+
+//     // Check uppercase letter
+//     if (/[A-Z]/.test(passwordValue)) {
+//         uppercaseReq.classList.remove("invalid");
+//         uppercaseReq.classList.add("valid");
+//     } else {
+//         uppercaseReq.classList.remove("valid");
+//         uppercaseReq.classList.add("invalid");
+//     }
+
+//     // Check lowercase letter
+//     if (/[a-z]/.test(passwordValue)) {
+//         lowercaseReq.classList.remove("invalid");
+//         lowercaseReq.classList.add("valid");
+//     } else {
+//         lowercaseReq.classList.remove("valid");
+//         lowercaseReq.classList.add("invalid");
+//     }
+
+//     // Check number
+//     if (/[0-9]/.test(passwordValue)) {
+//         numberReq.classList.remove("invalid");
+//         numberReq.classList.add("valid");
+//     } else {
+//         numberReq.classList.remove("valid");
+//         numberReq.classList.add("invalid");
+//     }
+// });
+
+
+// function validatePassword() {
+//     var password = document.getElementById("password").value;
+//     var message = "";
+
+//     // Check length
+//     if (password.length < 8) {
+//         message += "At least 8 characters. ";
+//     }
+
+//     // Check for a number
+//     if (!/[0-9]/.test(password)) {
+//         message += "1 number. ";
+//     }
+
+//     // Check for an uppercase letter
+//     if (!/[A-Z]/.test(password)) {
+//         message += "1 uppercase letter. ";
+//     }
+
+//     // Check for a lowercase letter
+//     if (!/[a-z]/.test(password)) {
+//         message += "1 lowercase letter. ";
+//     }
+
+//     // Check for a symbol
+//     var specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+//     if (!specialCharacters.test(password)) {
+//         message += "1 symbol. ";
+//     }
+
+//     var validationMessage = document.getElementById("passwordValidation");
+//     validationMessage.innerHTML = message;
+// }
+
+
+$(document).ready(function(){
+     $('[data-toggle="popover"]').popover(); // 初始化所有具有 popover 功能的元素
+    
+    $('#password').popover({
+        trigger: 'focus'  // 指定当输入框获得焦点时显示
+    });
+
+    $('#password').on('keyup', function() {
+        var password = $(this).val();
+        // 这里您可以添加密码验证逻辑
+        if (password.length < 8) {
+            $(this).attr('data-content', '密码长度应该大于或等于8位。');
+            $(this).popover('show');
+        } else {
+            $(this).popover('hide');
+        }
+    });
 });

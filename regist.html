@@ -61,7 +61,7 @@ twq('config','oflly');
             </div>
         </div>
     </nav>
-    <form method="post">
+    <form method="post">{% csrf_token %}
         <section class="section-aero" style="font-family: Aleo, serif;">
             <div class="d-flex flex-column justify-content-center div-middle">
                 <div class="container d-flex flex-column justify-content-evenly align-items-center reg-hero-container" style="/*height: 70%;*/">
@@ -82,7 +82,7 @@ twq('config','oflly');
                             <div class="row item" style="margin: 0px;height: 50%;">
                                 <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
                                     <div class="form-group" style="height: 50%;">
-                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg" style="height: calc(2vh);width: auto;"></span><input class="form-control password-input" type="password" placeholder="Password" name="password" required=""></div>
+                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg" style="height: calc(2vh);width: auto;"></span><input class="form-control password-input" type="password" id="password" placeholder="Password" name="password" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*\W).{8,20}$" title="Password must be 8-20 characters long and contain at least one letter and one symbol." required=""></div>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@ twq('config','oflly');
                         <div class="col d-flex flex-row justify-content-center" style="text-align: center;padding: 0px;">
                             <div class="form-check d-flex flex-row justify-content-end align-items-center reg-word-size"><input class="form-check-input reg-word-size" type="checkbox" id="formCheck-1" style="margin: 0px;" required=""><label class="form-check-label reg-word-size" for="formCheck-1" style="color: var(--bs-white);">&nbsp;I agreed the agreement</label></div><a class="d-flex flex-column justify-content-center reg-word-size" href="#" style="text-decoration: none;">《User Use Agreement》</a>
                         </div>
-                    </div>
+                    </div><div id="errorMsg" class="row reg-hero-row" style="color: var(--bs-red);display: none;">{{ error_message }}</div>
                     <div class="row reg-hero-row item" style="height: 15%;">
                         <div class="col d-flex flex-column justify-content-center align-items-center" style="text-align: center;padding: 0px;"><button class="btn btn-primary reg-btn" type="submit">Creat account</button></div>
                     </div>

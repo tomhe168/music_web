@@ -1197,23 +1197,57 @@ input[type="text"]::placeholder {
   }
 }
 
-.keyboard-container {
-}
-
 .dynamic-font {
   font-size: calc(1rem + 1vw);
 }
 
 .tooltip-inner {
-  max-width: 100%;
-  width: 100%;
+  /*max-width: 100%;*/
+  /*width: 100%;*/
   /*background-color: transparent;*/
   /*font: red;*/
-  color: red;
+  /*color: red;*/
   /*margin-left: 10%;*/
   /*margin-top: 50%;*/
-  text-align: center;
+  /*text-align: center;*/
   /*display: inline-block;*/
   /*position: fixed;*/
+}
+
+#requirements {
+  /*margin-top: 10px;*/
+}
+
+.invalid {
+  /*color: red;*/
+}
+
+.valid {
+  /*color: green;*/
+}
+
+.tooltip {
+  /*position: relative;*/
+  /*display: inline-block;*/
+}
+
+.tooltip .tooltiptext {
+  /*visibility: hidden;*/
+  /*background-color: white;*/
+  /*color: #333;*/
+  /*text-align: center;*/
+  /*border-radius: 6px;*/
+  /*padding: 5px;*/
+  /*position: absolute;*/
+  /*z-index: 1;*/
+  /*bottom: 125%;*/
+  /*left: 50%;*/
+  /*margin-left: -60px;*/
+  /*border: 1px solid #ccc;*/
+  /*width: 120px;*/
+}
+
+.tooltip:hover .tooltiptext {
+  /*visibility: visible;*/
 }
 

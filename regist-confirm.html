@@ -61,7 +61,7 @@ twq('config','oflly');
             </div>
         </div>
     </nav>
-    <form>
+    <form method="post">{% csrf_token %}
         <section class="section-aero" style="font-family: Aleo, serif;" method="post">
             <div class="d-flex flex-column justify-content-center div-middle" style="border-style: none;">
                 <div class="container d-flex flex-column justify-content-evenly align-items-center reg-hero-container" style="/*height: 70%;*/">
