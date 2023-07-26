@@ -200,3 +200,9 @@ $(document).ready(function(){
         }
     });
 });
+
+
+function onCaptchaSuccess() {
+  var captchaElement = document.querySelector('.h-captcha');
+  captchaElement.style.display = 'none';
+}

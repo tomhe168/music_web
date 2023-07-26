@@ -87,13 +87,16 @@ twq('config','oflly');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    {% if failed_login_attempts >= 2 %}
-                        <div class="h-captcha" data-sitekey="0xc68ff2c81e1Fad755464189F2bd7B2CBedd3088a"></div>
-                    {% endif %}
+                    </div>{% if failed_login_attempts >= 1 %}
+<div class="h-captcha"
+style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);" 
+data-sitekey="6b76f4f0-d3ef-48a8-b619-92fc75fb93a6"
+data-callback="onCaptchaSuccess">
+</div>
+{% endif %}<div id="errorMsg" class="row reg-hero-row" style="color: var(--bs-red);display: none;">{{ error_message }}</div>
                     <div class="row reg-hero-row item" style="height: 15%;">
                         <div class="col d-flex flex-column justify-content-end align-items-center" style="text-align: center;padding: 0px;"><button class="btn btn-primary reg-btn" type="submit">Log In</button></div>
-                    </div><div id="errorMsg" class="row reg-hero-row" style="color: var(--bs-red);display: none;">{{ error_message }}</div>
+                    </div>
                     <div class="row item">
                         <div class="col d-flex flex-row justify-content-center" style="text-align: center;padding: 0px;"><a class="d-flex flex-column justify-content-center reg-word-size" href="forget-password.html" style="text-decoration: none;">Forgot your password?</a></div>
                     </div>
