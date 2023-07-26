@@ -75,22 +75,25 @@ twq('config','oflly');
                             <div class="row item" style="margin: 0px;">
                                 <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
                                     <div class="form-group" style="height: 50%;">
-                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="d-xxl-flex input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/arcoDesign-email%201.svg" style="/*font-size: calc(1rem + 100vh);*//*object-fit: cover;*/height: calc(2vh);width: auto;"></span><input class="form-control d-xxl-flex email-input" type="email" placeholder="Email"></div>
+                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="d-xxl-flex input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/arcoDesign-email%201.svg" style="/*font-size: calc(1rem + 100vh);*//*object-fit: cover;*/height: calc(2vh);width: auto;"></span><input class="form-control d-xxl-flex email-input" type="email" placeholder="Email" name="email" required=""></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row item" style="margin: 0px;height: 50%;">
                                 <div class="col d-flex flex-column justify-content-end" style="padding: 0px;">
                                     <div class="form-group" style="height: 50%;">
-                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg" style="height: calc(2vh);width: auto;"></span><input class="form-control password-input" type="password" placeholder="Password"></div>
+                                        <div class="input-group" style="border-radius: 20px;border: 1px solid rgb(255,255,255);height: 100%;"><span class="input-group-text" style="/*opacity: 0;*/--bs-body-bg: transparent;background-color: transparent;border-style: none;"><img src="assets/img/antOutline-lock%201.svg" style="height: calc(2vh);width: auto;"></span><input class="form-control password-input" type="password" placeholder="Password" name="password" required=""></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><div id="errorMsg" class="row reg-hero-row" style="color: var(--bs-red);display: none;">{{ error_message }}</div>
-                    <div class="row reg-hero-row item" style="height: 15%;">
-                        <div class="col d-flex flex-column justify-content-end align-items-center" style="text-align: center;padding: 0px;"><button class="btn btn-primary reg-btn" type="button">Log In</button></div>
                     </div>
+                    {% if failed_login_attempts >= 2 %}
+                        <div class="h-captcha" data-sitekey="0xc68ff2c81e1Fad755464189F2bd7B2CBedd3088a"></div>
+                    {% endif %}
+                    <div class="row reg-hero-row item" style="height: 15%;">
+                        <div class="col d-flex flex-column justify-content-end align-items-center" style="text-align: center;padding: 0px;"><button class="btn btn-primary reg-btn" type="submit">Log In</button></div>
+                    </div><div id="errorMsg" class="row reg-hero-row" style="color: var(--bs-red);display: none;">{{ error_message }}</div>
                     <div class="row item">
                         <div class="col d-flex flex-row justify-content-center" style="text-align: center;padding: 0px;"><a class="d-flex flex-column justify-content-center reg-word-size" href="forget-password.html" style="text-decoration: none;">Forgot your password?</a></div>
                     </div>
