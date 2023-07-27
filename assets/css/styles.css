@@ -1251,3 +1251,8 @@ input[type="text"]::placeholder {
   /*visibility: visible;*/
 }
 
+#aero {
+  width: 75%;
+  margin: 0 auto;
+}
+
