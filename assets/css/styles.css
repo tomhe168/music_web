@@ -69,12 +69,12 @@ p {
 
 @media (min-width: 992px) {
   #col-picture {
-    background: url("../../assets/img/图片%2012@1x.png") center / cover no-repeat;
+    background: url("../../assets/img/pic121x.png") center / cover no-repeat;
   }
 }
 
 #col-picture {
-  background: url("../../assets/img/图片%2012@1x.png") center / contain no-repeat;
+  background: url("../../assets/img/pic121x.png") center / contain no-repeat;
 }
 
 #right-icon {
@@ -525,14 +525,14 @@ a {
 .bs-icon-sm.bs-icon-rounded.bs-icon-primary.bs-icon.nav-brand-icon {
   height: 66px;
   width: 46px;
-  background: url("../../assets/img/Group%201.svg") center / cover no-repeat;
+  background: url("../../assets/img/Group1.svg") center / cover no-repeat;
 }
 
 @media (max-width: 767px) {
   .bs-icon-sm.bs-icon-rounded.bs-icon-primary.bs-icon.nav-brand-icon {
     height: 33px;
     width: 23px;
-    background: url("../../assets/img/Group%201.svg") center / cover no-repeat;
+    background: url("../../assets/img/Group1.svg") center / cover no-repeat;
   }
 }
 
@@ -663,14 +663,14 @@ a {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../../assets/img/index_new2_副本_副本.webp") top / contain no-repeat;
+  background: url("../../assets/img/index_new2_fb.webp") top / contain no-repeat;
 }
 
 @media (max-width: 767px) {
   #hero {
     width: 100%;
     height: 30vh;
-    background: url("../../assets/img/index_new2_副本_副本.webp") no-repeat;
+    background: url("../../assets/img/index_new2_fb.webp") no-repeat;
     background-position: 50% 70%;
     background-size: contain;
   }
