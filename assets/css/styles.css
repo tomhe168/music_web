@@ -69,12 +69,12 @@ p {
 
 @media (min-width: 992px) {
   #col-picture {
-    background: url("../../assets/img/pic121x.png") center / cover no-repeat;
+    background: url("../../assets/img/pic_121x.png") center / cover no-repeat;
   }
 }
 
 #col-picture {
-  background: url("../../assets/img/pic121x.png") center / contain no-repeat;
+  background: url("../../assets/img/pic_121x.png") center / contain no-repeat;
 }
 
 #right-icon {
@@ -663,14 +663,14 @@ a {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../../assets/img/index_new2_fb.webp") top / contain no-repeat;
+  background: url("../../assets/img/index_new2.webp") top / contain no-repeat;
 }
 
 @media (max-width: 767px) {
   #hero {
     width: 100%;
     height: 30vh;
-    background: url("../../assets/img/index_new2_fb.webp") no-repeat;
+    background: url("../../assets/img/index_new2.webp") no-repeat;
     background-position: 50% 70%;
     background-size: contain;
   }
