@@ -206,3 +206,21 @@ function onCaptchaSuccess() {
   var captchaElement = document.querySelector('.h-captcha');
   captchaElement.style.display = 'none';
 }
+
+
+$(document).ready(function(){
+  // $(document).on('click', '#mybutton', function(){
+    $('.debouncing-form').submit(function(e){  
+      // console.log("cccccccccclick");
+      var btn = $('.debouncing-button');
+      btn.prop('disabled', true);  // 禁用按钮
+      setTimeout(function(){
+          btn.prop('disabled', false);  // 一段时间后再启用按钮
+      }, 2000);  // 这里的2000是2000毫秒，也就是2秒
+  });
+});
+
+
+function goBack() {
+  window.history.back();
+}
