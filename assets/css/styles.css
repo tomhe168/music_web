@@ -1085,7 +1085,7 @@ input[type="text"]::placeholder {
 }
 
 .section-aero {
-  height: 70VH;
+  /*height: 70VH;*/
   margin: 0 auto;
   background: transparent;
   /*backdrop-filter: blur(100px);
@@ -1188,8 +1188,18 @@ input[type="text"]::placeholder {
   font-size: 40px;
 }
 
+.reg-login-heading-size {
+  font-size: 20px;
+}
+
 @media (max-width: 767px) {
   .reg-heading-size {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .reg-login-heading-size {
     font-size: 30px;
   }
 }
@@ -1385,5 +1395,58 @@ p::-webkit-scrollbar {
   .four-form-group {
     height: 33%;
   }
+}
+
+.p_body {
+  background-image: url('../../assets/img/4k_back.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*position: absolute;*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100VH;
+  overflow: hidden;
+}
+
+.p_content_class {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 0;
+  height: 90VH;
+}
+
+.p-hero-row {
+  width: 60%;
+}
+
+@media (max-width: 767px) {
+  .p-hero-row {
+    width: 75%;
+  }
+}
+
+.p_content_class::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.user-btn {
+  font-family: Aleo, serif;
+  border-radius: 50px;
+  width: 30%;
+  height: 30%;
+  font-size: calc(2vh);
+  overflow: hidden;
+  line-height: normal;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-style: none;
 }
 

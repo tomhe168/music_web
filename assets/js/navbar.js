@@ -10,6 +10,28 @@ $(window).scroll(function() {
     }
 });
 
+var p_container = document.getElementsByClassName('p_content_class')[0]
+function updateNavbarBackground() {
+    var scrolled = p_container.scrollTop;
+    if (scrolled === 0) {
+        $(".navbar").css("background", "transparent");
+        $(".navbar").css("backdrop-filter", "blur(0px)");
+    } else {
+        $(".navbar").css("background", "rgba(0,0,0,0.8)");
+        $(".navbar").css("backdrop-filter", "blur(5px)");
+    }
+}
+
+$(p_container).scroll(updateNavbarBackground);
+// Run the function once at page load
+$(p_container).ready(updateNavbarBackground);
+
+// Run specific setting at page load
+$(document).ready(function() {
+    $(".navbar").css("background", "transparent");
+    $(".navbar").css("backdrop-filter", "blur(0px)");
+});
+
 $(document).ready(function() {
   $('.dropdown').on('show.bs.dropdown', function() {
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown(200);
@@ -224,3 +246,4 @@ $(document).ready(function(){
 function goBack() {
   window.history.back();
 }
+
