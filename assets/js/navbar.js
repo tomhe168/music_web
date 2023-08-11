@@ -1,25 +1,25 @@
-$(window).scroll(function() {
-    document.querySelector('.navbar');
-    var scrolled = $(window).pageYOffset ||document.documentElement.scrollTop;
-    if (scrolled === 0) {
-        $(".navbar").css("background", "transparent");
-        $(".navbar").css("backdrop-filter", "blur(0px)");
-    } else {
-        $(".navbar").css("background", "rgba(0,0,0,0.8)");
-        $(".navbar").css("backdrop-filter", "blur(5px)");
-    }
+$(window).scroll(function () {
+  document.querySelector('.navbar');
+  var scrolled = $(window).pageYOffset || document.documentElement.scrollTop;
+  if (scrolled === 0) {
+    $(".navbar").css("background", "transparent");
+    $(".navbar").css("backdrop-filter", "blur(0px)");
+  } else {
+    $(".navbar").css("background", "rgba(0,0,0,0.8)");
+    $(".navbar").css("backdrop-filter", "blur(5px)");
+  }
 });
 
 var p_container = document.getElementsByClassName('p_content_class')[0]
 function updateNavbarBackground() {
-    var scrolled = p_container.scrollTop;
-    if (scrolled === 0) {
-        $(".navbar").css("background", "transparent");
-        $(".navbar").css("backdrop-filter", "blur(0px)");
-    } else {
-        $(".navbar").css("background", "rgba(0,0,0,0.8)");
-        $(".navbar").css("backdrop-filter", "blur(5px)");
-    }
+  var scrolled = p_container.scrollTop;
+  if (scrolled === 0) {
+    $(".navbar").css("background", "transparent");
+    $(".navbar").css("backdrop-filter", "blur(0px)");
+  } else {
+    $(".navbar").css("background", "rgba(0,0,0,0.8)");
+    $(".navbar").css("backdrop-filter", "blur(5px)");
+  }
 }
 
 $(p_container).scroll(updateNavbarBackground);
@@ -27,19 +27,19 @@ $(p_container).scroll(updateNavbarBackground);
 $(p_container).ready(updateNavbarBackground);
 
 // Run specific setting at page load
-$(document).ready(function() {
-    $(".navbar").css("background", "transparent");
-    $(".navbar").css("backdrop-filter", "blur(0px)");
+$(document).ready(function () {
+  $(".navbar").css("background", "transparent");
+  $(".navbar").css("backdrop-filter", "blur(0px)");
 });
 
-$(document).ready(function() {
-  $('.dropdown').on('show.bs.dropdown', function() {
+$(document).ready(function () {
+  $('.dropdown').on('show.bs.dropdown', function () {
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown(200);
     $("dropdown-menu").css('padding-top', '10px');
     // $("dropdown-menu").css('width', '120px');
   });
 
-  $('.dropdown').on('hide.bs.dropdown', function() {
+  $('.dropdown').on('hide.bs.dropdown', function () {
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
     $("dropdown-menu").css('padding-top', '0px');
   });
@@ -82,10 +82,10 @@ setTimeout(function () {
 //     $('#buttonInput').tooltip('show');
 // });
 
-$(document).ready(function() {
+$(document).ready(function () {
   const errorMsgText = document.getElementById("errorMsg");
-  if(errorMsgText){
-      $("#errorMsg").show();  // 使用 jQuery 的 show 方法显示错误消息  
+  if (errorMsgText) {
+    $("#errorMsg").show();  // 使用 jQuery 的 show 方法显示错误消息  
   }
 });
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
 
 // passwordInput.addEventListener("input", function() {
 //     const passwordValue = passwordInput.value;
-    
+
 //     // Check length
 //     if (passwordValue.length >= 8) {
 //         lengthReq.classList.remove("invalid");
@@ -204,23 +204,23 @@ $(document).ready(function() {
 // }
 
 
-$(document).ready(function(){
-     $('[data-toggle="popover"]').popover(); // 初始化所有具有 popover 功能的元素
-    
-    $('#password').popover({
-        trigger: 'focus'  // 指定当输入框获得焦点时显示
-    });
+$(document).ready(function () {
+  $('[data-toggle="popover"]').popover(); // 初始化所有具有 popover 功能的元素
 
-    $('#password').on('keyup', function() {
-        var password = $(this).val();
-        // 这里您可以添加密码验证逻辑
-        if (password.length < 8) {
-            $(this).attr('data-content', '密码长度应该大于或等于8位。');
-            $(this).popover('show');
-        } else {
-            $(this).popover('hide');
-        }
-    });
+  $('#password').popover({
+    trigger: 'focus'  // 指定当输入框获得焦点时显示
+  });
+
+  $('#password').on('keyup', function () {
+    var password = $(this).val();
+    // 这里您可以添加密码验证逻辑
+    if (password.length < 8) {
+      $(this).attr('data-content', '密码长度应该大于或等于8位。');
+      $(this).popover('show');
+    } else {
+      $(this).popover('hide');
+    }
+  });
 });
 
 
@@ -230,20 +230,279 @@ function onCaptchaSuccess() {
 }
 
 
-$(document).ready(function(){
+$(document).ready(function () {
   // $(document).on('click', '#mybutton', function(){
-    $('.debouncing-form').submit(function(e){  
-      // console.log("cccccccccclick");
-      var btn = $('.debouncing-button');
-      btn.prop('disabled', true);  // 禁用按钮
-      setTimeout(function(){
-          btn.prop('disabled', false);  // 一段时间后再启用按钮
-      }, 2000);  // 这里的2000是2000毫秒，也就是2秒
+  $('.debouncing-form').submit(function (e) {
+    // console.log("cccccccccclick");
+    var btn = $('.debouncing-button');
+    var debounceTime = (btn.attr('id') === 'btnCaptchaId') ? 10000 : 2000; // 如果id是btnCaptchaId则时间是10秒，否则是2秒
+    
+    btn.prop('disabled', true);  // 禁用按钮
+    
+    setTimeout(function () {
+        btn.prop('disabled', false);  // 一段时间后再启用按钮
+    }, debounceTime);
   });
 });
 
 
-function goBack() {
-  window.history.back();
+/*
+$(document).ready(function () {
+  var isClicked = false;
+  if (userIsAuthenticated) {
+    $('.btn-user').hover(
+      function () {
+        $.ajax({
+          url: 'small-user-func.html',
+          success: function (data) {
+            console.log("Ajax request succeeded.");
+            var content = $('<div>').addClass('hover-content').html(data).appendTo('.btn-user');
+            // content.click(function(event) {
+            //   event.stopPropagation();
+            //   // event.preventDefault();  // 阻止默认行为
+            //   // isClicked = true;
+            //  });
+
+            // Add a new hover event to the pop-up content
+            content.hover(
+              function () {
+                // When the mouse enters the pop-up, remove the 'hover-out' class
+                $(this).removeClass('hover-out');
+              },
+              function () {
+                if (!isClicked) {
+                  // When the mouse leaves the pop-up, add the 'hover-out' class
+                  $(this).addClass('hover-out');
+
+                  // After a short delay, remove the pop-up if it still has the 'hover-out' class
+                  var _this = $(this);
+                  setTimeout(function () {
+                    if (_this.hasClass('hover-out')) {
+                      _this.remove();
+                    }
+                  }, 300);   // delay in milliseconds
+                }
+              }
+            );
+          },
+          error: function (xhr, status, error) {
+            console.log("Ajax request failed. Status: " + status + ", Error: " + error);
+          },
+          complete: function () {
+            console.log("Ajax request completed.");
+          }
+        });
+      },
+      function () {
+        if (!isClicked) {
+          // When the mouse leaves the button, add the 'hover-out' class to the pop-up
+          $('.hover-content').addClass('hover-out');
+
+          // After a short delay, remove the pop-up if it still has the 'hover-out' class
+          setTimeout(function () {
+            if ($('.hover-content').hasClass('hover-out')) {
+              $('.hover-content').remove();
+            }
+          }, 300);   // delay in milliseconds
+        }
+      }
+    );
+  }
+});
+*/
+
+
+
+
+$(document).ready(function () {
+  var isClicked = false;
+
+  function isMobileDevice() {
+    // return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return window.innerWidth <= 768;
+  }
+  if (userIsAuthenticated) {
+    if (isMobileDevice()) {
+      // 手机浏览器的逻辑
+      $.ajax({
+        // url: 'small-user-func.html',
+        success: function (data) {
+          // 将内容直接显示在nav上
+          // 你需要指定一个nav的选择器，例如#navbar
+          $('.navcol-class .btn').after('<p class="nav-collapse-type d-flex flex-row justify-content-end small-page-p" style="margin: 0px;padding: 0px;">' + availableTime + '</p>');
+          $('.navcol-class .btn').next().after('<p class="nav-collapse-type d-flex flex-row justify-content-end small-page-p" style="margin: 0px;padding: 0px;">' + currentUserEmail + '</p>');
+          $('.navcol-class .btn').next().next().after('<form action="' + logout_url + '" method="post">' + csrf_token + '<button class="btn btn-primary nav-collapse-type d-sm-flex justify-content-sm-end" type="submit">Log Out</button></form>');
+          $('.small-page-p').on('click', function(event) {
+            event.preventDefault();
+            console.log(event);
+            event.stopPropagation();
+          });
+        
+        },
+        error: function (xhr, status, error) {
+          console.log("Ajax request failed. Status: " + status + ", Error: " + error);
+        }
+      });
+    } 
+    else
+    {
+    
+    $('.btn-user').hover(
+      function () {
+        $.ajax({
+          url: 'small-user-func.html',
+          success: function (data) {
+            console.log("Ajax request succeeded.");
+            var content = $('<div>').addClass('hover-content').html(data).appendTo('.btn-user');
+            // content.click(function(event) {
+            //   event.stopPropagation();
+            //   // event.preventDefault();  // 阻止默认行为
+            //   // isClicked = true;
+            //  });
+            // 防止点击.hover-content导致事件冒泡到document
+            $('.hover-content').on('click', function(event) {
+              // event.preventDefault();
+              console.log(event);
+              event.stopPropagation();
+            });
+
+            $('.small-page-p').on('click', function(event) {
+              event.preventDefault();
+              console.log(event);
+              event.stopPropagation();
+            });
+
+            // 监听整个文档的点击
+            $(document).on('click', function(event) {
+              console.log(event);
+              var $target = $(event.target);
+              if (!$target.closest('.hover-content').length && !$target.closest('.btn-user').length) {
+                  // 点击发生在.hover-content和.btn-user之外
+                  $('.hover-content').remove();
+              }
+            });
+            // Add a new hover event to the pop-up content
+            content.hover(
+              function () {
+                // When the mouse enters the pop-up, remove the 'hover-out' class
+                $(this).removeClass('hover-out');
+              },
+              function () {
+                if (!isClicked) {
+                  // When the mouse leaves the pop-up, add the 'hover-out' class
+                  $(this).addClass('hover-out');
+
+                  // After a short delay, remove the pop-up if it still has the 'hover-out' class
+                  var _this = $(this);
+                  setTimeout(function () {
+                    if (_this.hasClass('hover-out')) {
+                      _this.remove();
+                    }
+                  }, 300);   // delay in milliseconds
+                }
+              }
+            );
+          },
+          error: function (xhr, status, error) {
+            console.log("Ajax request failed. Status: " + status + ", Error: " + error);
+          },
+          complete: function () {
+            console.log("Ajax request completed.");
+          }
+        });
+      },
+      function () {
+        if (!isClicked) {
+          // When the mouse leaves the button, add the 'hover-out' class to the pop-up
+          $('.hover-content').addClass('hover-out');
+
+          // After a short delay, remove the pop-up if it still has the 'hover-out' class
+          setTimeout(function () {
+            if ($('.hover-content').hasClass('hover-out')) {
+              $('.hover-content').remove();
+            }
+          }, 300);   // delay in milliseconds
+        }
+      }
+    );
+    }
+  }
+});
+
+
+
+// 在页面加载时启动倒计时
+$(document).ready(function() {
+    startCountdown();
+});
+
+var countdown;
+var initialTime = 60;  // 时间设为60秒
+
+function startCountdown() {
+    var currentTime = initialTime;
+
+    // 清除已存在的计时器
+    if(countdown) {
+      clearInterval(countdown);
+    }
+
+
+    // 更新链接文本并禁用它，以防止在倒计时时重复点击
+    $('#countdownLink').text(currentTime).off('click');
+
+    countdown = setInterval(function() {
+        currentTime--;
+        $('#countdownLink').text(currentTime);
+
+        if (currentTime <= 0) {
+            clearInterval(countdown);
+            $('#countdownLink').off('click').text('resend code').on('click', function() {
+                send_email();
+                // 这里可以添加其他逻辑，例如向服务器发送请求，重新发送邮件等。
+                startCountdown();
+                return false; // 阻止默认的<a>标签点击行为
+            });
+        }
+    }, 1000);
 }
+
+
+function send_email()
+{
+  // $('#countdownLink').click(function() {
+    $.ajax({
+      url: '/send-email/',  // 请根据实际的URL配置进行调整
+      method: 'GET',  // 或者其他适当的HTTP方法
+      success: function(response) {
+          if (response.status === 'success') {
+              startCountdown();
+          } else {
+              alert("There was an ${response.status} error sending the email.");
+          }
+      },
+      error: function(error) {
+          alert("There was an error sending the email.");
+      }
+  });
+  return false; // 阻止默认的<a>标签点击行为
+  // });
+}
+
+
+
+// 在页面加载时启动倒计时
+$(document).ready(function() {
+    startCountdown();
+});
+
+
+
+
+
+
+
+
+
+
 

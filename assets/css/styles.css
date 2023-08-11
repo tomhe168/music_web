@@ -1450,3 +1450,16 @@ p::-webkit-scrollbar {
   border-style: none;
 }
 
+.small-page-button {
+  background: transparent;
+  border-style: none;
+  font-size: 16px;
+  height: 43px;
+  width: 80%;
+}
+
+.small-page-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #0d6efd;
+}
+
