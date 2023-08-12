@@ -255,10 +255,52 @@ p {
   font-family: Aleo, serif;
 }
 
+.aero-left-link-1 {
+  margin-top: 0px;
+  font-size: 40px;
+  margin-bottom: 0px;
+  color: var(--bs-white);
+  text-align: left;
+  font-family: Aleo, serif;
+}
+
+.aero-left-p-small-1 {
+  margin-top: 0px;
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: var(--bs-gray-500);
+  text-align: left;
+  font-family: Aleo, serif;
+  /*line-height: 2;*/
+}
+
+@media (max-width: 767px) {
+  .aero-left-p-small-1 {
+    margin-top: 0px;
+    font-size: 10px;
+    margin-bottom: 0px;
+    color: var(--bs-gray-500);
+    text-align: left;
+    font-family: Aleo, serif;
+    /*line-height: 2;*/
+  }
+}
+
 @media (max-width: 767px) {
   .aero-left-p-1 {
     margin-top: 15%;
     font-size: 17px;
+    margin-bottom: 0px;
+    color: var(--bs-white);
+    text-align: left;
+    font-family: Aleo, serif;
+  }
+}
+
+@media (max-width: 767px) {
+  .aero-left-link-1 {
+    margin-top: 0px;
+    font-size: 23px;
     margin-bottom: 0px;
     color: var(--bs-white);
     text-align: left;
@@ -308,8 +350,8 @@ p {
 }
 
 #areo-middle-3-img {
-  max-width: 110%;
-  height: auto;
+  max-width: auto;
+  height: 110%;
   /*max-height: 100%;*/
   /*width: auto;*/
   position: relative;
@@ -334,7 +376,7 @@ p {
   position: absolute;
   top: 0;
   /*width: 100px;*/
-  height: 110%;
+  height: 100%;
   /*background-color: var(--bs-white);*/
   /*transform: translateX(-50%);*/
   left: 50.5%;
@@ -342,20 +384,23 @@ p {
 }
 
 #areo-middle-1-img {
-  max-width: 90%;
+  width: 50%;
   height: auto;
   position: relative;
-  /*left: 50%;*/
-  /*transform: translateX(-50%);*/
+  left: 40%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 767px) {
   #areo-middle-1-img {
-    max-width: 90%;
+    max-width: 110%;
     height: auto;
     position: relative;
-    /*left: 50%;*/
-    /*transform: translateX(-50%);*/
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
 
@@ -935,7 +980,7 @@ a {
 #areo-middle-4-img {
   /*max-width: auto;*/
   height: 90%;
-  width: auto;
+  width: 90%;
 }
 
 background-image: transparent;background-color: transparent;font-style: color:white;border-style: none;color: var(--bs-white);padding: 0px;font-size: calc(1rem + 0.7vh);.email-input {
@@ -1369,7 +1414,7 @@ p::-webkit-scrollbar {
 
 .back-arrow {
   position: fixed;
-  top: 9.8%;
+  top: 10%;
   left: 10%;
   /*width: calc(1rem + 1vw);*/
   font-size: calc(1rem + 1vw);
@@ -1461,5 +1506,8 @@ p::-webkit-scrollbar {
 .small-page-button:hover {
   background-color: rgba(0, 0, 0, 0.2);
   color: #0d6efd;
+}
+
+#areo-middle-5-img {
 }
 
