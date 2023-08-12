@@ -344,9 +344,9 @@ p {
 #areo-middle-2-img {
   max-width: 110%;
   height: auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /*position: relative;*/
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
 }
 
 #areo-middle-3-img {
