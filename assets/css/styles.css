@@ -1508,6 +1508,20 @@ p::-webkit-scrollbar {
   color: #0d6efd;
 }
 
-#areo-middle-5-img {
+.div-with-bg::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.div-with-bg {
+  width: 50%;
+  height: 0;
+  padding-bottom: 22%;
+  background-image: url('../../assets/img/pic231x.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
 }
 
