@@ -257,7 +257,7 @@ p {
 
 .aero-left-link-1 {
   margin-top: 0px;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 0px;
   color: var(--bs-white);
   text-align: left;
@@ -266,7 +266,7 @@ p {
 
 .aero-left-p-small-1 {
   margin-top: 0px;
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 0px;
   color: var(--bs-gray-500);
   text-align: left;
@@ -342,11 +342,21 @@ p {
 }
 
 #areo-middle-2-img {
-  max-width: 110%;
+  max-width: 100%;
   height: auto;
   /*position: relative;*/
   /*left: 50%;*/
   /*transform: translateX(-50%);*/
+}
+
+@media (max-width: 767px) {
+  #areo-middle-2-img {
+    max-width: 95%;
+    height: auto;
+    /*position: relative;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+  }
 }
 
 #areo-middle-3-img {
@@ -384,7 +394,7 @@ p {
 }
 
 #areo-middle-1-img {
-  width: 50%;
+  width: 60%;
   height: auto;
   position: relative;
   left: 40%;
@@ -861,8 +871,8 @@ a {
 }
 
 .aero-col-left {
-  margin-right: 0px;
-  width: 50%;
+  margin-right: 2%;
+  width: 48%;
 }
 
 @media (max-width: 767px) {
@@ -874,8 +884,8 @@ a {
 }
 
 .aero-col-right {
-  margin-left: 5%;
-  width: 45%;
+  margin-left: 10%;
+  width: 40%;
 }
 
 @media (max-width: 767px) {
@@ -979,7 +989,7 @@ a {
 
 #areo-middle-4-img {
   /*max-width: auto;*/
-  height: 90%;
+  height: auto;
   width: 90%;
 }
 
