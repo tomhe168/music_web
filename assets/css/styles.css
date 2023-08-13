@@ -1496,9 +1496,9 @@ p::-webkit-scrollbar {
 .user-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
-  width: 30%;
-  height: 30%;
-  font-size: calc(2vh);
+  width: 32%;
+  height: 60%;
+  font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -1509,8 +1509,8 @@ p::-webkit-scrollbar {
   background: transparent;
   border-style: none;
   font-size: 16px;
-  height: 43px;
-  width: 80%;
+  /*height: 43px;*/
+  /*width: 20%;*/
 }
 
 .small-page-button:hover {

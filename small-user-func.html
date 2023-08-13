@@ -42,22 +42,13 @@ twq('config','oflly');
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-    <div class="d-flex flex-column justify-content-between align-items-center align-content-center small-page" style="background: rgba(0, 0, 0, 0.2);width: 100%;height: 100%;font-family: Aleo, serif;">
-        <div class="row" style="width: 100%;">
-            <div class="col d-flex flex-row justify-content-center">
-                <p class="d-flex flex-column justify-content-center small-page-p" style="margin: 0px;font-size: 16px;height: 42px;padding: 6px 12px;">{{ available_time }}&nbsp;</p>
-            </div>
+<body style="pointer-events: none;">
+    <div class="row d-xxl-flex align-items-xxl-center small-page-row" style="margin-top: 10px;border-top: 1px solid var(--bs-white);border-right: none;border-bottom: none;border-left: none;padding: 0px;width: 100%;min-width: 500px;background: rgba(0, 0, 0, 0.2);">
+        <div class="col d-flex flex-row justify-content-start">
+            <p class="d-flex flex-column justify-content-center small-page-p" style="margin: 0px;font-size: 16px;height: 42px;">{{ current_user.email }}</p>
         </div>
-        <div class="row" style="width: 100%;">
-            <div class="col d-flex d-xxl-flex flex-row justify-content-center justify-content-xxl-center">
-                <p class="d-flex flex-column justify-content-center" style="margin: 0px;font-size: 16px;height: 42px;padding: 6px 12px;">{{ current_user.email }}</p>
-            </div>
-        </div>
-        <div class="row" style="width: 100%;">
-            <div class="col d-flex flex-row justify-content-center justify-content-xxl-center align-items-xxl-center" style="border-top: 1px solid var(--bs-white);border-right: none;border-bottom: none;border-left: none;">
-                <form class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="width: 100%;height: 100%;" action="{% url 'logout' %}" method="post"><button class="btn btn-primary d-flex flex-column justify-content-xxl-center align-items-xxl-center small-page-button" type="submit">Log Out</button></form>
-            </div>
+        <div class="col">
+            <form class="d-xxl-flex justify-content-xxl-end align-items-xxl-center" action="{% url 'music_app:logout' %}" method="post"><span>{% csrf_token %}</span><button class="btn btn-primary d-flex flex-column justify-content-xxl-center align-items-xxl-end small-page-button" style="pointer-events: auto;" type="submit">Log Out</button></form>
         </div>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
