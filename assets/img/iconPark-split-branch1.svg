@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" width="24" height="24" style="border-color: rgba(187,187,187,1);border-width: 0;border-style: solid" filter="none">
-    
-    <g>
-    <rect width="48" height="48" fill="rgba(255,255,255,1)" fill-opacity="0.01" stroke="none"></rect><path d="M44 44V4H24V17L33 26V44H44Z" fill="none"></path><path d="M4 4V44H25V30L16 21V4H4Z" fill="none"></path><path d="M44 44V4H24V17L33 26V44H44Z" stroke="rgba(255,255,255,1)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><path d="M4 4V44H25V30L16 21V4H4Z" stroke="rgba(255,255,255,1)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-    </g>
-  </svg>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+	<title>iconPark-split-branch 1-svg</title>
+	<style>
+		.s0 { opacity: 0;fill: #ffffff } 
+		.s1 { fill: none } 
+		.s2 { fill: none;stroke: #ffffff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 4 } 
+	</style>
+	<g id="Layer">
+		<path id="Layer" class="s0" d="m6 6h48v48h-48z"/>
+		<path id="Layer" class="s1" d="m50 50v-40h-20v13l9 9v18z"/>
+		<path id="Layer" class="s1" d="m10 10v40h21v-14l-9-9v-17z"/>
+		<path id="Layer" class="s2" d="m50 50v-40h-20v13l9 9v18z"/>
+		<path id="Layer" class="s2" d="m10 10v40h21v-14l-9-9v-17z"/>
+	</g>
+</svg>

@@ -1497,7 +1497,7 @@ p::-webkit-scrollbar {
   font-family: Aleo, serif;
   border-radius: 50px;
   width: 32%;
-  height: 60%;
+  height: 50%;
   font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
