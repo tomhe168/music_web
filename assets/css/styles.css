@@ -803,6 +803,17 @@ a {
   margin-top: 5%;
 }
 
+.t-section-heading {
+  text-align: center;
+  font-size: 60px;
+  font-family: Aleo, serif;
+  color: var(--bs-white);
+  /*text-align: left;*/
+  font-weight: 100;
+  width: 100%;
+  margin-top: 0px;
+}
+
 .aero-heading {
   /*text-align: center;*/
   font-size: 75px;
@@ -812,6 +823,20 @@ a {
   font-weight: 600;
   width: 100%;
   /*margin-top: 5%;*/
+}
+
+@media (max-width: 767px) {
+  .t-section-heading {
+    /*text-align: center;*/
+    font-size: 20px;
+    font-family: Aleo, serif;
+    color: var(--bs-white);
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1493,11 +1518,25 @@ p::-webkit-scrollbar {
   height: 0;
 }
 
+@media (max-width: 767px) {
+  .user-btn {
+    font-family: Aleo, serif;
+    border-radius: 50px;
+    width: 32%;
+    height: 35%;
+    font-size: calc(1.5vh);
+    overflow: hidden;
+    line-height: normal;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-style: none;
+  }
+}
+
 .user-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
   width: 32%;
-  height: 50%;
+  height: 25%;
   font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
@@ -1533,5 +1572,21 @@ p::-webkit-scrollbar {
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
+}
+
+.t-img-container {
+  height: auto;
+  width: 60%;
+}
+
+@media (max-width: 767px) {
+  .t-img-container {
+    height: auto;
+    width: 80%;
+  }
+}
+
+.t-section-para {
+  margin-top: 0px;
 }
 
