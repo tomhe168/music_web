@@ -360,10 +360,10 @@ p {
 }
 
 #areo-middle-3-img {
-  max-width: auto;
+  /*max-width: auto;*/
+  /*height: 100%;*/
+  width: 110%;
   height: 110%;
-  /*max-height: 100%;*/
-  /*width: auto;*/
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -812,6 +812,7 @@ a {
   font-weight: 100;
   width: 100%;
   margin-top: 0px;
+  transform: translateY(-40%);
 }
 
 .aero-heading {
@@ -836,6 +837,7 @@ a {
     width: 100%;
     margin-top: 0px;
     margin-bottom: 0px;
+    transform: translateY(0);
   }
 }
 
@@ -1530,6 +1532,18 @@ p::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0.2) !important;
     border-style: none;
   }
+}
+
+.f-user-btn {
+  font-family: Aleo, serif;
+  border-radius: 25px;
+  width: 25%;
+  height: 30%;
+  font-size: calc(1.5vh);
+  overflow: hidden;
+  line-height: normal;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-style: none;
 }
 
 .user-btn {

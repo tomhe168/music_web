@@ -45,7 +45,7 @@ twq('config','oflly');
 
 <body style="background: var(--bs-black);">
     <nav class="navbar navbar-light navbar-expand-md sticky-top py-3" id="hero-navbar-3" style="font-family: Aleo, serif;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon nav-brand-icon"></span><span class="nav-brand-font">NoteScience</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#" style="border-color: var(--bs-white);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/index.html"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon nav-brand-icon"></span><span class="nav-brand-font">NoteScience</span></a><button data-bs-toggle="collapse" data-bs-target=".navcol-class" class="navbar-toggler" style="border-color: var(--bs-white);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse navcol-class" style="text-align: right;">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link nav-collapse-type" id="nav-blog-link-3" href="/blog.html">Blog</a></li>
@@ -66,19 +66,19 @@ twq('config','oflly');
             <div class="container" data-aos="fade-up" data-aos-duration="500" id="hero-container">
                 <h1 class="blog-aero-heading">Music creation made easy and accessible for everyone</h1>
                 <div data-aos="fade-up" data-aos-duration="500" style="margin-top: 40px;">
-                    <hr class="blog-aero-hr"><a href="/blogdetails.html">
-                        <figure class="figure" style="/*margin-top: 10px;*/text-align: left;width: 80%;height: auto;">
-                            <p class="blog-p-1">Published December 21, 2023</p><img class="img-fluid figure-img blog-aero-img" src="assets/img/pic_41x.webp" width="1169" height="500">
-                            <p class="blog-p-2">NoteScience launches Audio-to-MIDI,revolutionizing music editing</p>
+                    <hr class="blog-aero-hr"><a href="/blogdetails2.html">
+                        <figure class="figure" style="/*margin-top: 10px;*/text-align: left;width: 80%;height: 80%;">
+                            <p class="blog-p-1">Published August 13, 2022</p><img class="img-fluid figure-img blog-aero-img" src="assets/img/pic231x-resize.webp" width="1169" height="500">
+                            <p class="blog-p-2">Audio To MIDI Magic</p>
                             <p class="blog-p-3">→ Learn More</p>
                         </figure>
                     </a>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="500" style="margin-top: 40px;">
-                    <hr class="blog-aero-hr"><a href="/blogdetails2.html">
-                        <figure class="figure" style="/*margin-top: 10px;*/text-align: left;width: 80%;height: 80%;">
-                            <p class="blog-p-1">Published August 13th, 2022</p><img class="img-fluid figure-img blog-aero-img" src="assets/img/pic231x-resize.webp" width="1169" height="500">
-                            <p class="blog-p-2">Audio To MIDI Magic</p>
+                    <hr class="blog-aero-hr"><a href="/blogdetails.html">
+                        <figure class="figure" style="/*margin-top: 10px;*/text-align: left;width: 80%;height: auto;">
+                            <p class="blog-p-1">Published December 21, 2022</p><img class="img-fluid figure-img blog-aero-img" src="assets/img/pic_41x.webp" width="1169" height="500">
+                            <p class="blog-p-2">NoteScience launches Audio-to-MIDI,revolutionizing music editing</p>
                             <p class="blog-p-3">→ Learn More</p>
                         </figure>
                     </a>
@@ -107,6 +107,9 @@ twq('config','oflly');
     <script src="https://turing.captcha.qcloud.com/TCaptcha.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/verification.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
+    <script src="assets/js/record.mjs" type="module"></script>
 </body>
 
 </html>
