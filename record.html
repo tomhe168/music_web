@@ -38,6 +38,7 @@ twq('config','oflly');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri&amp;display=swap">
     <link rel="stylesheet" href="assets/css/audio.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -63,31 +64,43 @@ twq('config','oflly');
     <section class="regist-section-aero" style="font-family: Aleo, serif;">
         <div class="d-flex flex-column justify-content-between div-middle">
             <div class="container d-flex flex-column justify-content-between" style="height: 90%;">
-                <div class="row item">
+                <div class="row item special">
                     <div class="col">
-                        <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;"><button class="btn btn-primary disabled d-flex d-xxl-flex flex-row justify-content-center align-items-center align-content-center user-btn" type="button" disabled=""><img class="mr-2" src="assets/img/if-light-bulb1.svg" style="height: calc(1.5vh);width: auto;vertical-align: middle;">&nbsp;Compose</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center user-btn" type="button" disabled="" style="padding: 0px;"><img class="mr-2" src="assets/img/iconPark-split-branch1.svg" style="height: calc(2vh);width: auto;">&nbsp;Edit</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center user-btn" type="button" disabled=""><img class="mr-2" src="assets/img/md-publish1.svg" style="height: calc(2vh);width: auto;">&nbsp;Release</button></div>
+                        <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;padding: 0px;"><button class="btn btn-primary disabled d-flex d-xxl-flex flex-row justify-content-center align-items-center align-content-center user-btn" type="button" disabled=""><img class="mr-2" src="assets/img/if-light-bulb1.svg" style="height: calc(2vh);width: auto;vertical-align: middle;">&nbsp;Compose</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center user-btn" type="button" disabled="" style="padding: 0px;"><img class="mr-2" src="assets/img/iconPark-split-branch1.svg" style="height: calc(2vh);width: auto;">&nbsp;Edit</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center user-btn" type="button" disabled=""><img class="mr-2" src="assets/img/md-publish1.svg" style="height: calc(2vh);width: auto;">&nbsp;Release</button></div>
                     </div>
                 </div>
                 <div class="row item special">
-                    <div class="col d-flex flex-column justify-content-around align-items-center"></div>
+                    <div class="col d-flex flex-column justify-content-around align-items-center d-none d-md-block"></div>
                     <div class="col d-flex flex-column justify-content-around align-items-center"><img id="record" class="t-img-container" src="assets/img/t13.png" style="border: none;outline: none;cursor: pointer;overflow: hidden;"></div>
-                    <div class="col d-flex flex-column justify-content-around align-items-center"></div>
+                    <div class="col d-flex flex-column justify-content-around align-items-center d-none d-md-block"></div>
                 </div>
-                <div class="row">
+                <div class="row item">
                     <div class="col d-flex flex-row justify-content-center align-items-center">
                         <p class="d-flex justify-content-center t-section-para" id="timer" style="margin: 0px;">00:00</p>
                     </div>
                 </div>
-                <div class="row d-flex flex-row justify-content-center item">
-                    <div class="col d-flex flex-row justify-content-end align-items-center item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill" id="play-stop" style="width: auto;height: 50%;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);display: none;">
+                <div class="row item d-md-none" id="moblie-btn-row" style="display: none;">
+                    <div class="col d-flex flex-row justify-content-center align-items-center col-6"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-icon-btn" id="mobile-play-stop">
                             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
                         </svg></div>
-                    <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center item special">
-                        <div id="mic" style="border: 1px solid #ddd;border-radius: 4px;margin: 0px;/*margin-top: 1rem;*/width: 100%;height: 50%;"></div>
-                    </div>
-                    <div class="col d-flex flex-row justify-content-start align-items-center item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-trash-fill" id="delete-btn" style="color: var(--bs-white);width: auto;height: 20%;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);display: none;">
+                    <div class="col d-flex flex-row justify-content-center align-items-center col-6"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-trash-fill delete-icon-btn" id="mobile-delete-btn">
                             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
                         </svg></div>
+                </div>
+                <div class="row d-flex flex-row justify-content-center item special">
+                    <div class="col d-flex flex-row justify-content-start align-items-center item d-none d-md-block" style="padding: 0px;">
+                        <div class="d-flex flex-row justify-content-end align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-icon-btn" id="play-stop">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
+                            </svg></div>
+                    </div>
+                    <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center item special">
+                        <div id="mic" class="mic-class"></div>
+                    </div>
+                    <div class="col d-flex flex-row justify-content-start align-items-center item d-none d-md-block" style="padding: 0px;">
+                        <div class="d-flex flex-row justify-content-start align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-trash-fill delete-icon-btn" id="delete-btn">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
+                            </svg></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,6 +113,7 @@ twq('config','oflly');
     <script src="assets/js/verification.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
+    <script src="assets/js/loading.js"></script>
     <script src="assets/js/record.mjs" type="module"></script>
 </body>
 

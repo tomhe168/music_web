@@ -312,15 +312,13 @@ $(document).ready(function () {
 */
 
 
-
+export default function isMobileDevice() {
+  // return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return window.innerWidth <= 768;
+}
 
 $(document).ready(function () {
   var isClicked = false;
-
-  function isMobileDevice() {
-    // return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    return window.innerWidth <= 768;
-  }
   if (userIsAuthenticated) {
     if (isMobileDevice()) {
       // 手机浏览器的逻辑
@@ -495,8 +493,6 @@ function send_email()
 $(document).ready(function() {
     startCountdown();
 });
-
-
 
 
 

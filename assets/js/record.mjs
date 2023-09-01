@@ -4,6 +4,10 @@ import TimelinePlugin from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/timel
 import Hover from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/hover.esm.js'
 import RecordPlugin from 'https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js'
 
+import isMobileDevice from'./navbar.js'
+import initLoading from './loading.js'
+
+
 
 let g_activeRegion = null
 // Give regions a random color when they are created
@@ -33,13 +37,32 @@ window.onload = function() {
 
 function init()
 {
-    document.getElementById("play-stop").style.display = "none";
+    setStyleDisplay("play-stop","none")
+    setStyleDisplay("delete-btn","none")
+    // document.getElementById("play-stop").style.display = "none";
     var btnPathElement = document.querySelector("#play-stop path");
     btnPathElement.setAttribute('d', 'm11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'); // 更改回"暂停"图标为播放
-    document.getElementById("play-stop").onclick = handlePlayStopClick;
+    // document.getElementById("play-stop").onclick = handlePlayStopClick;
+    // document.getElementById("mobile-play-stop").onclick = handlePlayStopClick;
+
+    var elements = document.querySelectorAll('[id$="play-stop"]');
+    elements.forEach((element) => {
+        // 对每个匹配的元素执行操作
+        element.onclick=handlePlayStopClick
+    });
+
+    elements = document.querySelectorAll('[id$="delete-btn"]');
+    elements.forEach((element) => {
+        // 对每个匹配的元素执行操作
+        element.onclick=handleDeleteClick
+    });
+    
+
     g_record_btn_type = 0
 
-    document.getElementById("delete-btn").style.display = "none";
+    // document.getElementById("delete-btn").style.display = "none";
+    // document.getElementById("delete-btn").onclick = handleDeleteClick;
+    // document.getElementById("mobile-delete-btn").onclick = handleDeleteClick;
     g_containerHeight = document.getElementById('mic').offsetHeight;
 
     g_waverecordsurfer = WaveSurfer.create({
@@ -246,8 +269,11 @@ function create_upload(){
 
     document.getElementById('mic').innerHTML = '';
 
-    document.getElementById("play-stop").style.display = "none";
-    document.getElementById("delete-btn").style.display = "none";
+    // document.getElementById("play-stop").style.display = "none";
+    // document.getElementById("delete-btn").style.display = "none";
+
+    setStyleDisplay("play-stop","none")
+    setStyleDisplay("delete-btn","none")
 
     g_waverecordsurfer = WaveSurfer.create({
         container: '#mic',
@@ -284,37 +310,44 @@ async function create_creating(){
         row.classList.remove("special");
     });
 
-    document.getElementById("record").outerHTML = "<h1 id='record'>Creating</h1>";
+    if(isMobileDevice()){
+        document.getElementById("record").outerHTML =  "<div class='loading la-2x la-white'></div>" //"<h1 id='head-p'>Creating</h1>";
+    }
+    else{
+        document.getElementById("record").outerHTML =  "<div class='loading la-3x la-white'></div>" //"<h1 id='head-p'>Creating</h1>";
+    }
+    initLoading()
+    document.getElementById("timer").outerHTML =  "<h1 id='timer'>Creating</h1>";
 
     // 获取 video 元素
     // const videoElement = document.querySelector('video');
-    const pElement = document.getElementById("timer");
-    const parentElement = pElement.parentNode;
+    // const pElement = document.getElementById("timer");
+    // const parentElement = pElement.parentNode;
 
-    // 创建一个新的 <video> 元素
-    const videoElement = document.createElement("video");
+    // // 创建一个新的 <video> 元素
+    // const videoElement = document.createElement("video");
 
-    // 设置各种属性
-    videoElement.loop = true;
-    videoElement.muted = true;
-    videoElement.autoplay = true;
-    videoElement.style.height = 'auto';
-    videoElement.style.width = '29%';
+    // // 设置各种属性
+    // videoElement.loop = true;
+    // videoElement.muted = true;
+    // videoElement.autoplay = true;
+    // videoElement.style.height = 'auto';
+    // videoElement.style.width = '29%';
 
-    // 获取或创建 <source> 和 <track> 元素
-    const sourceElement = videoElement.querySelector('source') || document.createElement('source');
+    // // 获取或创建 <source> 和 <track> 元素
+    // const sourceElement = videoElement.querySelector('source') || document.createElement('source');
 
-    // 设置 source 和 track 的属性
-    sourceElement.setAttribute('src', 'assets/video/creating.webm');
-    sourceElement.setAttribute('type', 'video/webm');
+    // // 设置 source 和 track 的属性
+    // sourceElement.setAttribute('src', 'assets/video/creating.webm');
+    // sourceElement.setAttribute('type', 'video/webm');
 
-    // 如果这些元素是新创建的，需要将它们添加到 video 元素中
-    if (!videoElement.contains(sourceElement)) {
-        videoElement.appendChild(sourceElement);
-    }
+    // // 如果这些元素是新创建的，需要将它们添加到 video 元素中
+    // if (!videoElement.contains(sourceElement)) {
+    //     videoElement.appendChild(sourceElement);
+    // }
 
-    // 用新的 <video> 元素替换旧的 <p> 元素
-    parentElement.replaceChild(videoElement, pElement);
+    // // 用新的 <video> 元素替换旧的 <p> 元素
+    // parentElement.replaceChild(videoElement, pElement);
 
     // document.getElementById("mic").style.display = "none";
 
@@ -356,8 +389,14 @@ function create_finish(){
     // 获取页面上所有的 .row 元素
     var allRows = document.querySelectorAll('.row');  
 
+    var Row = allRows[0];
+    if(Row){
+        Row.classList.add("item");
+        Row.classList.add("special");
+    }
+
     // 选择第二个 .row 元素
-    var Row = allRows[1];  // 注意，索引是从 0 开始的，所以第二个元素是 allRows[1]
+    Row = allRows[1];  // 注意，索引是从 0 开始的，所以第二个元素是 allRows[1]
     if (Row) {  // 确保元素存在
         Row.remove();
     }
@@ -369,21 +408,19 @@ function create_finish(){
     if (Row) {  // 确保元素存在
         Row.remove();
     }
-
     // 选择页面上最后一个 .row 元素
     allRows = document.querySelectorAll('.row');  
     var lastRow = allRows[allRows.length - 1];  
 
     // 创建新的 HTML 内容
     var newRowHTML = `
-    <div class="row d-flex flex-row justify-content-center item">
-        <div class="col d-flex flex-column justify-content-center align-items-center col-2"><svg id="play-stop" class="bi bi-play-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="width: auto;height: 50%;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);/*display: none;*/">
-                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
-            </svg>
-            <p id="timer" style="margin: 0px;"></p>
-        </div>
-        <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-10">
-            <div id="mic" style="border: 1px solid #ddd;border-radius: 4px;margin: 0px;/*margin-top: 1rem;*/width: 100%;height: 50%;"></div>
+    <div id="moblie-btn-row" class="row d-md-none item">
+        <div class="col d-flex flex-row justify-content-start align-items-end col-12">
+            <div class="d-flex flex-row" style="width: 60%;"><svg id="mobile-play-stop" class="bi bi-play-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="width: 40%;height: auto;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);/*display: none;*/">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
+                </svg>
+                <p id="mobile-timer" class="d-flex flex-column justify-content-center" style="margin: 0px;white-space: nowrap;">00:00 / 05:32</p>
+            </div>
         </div>
     </div>
     `;
@@ -393,30 +430,45 @@ function create_finish(){
     allRows = document.querySelectorAll('.row');  
     lastRow = allRows[allRows.length - 1];  
     newRowHTML = `
-    <div class="row item">
-        <div class="col">
-            <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;">
-                <button class="btn btn-primary disabled d-flex d-xxl-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled>
-                    <img class="mr-2" src="assets/img/f-refresh.png" style="height: calc(1.5vh);width: auto;vertical-align: middle;" width="16" height="16" />
-                    Songify again
-                </button>
-                <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled>
-                    <img class="mr-2" src="assets/img/f-heart.png" style="height: calc(2vh);width: auto;" />
-                    Add My Music
-                </button>
-                <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled>
-                    <img class="mr-2" src="assets/img/f-edit.png" style="height: calc(2vh);width: auto;" />
-                    Editing
-                </button>
+    <div class="row d-flex flex-row justify-content-center item special">
+        <div class="col d-flex flex-column justify-content-center align-items-center d-none d-md-block col-2">
+            <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg id="play-stop" class="bi bi-play-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="width: auto;height: 50%;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);/*display: none;*/">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
+                </svg>
+                <p id="timer" style="margin: 0px;">Paragraph</p>
             </div>
+        </div>
+        <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center">
+            <div id="mic" class="mic-class"></div>
         </div>
     </div>
     `;
     // 在选定的 .row 元素后面插入新的 HTML 内容
     lastRow.insertAdjacentHTML('afterend', newRowHTML);
 
-    var btnElement = document.querySelector("#play-stop");
-    btnElement.onclick = handlePlayStopClick;
+    allRows = document.querySelectorAll('.row');  
+    lastRow = allRows[allRows.length - 1];  
+    newRowHTML = `
+    <div class="row item special">
+        <div class="col">
+            <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;padding: 0px;">
+                <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/f-refresh.png" style="height: calc(2vh);width: auto;" /> Songify again</button>
+                <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/f-heart.png" style="height: calc(2vh);width: auto;" /> Add My Music</button>
+                <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/f-edit.png" style="height: calc(2vh);width: auto;" /> Editing</button></div>
+        </div>
+    </div>
+    `;
+    // 在选定的 .row 元素后面插入新的 HTML 内容
+    lastRow.insertAdjacentHTML('afterend', newRowHTML);
+
+    // var btnElement = document.querySelector("#play-stop");
+    // btnElement.onclick = handlePlayStopClick;
+    var elements = document.querySelectorAll('[id$="play-stop"]');
+    elements.forEach((element) => {
+        // 对每个匹配的元素执行操作
+        element.onclick=handlePlayStopClick
+    });
+
     g_containerHeight = document.getElementById('mic').offsetHeight;
     create_play()
 
@@ -474,78 +526,94 @@ async function upload_progress(){
 
 function create_play(blob = null) {
 
-    var play_element = document.getElementById("play-stop");
-    if(play_element){
-        document.getElementById("play-stop").style.display = "block";
+    // var play_element = document.getElementById("play-stop");
+    // if(play_element){
+    //     document.getElementById("play-stop").style.display = "block";
+    // }
+    // var delete_element = document.getElementById("delete-btn");
+    // if(delete_element){
+    //     delete_element.style.display = "block";
+    // }
+    // setStyleDisplay("play-stop","block")
+    // setStyleDisplay("delete-btn","block")
+    // moblie-btn-row
+    // var mobile_btn_row_element = document.getElementById("moblie-btn-row");
+    // if(mobile_btn_row_element){
+    //     mobile_btn_row_element.style.display = "block";
+    // }
+    try
+   { 
+        setStyleDisplay("moblie-btn-row","flex")
+        setStyleDisplay("play-stop","block")
+        setStyleDisplay("delete-btn","block")
+        var recordedUrl
+        if (blob === null || blob === undefined) {
+            recordedUrl = 'assets/audio/test.mp3'
+        }
+        else{
+            recordedUrl = URL.createObjectURL(blob)
+        }
+        //   const container = document.querySelector('#recordings')
+        const container = document.querySelector('#mic')
+
+        const waveplaysurfer = WaveSurfer.create({
+            container,
+            waveColor: 'rgb(200, 100, 0)',
+            progressColor: 'rgb(100, 50, 0)',
+            url: recordedUrl,
+            height: g_containerHeight
+        })
+
+        g_waveplaysurfer = waveplaysurfer
+
+        const wsRegions = waveplaysurfer.registerPlugin(RegionsPlugin.create())
+
+        wsRegions.enableDragSelection({
+            color: 'rgba(255, 0, 0, 0.1)',
+        })
+        // waveplaysurfer.registerPlugin(TimelinePlugin.create())
+        waveplaysurfer.registerPlugin(Hover.create({
+            lineColor: '#ff0000',
+            lineWidth: 2,
+            labelBackground: '#555',
+            labelColor: '#fff',
+            labelSize: '11px',
+        }))
+        g_wsRegions = wsRegions
+        
+
+        // waveplaysurfer.on('interaction', () => waveplaysurfer.playPause())
+        waveplaysurfer.on('ready', function () {
+            updatePlayTimeDisplay(g_currentPlayPosition)
+        });
+
+        const handlePlayformInteraction = createHandlePlayformInteraction(waveplaysurfer);
+        waveplaysurfer.on('interaction', handlePlayformInteraction);
+
+        const handlePlayformRegioncreated = createHandlePlayformRegioncreated(wsRegions);
+        wsRegions.on('region-created', handlePlayformRegioncreated);
+
+        const handlePlayformRegionin = createHandlePlayformRegionin(wsRegions);
+        wsRegions.on('region-in', handlePlayformRegionin);
+
+        const handlePlayformRegionout = createHandlePlayformRegionout(waveplaysurfer);
+        wsRegions.on('region-out', handlePlayformRegionout);
+
+        const handlePlayformRegionclicked = createHandlePlayformRegionclicked(wsRegions);
+        wsRegions.on('region-clicked', handlePlayformRegionclicked);
+
+        const handlePlayformAudioprocess = createHandlePlayformAudioprocess(waveplaysurfer);
+        waveplaysurfer.on('audioprocess', handlePlayformAudioprocess);
+
+        const handlePlayformSeek = createHandlePlayformSeek(waveplaysurfer);
+        waveplaysurfer.on('seeking', handlePlayformSeek);
+
+        const handlePlayformClick = createHandlePlayformClick(waveplaysurfer);
+        waveplaysurfer.on('click', handlePlayformClick);
+    } catch (err) {
+        console.error("Error create_play:", err);
+        alert("Error create_play:" + err.toString());
     }
-    var delete_element = document.getElementById("delete-btn");
-    if(delete_element){
-        delete_element.style.display = "block";
-    }
-    var recordedUrl
-    if (blob === null || blob === undefined) {
-        recordedUrl = 'assets/audio/test.mp3'
-    }
-    else{
-        recordedUrl = URL.createObjectURL(blob)
-    }
-    //   const container = document.querySelector('#recordings')
-    const container = document.querySelector('#mic')
-
-    const waveplaysurfer = WaveSurfer.create({
-        container,
-        waveColor: 'rgb(200, 100, 0)',
-        progressColor: 'rgb(100, 50, 0)',
-        url: recordedUrl,
-        height: g_containerHeight
-    })
-
-    g_waveplaysurfer = waveplaysurfer
-
-    const wsRegions = waveplaysurfer.registerPlugin(RegionsPlugin.create())
-
-    wsRegions.enableDragSelection({
-        color: 'rgba(255, 0, 0, 0.1)',
-    })
-    // waveplaysurfer.registerPlugin(TimelinePlugin.create())
-    waveplaysurfer.registerPlugin(Hover.create({
-        lineColor: '#ff0000',
-        lineWidth: 2,
-        labelBackground: '#555',
-        labelColor: '#fff',
-        labelSize: '11px',
-    }))
-    g_wsRegions = wsRegions
-    
-
-    // waveplaysurfer.on('interaction', () => waveplaysurfer.playPause())
-    waveplaysurfer.on('ready', function () {
-        updatePlayTimeDisplay(g_currentPlayPosition)
-    });
-
-    const handlePlayformInteraction = createHandlePlayformInteraction(waveplaysurfer);
-    waveplaysurfer.on('interaction', handlePlayformInteraction);
-
-    const handlePlayformRegioncreated = createHandlePlayformRegioncreated(wsRegions);
-    wsRegions.on('region-created', handlePlayformRegioncreated);
-
-    const handlePlayformRegionin = createHandlePlayformRegionin(wsRegions);
-    wsRegions.on('region-in', handlePlayformRegionin);
-
-    const handlePlayformRegionout = createHandlePlayformRegionout(waveplaysurfer);
-    wsRegions.on('region-out', handlePlayformRegionout);
-
-    const handlePlayformRegionclicked = createHandlePlayformRegionclicked(wsRegions);
-    wsRegions.on('region-clicked', handlePlayformRegionclicked);
-
-    const handlePlayformAudioprocess = createHandlePlayformAudioprocess(waveplaysurfer);
-    waveplaysurfer.on('audioprocess', handlePlayformAudioprocess);
-
-    const handlePlayformSeek = createHandlePlayformSeek(waveplaysurfer);
-    waveplaysurfer.on('seeking', handlePlayformSeek);
-
-    const handlePlayformClick = createHandlePlayformClick(waveplaysurfer);
-    waveplaysurfer.on('click', handlePlayformClick);
 
     //   const link = container.appendChild(document.createElement('a'))
     //   Object.assign(link, {
@@ -624,20 +692,45 @@ function createHandlePlayformAudioprocess(waveplaysurfer) {
 
         updatePlayTimeDisplay(g_currentPlayPosition);
 
-        // const recButton = document.querySelector('#play-stop')
         var btnPathElement = document.querySelector("#play-stop path");
-        if (g_waveplaysurfer.isPlaying()) {
-            // console.log('createHandlePlayformAudioprocess_playing')
-            // recButton.setAttribute('d', 'M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z'); // 更改回"播放"图标为暂停
-            // var btnPathElement = document.querySelector("#play-stop path");
-            btnPathElement.setAttribute('d', 'M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z');
-            // recButton.textContent = 'stop'
-            return
+        var mobileBtnPathElement = document.querySelector("#mobile-play-stop path");
+        var elements = [];
+        if (btnPathElement) {
+            elements.push(btnPathElement);
         }
-        // recButton.textContent = 'play'
-        // console.log('createHandlePlayformAudioprocess_stop')
+        if (mobileBtnPathElement) {
+            elements.push(mobileBtnPathElement);
+        }
+        elements.forEach((element) => {
+            // 对每个匹配的元素执行操作
+            if (g_waveplaysurfer.isPlaying()) {
+                // console.log('createHandlePlayformAudioprocess_playing')
+                // recButton.setAttribute('d', 'M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z'); // 更改回"播放"图标为暂停
+                // var btnPathElement = document.querySelector("#play-stop path");
+                element.setAttribute('d', 'M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z');
+                // recButton.textContent = 'stop'
+                return
+            }
+            // recButton.textContent = 'play'
+            // console.log('createHandlePlayformAudioprocess_stop')
+            // var btnPathElement = document.querySelector("#play-stop path");
+            element.setAttribute('d', 'm11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'); // 更改回"暂停"图标为播放
+        });
+
+        // const recButton = document.querySelector('#play-stop')
         // var btnPathElement = document.querySelector("#play-stop path");
-        btnPathElement.setAttribute('d', 'm11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'); // 更改回"暂停"图标为播放
+        // if (g_waveplaysurfer.isPlaying()) {
+        //     // console.log('createHandlePlayformAudioprocess_playing')
+        //     // recButton.setAttribute('d', 'M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z'); // 更改回"播放"图标为暂停
+        //     // var btnPathElement = document.querySelector("#play-stop path");
+        //     btnPathElement.setAttribute('d', 'M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z');
+        //     // recButton.textContent = 'stop'
+        //     return
+        // }
+        // // recButton.textContent = 'play'
+        // // console.log('createHandlePlayformAudioprocess_stop')
+        // // var btnPathElement = document.querySelector("#play-stop path");
+        // btnPathElement.setAttribute('d', 'm11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'); // 更改回"暂停"图标为播放
 
     }
 }
@@ -665,7 +758,7 @@ function createHandlePlayformClick(waveplaysurfer) {
     // recButton.onclick = () => {
 function handlePlayStopClick()
 {
-    const recButton = document.querySelector('#play-stop')
+    // const recButton = document.querySelector('#play-stop')
     if (g_waveplaysurfer.isPlaying()) {
         g_waveplaysurfer.pause()
         // recButton.textContent = 'play'
@@ -673,15 +766,54 @@ function handlePlayStopClick()
         return
     }
 
-    recButton.disabled = true
+    var elements = document.querySelectorAll('[id$="play-stop"]');
+    elements.forEach((element) => {
+        // 对每个匹配的元素执行操作
+        element.disabled=true
+    });
 
     g_waveplaysurfer.play().then(() => {
         // recButton.textContent = 'Stop'
-        recButton.disabled = false
+        elements.forEach((element) => {
+            // 对每个匹配的元素执行操作
+            element.disabled=false
+        });
     })
     // recButton.setAttribute('d', 'm11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'); // 更改回"播放"图标的 path 数据
 }
 // }
+
+
+// delete Buttons
+function handleDeleteClick()
+{
+    // Start recording
+    // const delButton = document.querySelector('#delete-btn')
+    // delButton.onclick = () => {
+    g_waveplaysurfer.destroy()
+    init()
+    // location.reload();
+    var btn = document.getElementById('record');
+    btn.src = 'assets/img/t13.png';
+    // document.getElementById("play-stop").style.display = "none";
+    // document.getElementById("delete-btn").style.display = "none";
+    setStyleDisplay("play-stop","none")
+    setStyleDisplay("delete-btn","none")
+    g_currentPlayPosition = 0
+    g_currentSeekPosition = 0
+    stopRecordTimer()
+    // }
+}
+
+function setStyleDisplay(id,type)
+{
+    const elements = document.querySelectorAll(`[id$="${id}"]`);
+    elements.forEach((element) => {
+        // 对每个匹配的元素执行操作
+        element.style.display=type
+      });
+}
+
 
 // 格式化时间为 mm:ss 格式
 function formatTime(time) {
@@ -693,30 +825,15 @@ function formatTime(time) {
 // 更新播放时间显示
 function updatePlayTimeDisplay(currentTime) {
     const totalTime = g_waveplaysurfer.getDuration();
-    const currentTimeElement = document.getElementById('timer');
-    currentTimeElement.textContent = `${formatTime(currentTime)} / ${formatTime(totalTime)}`;
+    var elements = document.querySelectorAll('[id$="timer"]');
+    elements.forEach((element) => {
+        // 对每个匹配的元素执行操作
+        element.textContent = `${formatTime(currentTime)} / ${formatTime(totalTime)}`;
+    });
 }
 
 
-// delete Buttons
-{
-    // Start recording
-    const delButton = document.querySelector('#delete-btn')
-    delButton.onclick = () => {
-        g_waveplaysurfer.destroy()
-        init()
-        // location.reload();
-        var btn = document.getElementById('record');
-        btn.src = 'assets/img/t13.png';
-        document.getElementById("play-stop").style.display = "none";
-        document.getElementById("delete-btn").style.display = "none";
-        g_currentPlayPosition = 0
-        g_currentSeekPosition = 0
-        stopRecordTimer()
-        
 
-    }
-}
 
 
 
