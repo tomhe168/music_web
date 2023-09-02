@@ -140,6 +140,19 @@ window.addEventListener('load', function () {
                 // if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
                 //     throw new Error("Cannot read property 'getUserMedia' of undefined");
                 // }
+                let stream
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(function(stream) {
+                    // 成功获取音频流
+                    // `stream` 是一个包含用户麦克风音频流的 MediaStream 对象
+                    console.log("getUserMedia({ audio: true }) success")
+                })
+                .catch(function(err) {
+                // 发生错误（用户拒绝、设备错误等）
+                    console.error('Error accessing the microphone:', err);
+                });
+                return
+                
                 g_record.startRecording()
                 .then(() => {
                     // recButton.textContent = 'Stop'
