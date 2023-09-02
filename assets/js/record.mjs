@@ -137,9 +137,9 @@ window.addEventListener('load', function () {
 
 
             try {
-                if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
-                    throw new Error("Cannot read property 'getUserMedia' of undefined");
-                }
+                // if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
+                //     throw new Error("Cannot read property 'getUserMedia' of undefined");
+                // }
                 g_record.startRecording()
                 .then(() => {
                     // recButton.textContent = 'Stop'
