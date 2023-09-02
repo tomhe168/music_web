@@ -140,6 +140,23 @@ window.addEventListener('load', function () {
                 // if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
                 //     throw new Error("Cannot read property 'getUserMedia' of undefined");
                 // }
+
+                if (!navigator.mediaDevices?.enumerateDevices) {
+                    console.log("enumerateDevices() not supported.");
+                  } else {
+                    // List cameras and microphones.
+                    navigator.mediaDevices
+                      .enumerateDevices()
+                      .then((devices) => {
+                        devices.forEach((device) => {
+                          console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+                        });
+                      })
+                      .catch((err) => {
+                        console.error(`${err.name}: ${err.message}`);
+                      });
+                  }
+
                 let stream
                 navigator.mediaDevices.getUserMedia({ audio: true })
                 .then(function(stream) {
