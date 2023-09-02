@@ -48,6 +48,7 @@ function init()
     var elements = document.querySelectorAll('[id$="play-stop"]');
     elements.forEach((element) => {
         // 对每个匹配的元素执行操作
+        console.log("elements")
         element.onclick=handlePlayStopClick
     });
 
@@ -758,6 +759,7 @@ function createHandlePlayformClick(waveplaysurfer) {
     // recButton.onclick = () => {
 function handlePlayStopClick()
 {
+    console.log("handlePlayStopClick")
     // const recButton = document.querySelector('#play-stop')
     if (g_waveplaysurfer.isPlaying()) {
         g_waveplaysurfer.pause()
