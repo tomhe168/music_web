@@ -149,10 +149,10 @@ window.addEventListener('load', function () {
                 })
                 .catch(function(err) {
                 // 发生错误（用户拒绝、设备错误等）
-                    console.error('Error accessing the microphone:', err);
+                    console.error(`${err.name}: ${err.message}`);
                 });
                 return
-                
+
                 g_record.startRecording()
                 .then(() => {
                     // recButton.textContent = 'Stop'
