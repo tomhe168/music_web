@@ -140,11 +140,17 @@ window.addEventListener('load', function () {
                 if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
                     throw new Error("Cannot read property 'getUserMedia' of undefined");
                 }
-                g_record.startRecording().then(() => {
+                g_record.startRecording()
+                .then(() => {
                     // recButton.textContent = 'Stop'
                     this.src = 'assets/img/t14.png';
                     // recButton.disabled = false
                 })
+                .catch(err => {
+                    // 这里捕获异步错误
+                    console.error("Error during recording:", err);
+                    alert("Error during recording:" + err.toString());
+                });
             } catch (err) {
                 console.error("Error accessing the microphone:", err);
                 alert("Error accessing the microphone:" + err.toString());
