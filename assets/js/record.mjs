@@ -272,7 +272,7 @@ function audioBufferToWav(audioBuffer) {
   
 
 function create_upload(){
-    g_wsRegions.playPause();
+    g_waveplaysurfer.playPause();
     var regions = g_wsRegions.getRegions();
     if (regions.length === 0) {
         console.log("数组为空");
