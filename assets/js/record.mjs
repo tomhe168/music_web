@@ -48,7 +48,6 @@ function init()
     var elements = document.querySelectorAll('[id$="play-stop"]');
     elements.forEach((element) => {
         // 对每个匹配的元素执行操作
-        console.log("elements")
         element.onclick=handlePlayStopClick
     });
 
@@ -141,34 +140,34 @@ window.addEventListener('load', function () {
                 //     throw new Error("Cannot read property 'getUserMedia' of undefined");
                 // }
 
-                if (!navigator.mediaDevices?.enumerateDevices) {
-                    console.log("enumerateDevices() not supported.");
-                  } else {
-                    // List cameras and microphones.
-                    navigator.mediaDevices
-                      .enumerateDevices()
-                      .then((devices) => {
-                        devices.forEach((device) => {
-                          console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-                        });
-                      })
-                      .catch((err) => {
-                        console.error(`${err.name}: ${err.message}`);
-                      });
-                  }
+                // if (!navigator.mediaDevices?.enumerateDevices) {
+                //     console.log("enumerateDevices() not supported.");
+                //   } else {
+                //     // List cameras and microphones.
+                //     navigator.mediaDevices
+                //       .enumerateDevices()
+                //       .then((devices) => {
+                //         devices.forEach((device) => {
+                //           console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+                //         });
+                //       })
+                //       .catch((err) => {
+                //         console.error(`${err.name}: ${err.message}`);
+                //       });
+                //   }
 
-                let stream
-                navigator.mediaDevices.getUserMedia({ audio: true })
-                .then(function(stream) {
-                    // 成功获取音频流
-                    // `stream` 是一个包含用户麦克风音频流的 MediaStream 对象
-                    console.log("getUserMedia({ audio: true }) success")
-                })
-                .catch(function(err) {
-                // 发生错误（用户拒绝、设备错误等）
-                    console.error(`${err.name}: ${err.message}`);
-                });
-                return
+                // let stream
+                // navigator.mediaDevices.getUserMedia({ audio: true })
+                // .then(function(stream) {
+                //     // 成功获取音频流
+                //     // `stream` 是一个包含用户麦克风音频流的 MediaStream 对象
+                //     console.log("getUserMedia({ audio: true }) success")
+                // })
+                // .catch(function(err) {
+                // // 发生错误（用户拒绝、设备错误等）
+                //     console.error(`${err.name}: ${err.message}`);
+                // });
+                // return
 
                 g_record.startRecording()
                 .then(() => {
@@ -190,6 +189,7 @@ window.addEventListener('load', function () {
         });
     }
 });
+
 
 
 
@@ -472,7 +472,7 @@ function create_finish(){
             <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg id="play-stop" class="bi bi-play-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="width: auto;height: 50%;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);/*display: none;*/">
                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
                 </svg>
-                <p id="timer" style="margin: 0px;">Paragraph</p>
+                <p id="timer" style="margin: 0px;"></p>
             </div>
         </div>
         <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center">
@@ -795,7 +795,6 @@ function createHandlePlayformClick(waveplaysurfer) {
     // recButton.onclick = () => {
 function handlePlayStopClick()
 {
-    console.log("handlePlayStopClick")
     // const recButton = document.querySelector('#play-stop')
     if (g_waveplaysurfer.isPlaying()) {
         g_waveplaysurfer.pause()

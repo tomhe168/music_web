@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
 <!-- Google tag (gtag.js) -->
-<!--
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RGYS5DQKX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,15 +12,14 @@
 
   gtag('config', 'G-4RGYS5DQKX');
 </script>
--->
 
 <!-- Twitter conversion tracking base code -->
-<!-- <script>
+<script>
 !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
 },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
 a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
 twq('config','oflly');
-</script> -->
+</script>
 <!-- End Twitter conversion tracking base code -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>NoteScience-Easy Tools Aristry for All</title>
@@ -47,23 +45,9 @@ twq('config','oflly');
 
 <body>
     <h1 style="margin-top: 0;">Press Record to start recording 🎙️</h1>
-    <p> 📖 <a href="https://wavesurfer-js.org/docs/classes/plugins_record.RecordPlugin">Record plugin docs</a></p><button id="record1">Record</button>
-    
-    <script>
-      // 当 DOM 完全加载后
-      document.addEventListener('DOMContentLoaded', function() {
-          // 获取按钮元素
-          const recordButton = document.getElementById('record1');
-  
-          // 添加点击事件监听器
-          recordButton.addEventListener('click', function(event) {
-              console.log('click');
-          });
-      });
-  </script>
-    
-    <div id="mic1" style="border: 1px solid #ddd;border-radius: 4px;margin-top: 1rem;width: 100px;height: 100px;"></div>
-    <div id="recordings1" style="margin: 1rem 0;width: 200px;height: 200px;"></div>
+    <p> 📖 <a href="https://wavesurfer-js.org/docs/classes/plugins_record.RecordPlugin">Record plugin docs</a></p><button id="record">Record</button>
+    <div id="mic" style="border: 1px solid #ddd;border-radius: 4px;margin-top: 1rem;width: 100px;height: 100px;"></div>
+    <div id="recordings" style="margin: 1rem 0;width: 200px;height: 200px;"></div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -72,8 +56,8 @@ twq('config','oflly');
     <script src="assets/js/verification.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
-    <script src="assets/js/loading.js"></script> 
-    <script src="assets/js/record.mjs" type="module"></script> 
+    <script src="assets/js/loading.js"></script>
+    <script src="assets/js/record.mjs" type="module"></script>
 </body>
 
 </html>

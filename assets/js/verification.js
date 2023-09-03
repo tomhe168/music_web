@@ -109,35 +109,32 @@ function loadErrorCallback() {
 // 定义验证码触发事件
 window.addEventListener('load', function(){
     var btn = document.getElementById('btnCaptchaId');
-    if(btn){
-        btn.onclick = function(event){
-            event.preventDefault(); 
-            try {
-                    // 生成一个验证码对象
-                    // CaptchaAppId：登录验证码控制台，从【验证管理】页面进行查看。如果未创建过验证，请先新建验证。注意：不可使用客户端类型为小程序的CaptchaAppId，会导致数据统计错误。
-                    // callback：定义的回调函数
-                    console.log('click');
-                    
-                    // console.log("000Is button disabled?:", btn.prop('disabled'));
-                    btn.disabled = true;  // 禁用按钮
-                    setTimeout(function () {
-                        btn.disabled = false; // 一段时间后再启用按钮
-                    }, 10000);
-                    var captcha = new TencentCaptcha('192641889', callback, {});
-                    
-                    // console.log("111Is button disabled?:", btn.prop('disabled'));
-                    // 调用方法，显示验证码
-                    captcha.show(); 
-                    console.log('click out');
-            } catch (error) {
-            // 加载异常，调用验证码js加载错误处理函数
-                    loadErrorCallback();
-            }
+    btn.onclick = function(event){
+        event.preventDefault(); 
+        try {
+                // 生成一个验证码对象
+                // CaptchaAppId：登录验证码控制台，从【验证管理】页面进行查看。如果未创建过验证，请先新建验证。注意：不可使用客户端类型为小程序的CaptchaAppId，会导致数据统计错误。
+                // callback：定义的回调函数
+                console.log('click');
+                
+                // console.log("000Is button disabled?:", btn.prop('disabled'));
+                btn.disabled = true;  // 禁用按钮
+                setTimeout(function () {
+                    btn.disabled = false; // 一段时间后再启用按钮
+                }, 10000);
+                var captcha = new TencentCaptcha('192641889', callback, {});
+                
+                // console.log("111Is button disabled?:", btn.prop('disabled'));
+                // 调用方法，显示验证码
+                captcha.show(); 
+                console.log('click out');
+        } catch (error) {
+        // 加载异常，调用验证码js加载错误处理函数
+                loadErrorCallback();
         }
-
     }
-
 });
+
 
 
 function displayErrorMessage(message) {
