@@ -497,6 +497,46 @@ $(document).ready(function() {
 
 
 
+$(document).ready(function(){
+  // 获取所有的下拉菜单项
+  const dropdownItems = document.querySelectorAll('.dropdown-item-body');
+  
+  // 给每一个下拉菜单项添加点击事件
+  dropdownItems.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      // 阻止默认行为（如果有）
+      e.preventDefault();
+      
+      // 获取被点击的文本
+      const clickedText = this.textContent || this.innerText;
+      
+      // 获取父级.dropdown元素
+      const parentDropdown = this.closest('.dropdown');
+      
+      // 获取.dropdown-toggle按钮
+      const dropdownToggle = parentDropdown.querySelector('.dropdown-toggle');
+      
+      // 获取按钮上的文本
+      const btnText = dropdownToggle.textContent || dropdownToggle.innerText;
+      
+      // 交换文本
+      this.textContent = btnText;
+      dropdownToggle.textContent = clickedText;
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
