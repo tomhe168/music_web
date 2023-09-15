@@ -1699,6 +1699,18 @@ p::-webkit-scrollbar {
   border-style: none;
 }
 
+.e-last2-long-btn {
+  font-family: Aleo, serif;
+  border-radius: 15px;
+  width: 70%;
+  height: 40%;
+  font-size: calc(1.5vh);
+  overflow: hidden;
+  line-height: normal;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-style: none;
+}
+
 @media (max-width: 767px) {
   .e-finish-btn {
     font-family: Aleo, serif;
@@ -1719,6 +1731,20 @@ p::-webkit-scrollbar {
     border-radius: 15px;
     width: 90%;
     height: 40%;
+    font-size: calc(1.5vh);
+    overflow: hidden;
+    line-height: normal;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-style: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .e-last2-long-btn {
+    font-family: Aleo, serif;
+    border-radius: 15px;
+    width: 90%;
+    height: 70%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
