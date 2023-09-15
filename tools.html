@@ -76,14 +76,16 @@ twq('config','oflly');
                     </div>
                 </div>
                 <div class="row item special">
-                    <div class="col d-flex flex-column justify-content-around align-items-center"><img class="t-img-container" src="assets/img/t1x.png">
+                    <div class="col d-flex flex-column justify-content-around align-items-center"><img class="t-3img-container" src="assets/img/t1x.png">
                         <p class="d-xxl-flex justify-content-xxl-center t-section-para">Hum</p>
                     </div>
-                    <div class="col d-flex flex-column justify-content-around align-items-center"><img class="t-img-container" src="assets/img/t61x.png">
+                    <div class="col d-flex flex-column justify-content-around align-items-center"><img class="t-3img-container" src="assets/img/t61x.png">
                         <p class="t-section-para">Describe</p>
                     </div>
-                    <div class="col d-flex flex-column justify-content-around align-items-center"><img class="t-img-container" src="assets/img/t12.png">
-                        <p class="t-section-para">Upload</p>
+                    <div class="col d-flex flex-column justify-content-around align-items-center">
+                        <form class="d-flex flex-column justify-content-around align-items-center" style="width: 100%;height: 100%;" method="post" enctype="multipart/form-data" action="/upload"><input class="form-control form-control-file" type="file" id="fileInput" name="file" style="display: none;" accept=".mp3,.wav"><img id="t-upload" class="t-3img-container" src="assets/img/t12.png">
+                            <p class="t-section-para">Upload</p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -113,6 +115,7 @@ twq('config','oflly');
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
     <script src="assets/js/loading.js"></script>
     <script src="assets/js/record.mjs" type="module"></script>
+    <script src="assets/js/upload.mjs" type="module"></script>
 </body>
 
 </html>

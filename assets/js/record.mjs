@@ -34,7 +34,6 @@ if (window.location.href.indexOf('record.html') !== -1){
     window.onload = function() {
         // 页面加载完成后要执行的代码
         init()
-        isRecordPage()
     };
 
 
