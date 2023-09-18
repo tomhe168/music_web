@@ -1675,12 +1675,44 @@ p::-webkit-scrollbar {
   border-style: none;
 }
 
+.e-finish-middle-btn {
+  font-family: Aleo, serif;
+  border-radius: 15px;
+  width: 60%;
+  height: 50%;
+  /*font-size: calc(2vh);*/
+  overflow: hidden;
+  line-height: normal;
+  /*background-color: rgba(255, 255, 255, 0.2) !important;*/
+  border-style: none;
+  background: #e99d42!important;
+  font-weight: bold;
+  font-size: calc(3vh);
+}
+
+@media (max-width: 767px) {
+  .e-finish-middle-btn {
+    font-family: Aleo, serif;
+    border-radius: 15px;
+    width: 90%;
+    height: 50%;
+    /*font-size: calc(2vh);*/
+    overflow: hidden;
+    line-height: normal;
+    /*background-color: rgba(255, 255, 255, 0.2) !important;*/
+    border-style: none;
+    background: #e99d42!important;
+    font-weight: bold;
+    font-size: calc(2vh);
+  }
+}
+
 .e-finish-btn {
   font-family: Aleo, serif;
   border-radius: 15px;
   width: 60%;
   height: 50%;
-  font-size: calc(1.5vh);
+  font-size: calc(2vh);
   overflow: hidden;
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -1704,7 +1736,7 @@ p::-webkit-scrollbar {
   border-radius: 15px;
   width: 70%;
   height: 40%;
-  font-size: calc(1.5vh);
+  font-size: calc(2vh);
   overflow: hidden;
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -1842,7 +1874,7 @@ p::-webkit-scrollbar {
   cursor: pointer;
   overflow: hidden;
   height: auto;
-  width: 60%;
+  width: 95%;
 }
 
 .t-img-container {
@@ -1851,7 +1883,7 @@ p::-webkit-scrollbar {
   cursor: pointer;
   overflow: hidden;
   height: auto;
-  width: 60%;
+  width: 55%;
 }
 
 .t-3img-container {
@@ -1860,7 +1892,7 @@ p::-webkit-scrollbar {
   cursor: pointer;
   overflow: hidden;
   height: auto;
-  width: 60%;
+  width: 50%;
 }
 
 @media (max-width: 767px) {
@@ -1871,6 +1903,7 @@ p::-webkit-scrollbar {
     overflow: hidden;
     height: auto;
     width: 80%;
+    margin-bottom: calc(2vh);
   }
 }
 
@@ -1892,7 +1925,7 @@ p::-webkit-scrollbar {
     cursor: pointer;
     overflow: hidden;
     height: auto;
-    width: 40%;
+    width: 100%;
   }
 }
 
@@ -1998,9 +2031,17 @@ p::-webkit-scrollbar {
 }
 
 #upload-progress {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  #upload-progress {
+    width: auto;
+    height: 70%;
+    object-fit: cover;
+  }
 }
 
 #u-progressText {
@@ -2010,6 +2051,17 @@ p::-webkit-scrollbar {
   transform: translate(-50%,-50%);
   font-size: calc(2rem + 2vh);
   color: var(--bs-white);
+}
+
+@media (max-width: 767px) {
+  #u-progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    font-size: calc(2rem + 2vh);
+    color: var(--bs-white);
+  }
 }
 
 .edit-12middle-btn {
@@ -2029,7 +2081,7 @@ p::-webkit-scrollbar {
   border-radius: 50px;
   width: 90%;
   height: 60%;
-  font-size: calc(1vh);
+  font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -2055,7 +2107,7 @@ p::-webkit-scrollbar {
   border-radius: 50px;
   width: 80%;
   height: 30%;
-  font-size: calc(1vh);
+  font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -2065,25 +2117,32 @@ p::-webkit-scrollbar {
 .edit-up-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
-  width: 80%;
+  width: 90%;
   height: 60%;
-  font-size: calc(1vh);
+  font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2) !important;
   border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.edit-small-up-btn {
-  font-family: Aleo, serif;
-  border-radius: 50px;
-  width: 80%;
-  height: 60%;
-  font-size: calc(1vh);
-  overflow: hidden;
-  line-height: normal;
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border-style: none;
+@media (max-width: 767px) {
+  .edit-collapse-up-btn {
+    font-family: Aleo, serif;
+    border-radius: 50px;
+    width: calc(15vh);
+    height: calc(4vh);
+    font-size: calc(1.5vh);
+    overflow: hidden;
+    line-height: normal;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-style: none;
+    padding: 0px;
+    margin: calc(2vh);
+  }
 }
 
 @media (max-width: 767px) {
@@ -2150,7 +2209,27 @@ p::-webkit-scrollbar {
 }
 
 .e-middle-icon {
-  width: calc(1.5vh);
+  width: calc(2vh);
+  height: auto;
+  margin-right: 1vh;
+  position: relative;
+  top: -0.1vh;
+}
+
+@media (max-width: 767px) {
+  .e-middle-icon {
+    width: calc(1.5vh);
+    height: auto;
+    margin-right: calc(0.5vh);
+    position: relative;
+    top: -0.1vh;
+  }
+}
+
+.e-instrument-icon {
+  width: calc(3vh);
+  height: auto;
+  margin-right: 1vh;
 }
 
 .edit-custom-row {
@@ -2166,6 +2245,7 @@ p::-webkit-scrollbar {
 .music-time-display {
   margin: 0px;
   font-size: calc(2VH);
+  font-weight: bold;
 }
 
 @media (max-width: 767px) {
@@ -2189,6 +2269,7 @@ p::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   background-color: #e99d42;
+  font-size: 3vh;
 }
 
 @media (max-width: 767px) {
@@ -2196,6 +2277,7 @@ p::-webkit-scrollbar {
     width: 90%;
     height: 90%;
     background-color: #e99d42;
+    font-size: 2vh;
   }
 }
 
@@ -2203,7 +2285,7 @@ p::-webkit-scrollbar {
   background: transparent;
   color: var(--bs-white);
   resize: none;
-  width: 100%;
+  width: 50%;
   height: 40%;
   margin-top: 0px;
   font-size: calc(2vh);
@@ -2218,10 +2300,10 @@ p::-webkit-scrollbar {
     background: transparent;
     color: var(--bs-white);
     resize: none;
-    width: 100%;
+    width: 50%;
     height: 80%;
     margin-top: 0px;
-    font-size: calc(2vh);
+    font-size: calc(1.5vh);
     padding: 0px;
     border-radius: 10px;
     border: 1px solid var(--bs-white);
@@ -2237,5 +2319,56 @@ p::-webkit-scrollbar {
   .music-2icon-display {
     width: 60%;
   }
+}
+
+.e-duration-input:focus {
+  outline: none;
+  border: 2px solid var(--bs-white);
+}
+
+.e-heading {
+  font-size: calc(6vh);
+}
+
+@media (max-width: 767px) {
+  .e-heading {
+    font-size: calc(3.5vh);
+  }
+}
+
+.e-input-key-p {
+  margin: 0px;
+  font-size: calc(2vh);
+}
+
+@media (max-width: 767px) {
+  .e-input-key-p {
+    margin: 0px;
+    font-size: calc(1.5vh);
+    margin-left: 0.5vh;
+  }
+}
+
+.e-collapse-back {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.e-collapse-style {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.play-stop-style {
+  width: auto;
+  height: 70%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--bs-white);
+  /*display: none;*/
 }
 

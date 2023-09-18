@@ -526,6 +526,27 @@ $(document).ready(function(){
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const inputElement = document.querySelector('.e-duration-input');
+    
+    if (inputElement) { // 检查元素是否存在
+        inputElement.addEventListener('input', function(e) {
+            
+            // let cursorPosition = e.target.selectionStart;
+            
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            
+            // 如果输入不为空，则在数字后加上 " seconds"
+//             if (e.target.value) {
+//                 e.target.value += ' seconds';
+//             }
+            
+//             // 重新设置光标位置，这里可能需要进行适当的调整以适应你的需求
+//             e.target.setSelectionRange(cursorPosition, cursorPosition);
+            
+        });
+    }
+});
 
 
 
