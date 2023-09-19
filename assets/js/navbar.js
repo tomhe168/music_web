@@ -549,6 +549,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.getElementById('carouselExampleFade').addEventListener('slide.bs.carousel', function () {
+  
+  const ids = ['e-collapse1', 'e-collapse2', 'e-collapse3', 'e-collapse4','e-collapse5','e-collapse6'];
+  ids.forEach(id => {
+      let collapseElem = document.getElementById(id);
+      if (collapseElem && collapseElem.classList.contains('show')) {
+          new bootstrap.Collapse(collapseElem).hide();
+      }
+  });
+
+});
+
+
 
 
 

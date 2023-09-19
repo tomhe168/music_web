@@ -64,95 +64,140 @@ twq('config','oflly');
     </nav>
     <section class="regist-section-aero" style="font-family: Aleo, serif;">
         <div class="d-flex flex-column justify-content-between div-middle">
-            <div class="container d-flex flex-column justify-content-between" style="height: 100%;">
+            <div class="container d-flex flex-column justify-content-between e-all-container">
                 <div class="row edit-item">
                     <div class="col">
-                        <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;padding: 0px;"><button class="btn btn-primary disabled d-flex d-xxl-flex flex-row justify-content-center align-items-center align-content-center e-user-btn" type="button" disabled=""><img class="mr-2" src="assets/img/if-light-bulb1.svg" style="height: calc(2vh);width: auto;vertical-align: middle;">&nbsp;Compose</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-user-btn" type="button" disabled="" style="padding: 0px;"><img class="mr-2" src="assets/img/iconPark-split-branch1.svg" style="height: calc(2vh);width: auto;">&nbsp;Edit</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-user-btn" type="button" disabled=""><img class="mr-2" src="assets/img/md-publish1.svg" style="height: calc(2vh);width: auto;">&nbsp;Release</button></div>
+                        <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;padding: 0px;"><button class="btn btn-primary disabled d-flex d-xxl-flex flex-row justify-content-center align-items-center align-content-center e-user-btn2" type="button" disabled=""><img class="mr-2" src="assets/img/if-light-bulb1.svg" style="height: calc(2vh);width: auto;vertical-align: middle;">&nbsp;Compose</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-user-btn2" type="button" disabled="" style="padding: 0px;"><img class="mr-2" src="assets/img/iconPark-split-branch1.svg" style="height: calc(2vh);width: auto;">&nbsp;Edit</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-user-btn2" type="button" disabled=""><img class="mr-2" src="assets/img/md-publish1.svg" style="height: calc(2vh);width: auto;">&nbsp;Release</button></div>
                     </div>
                 </div>
-                <div class="row d-xxl-flex justify-content-xxl-center align-items-xxl-center mobile-item special">
-                    <div class="col" style="height: 100%;">
-                        <div class="row d-flex flex-row justify-content-start justify-content-sm-start justify-content-md-start justify-content-lg-center justify-content-xl-center justify-content-xxl-center" style="height: 100%;">
-                            <div class="col d-flex flex-column justify-content-center align-items-center col-md-1 col-4 e-custom-col" style="/*height: 50%;*/">
-                                <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><img class="edit-img-container" src="assets/img/e-play.png"></div>
-                            </div>
-                            <div class="col d-flex flex-column justify-content-around col-md-1 col-4 e-custom-col" style="/*height: 50%;*/">
-                                <p class="music-time-display"><img class="music-icon-display" src="assets/img/semiDesign-semi-icons-tiktok_logo.svg">72.5</p>
-                                <p id="timer-1" class="music-time-display">1:08/3:42</p>
-                            </div>
-                            <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-md-10 col-12 e-custom-col" style="/*height: 50%;*/">
-                                <div id="mic-1" class="mic-class"></div>
-                            </div>
+                <div class="row d-flex flex-row justify-content-start justify-content-sm-start justify-content-md-start justify-content-lg-center justify-content-xl-center justify-content-xxl-center mobile-item special" style="height: 100%;">
+                    <div class="col d-flex flex-column justify-content-center align-items-center col-md-1 col-4 e-custom-col" style="/*height: 50%;*/">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><img class="edit-img-container" src="assets/img/e-play.png"></div>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-around col-md-1 col-4 e-custom-col" style="/*height: 50%;*/">
+                        <p class="music-score-display"><img class="music-score-icon-display" src="assets/img/semiDesign-semi-icons-tiktok_logo.svg">72.5</p>
+                        <p id="timer-1" class="music-time-display">1:08/3:42</p>
+                    </div>
+                    <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-md-10 col-12 e-custom-col" style="/*height: 50%;*/">
+                        <div id="mic-1" class="mic-class"></div>
+                    </div>
+                </div>
+                <div class="row d-flex d-md-none">
+                    <div class="col" style="padding: 0px;">
+                        <div id="carouselExampleFade" class="carousel slide" style="background: transparent;">
+                            <div class="carousel-inner" style="color: var(--bs-black);">
+                                <div class="carousel-item active" style="color: var(--bs-black);">
+                                    <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                        <div class="col d-flex d-sm-flex flex-row justify-content-evenly align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Advanced Tools</button><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg"><br>Remix<br><br></button></div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                        <div class="col d-flex d-sm-flex flex-row justify-content-evenly align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><br><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse4" aria-expanded="false" aria-controls="#e-collapse4"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                        <div class="col d-flex d-sm-flex flex-row justify-content-evenly align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse5" aria-expanded="false" aria-controls="#e-collapse5"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioVisualizer</button><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse6" aria-expanded="false" aria-controls="#e-collapse6"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
+                                    </div>
+                                </div>
+                            </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
                         </div>
                     </div>
                 </div>
-                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Advanced Tools</button></div>
-                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg"><br>Remix<br><br></button></div>
-                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse31"><br><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button></div>
-                </div>
                 <div class="row d-flex d-md-none">
                     <div class="col">
-                        <div id="e-collapse-parent">
-                            <div id="e-collapse1" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
-                                <div class="e-collapse-style"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">AI corpping</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accompaniment Extraction</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instrument Extraction</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">Precison Tune</button></div>
+                        <div id="e-collapse-parent-1">
+                            <div id="e-collapse-1" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
+                                <div class="e-collapse-style">
+                                    <div id="carouselExampleFade-1" class="carousel slide" style="background: transparent;">
+                                        <div class="carousel-inner" style="color: var(--bs-black);">
+                                            <div class="carousel-item active" style="color: var(--bs-black);">
+                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">AI corpping</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accompaniment Extraction</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instrument Extraction</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">Precison Tune</button></div>
+                                                </div>
+                                            </div>
+                                        </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-1" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade-1" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="e-collapse2" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
-                                <div class="e-collapse-style"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-semiDesign-semi-icons-similarity.svg">Harmony</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-go-on.svg">Continuation</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg" width="20" height="20">Mashup</button></div>
+                            <div id="e-collapse-2" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
+                                <div class="e-collapse-style">
+                                    <div id="carouselExampleFade-2" class="carousel slide" style="background: transparent;">
+                                        <div class="carousel-inner" style="color: var(--bs-black);">
+                                            <div class="carousel-item active" style="color: var(--bs-black);">
+                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-semiDesign-semi-icons-similarity.svg">Harmony</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-go-on.svg">Continuation</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg" width="20" height="20">Mashup</button>
+                                                        <p class="edit-collapse-up-btn" style="background-color: transparent !important;"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-2" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade-2" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="e-collapse3" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
+                            <div id="e-collapse-3" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
                                 <div class="e-collapse-style"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse4" aria-expanded="false" aria-controls="#e-collapse4"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
-                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse5" aria-expanded="false" aria-controls="#e-collapse5"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioVisualizer</button></div>
-                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse6" aria-expanded="false" aria-controls="#e-collapse6"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
-                </div>
-                <div class="row d-flex d-md-none">
-                    <div class="col">
-                        <div id="e-collapse-parent1">
-                            <div id="e-collapse4" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent1">
-                                <div class="e-collapse-style"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-file-music.svg">MIDI</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-md-queue_music.svg">ScoreGen</button></div>
+                            <div id="e-collapse-4" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
+                                <div class="e-collapse-style">
+                                    <div id="carouselExampleFade-4" class="carousel slide" style="background: transparent;">
+                                        <div class="carousel-inner" style="color: var(--bs-black);">
+                                            <div class="carousel-item active" style="color: var(--bs-black);">
+                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
+                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-file-music.svg">MIDI</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-md-queue_music.svg">ScoreGen</button></div>
+                                                </div>
+                                            </div>
+                                        </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-4" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade-4" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="e-collapse5" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent1">
+                            <div id="e-collapse-5" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
                                 <div class="e-collapse-style"></div>
                             </div>
-                            <div id="e-collapse6" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent1">
+                            <div id="e-collapse-6" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
                                 <div class="e-collapse-style"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row mobile-item d-none d-md-flex">
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Advanced Tools</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioVisualizer</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Advanced Tools</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioVisualizer</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
                 </div>
                 <div class="row mobile-item d-none d-md-flex">
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">AI corpping</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accompaniment Extraction</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instrument Extraction</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">Precison Tune</button></div>
-                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-md-2 col-4 e-custom-col"></div>
-                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-md-2 col-4 e-custom-col"></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">AI corpping</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accompaniment Extraction</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instrument Extraction</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">Precison Tune</button></div>
+                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col"></div>
+                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col"></div>
                 </div>
                 <div class="row edit-item special">
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-end align-items-sm-end align-items-md-center align-items-lg-center align-items-xl-center justify-content-xxl-start align-items-xxl-center col-md-3 col-12 e-custom-col">
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-end align-items-sm-end align-items-md-center align-items-lg-center align-items-xl-center justify-content-xxl-start align-items-xxl-center col-md-2 col-12 e-custom-col" style="padding: 0px;">
                         <p class="e-input-key-p">Select the audio you need</p>
                     </div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-center justify-content-xxl-center align-items-xxl-center col-md-3 col-6 e-custom-col"><button class="btn btn-primary edit12-up-btn" type="button">Instrumental</button></div>
-                    <div class="col d-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-md-3 col-6 e-custom-col"><button class="btn btn-primary edit12-up-btn" type="button">Vacol</button></div>
-                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-md-3 col-6 edit-custom-row e-custom-col"></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-6 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit12-up-btn" type="button">Instrumental</button></div>
+                    <div class="col d-flex flex-row justify-content-center align-items-center justify-content-xxl-start align-items-xxl-center col-md-2 col-6 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit12-up-btn" type="button">Vacol</button></div>
+                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-md-6 col-6 edit-custom-row e-custom-col"></div>
                 </div>
                 <div class="row mobile-item special">
-                    <div class="col d-flex flex-column justify-content-center align-items-center col-md-2 col-4 e-custom-col">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><button class="btn btn-primary songify-button" type="button" style="border-style: none;">songify</button></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;">
+                        <div class="d-flex flex-column justify-content-center align-items-start" style="width: 100%;height: 100%;"><button class="btn btn-primary songify-button" type="button" style="border-style: none;">songify</button></div>
                     </div>
                     <div class="col d-flex flex-column justify-content-around col-md-1 col-4 e-custom-col">
                         <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-stop-style" id="play-stop">

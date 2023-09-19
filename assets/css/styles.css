@@ -1694,8 +1694,8 @@ p::-webkit-scrollbar {
   .e-finish-middle-btn {
     font-family: Aleo, serif;
     border-radius: 15px;
-    width: 90%;
-    height: 50%;
+    width: 80%;
+    height: 40%;
     /*font-size: calc(2vh);*/
     overflow: hidden;
     line-height: normal;
@@ -1747,8 +1747,8 @@ p::-webkit-scrollbar {
   .e-finish-btn {
     font-family: Aleo, serif;
     border-radius: 15px;
-    width: 90%;
-    height: 50%;
+    width: 80%;
+    height: 40%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -1788,8 +1788,20 @@ p::-webkit-scrollbar {
 .e-user-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
-  width: 32%;
-  height: 70%;
+  width: 28%;
+  height: 60%;
+  font-size: calc(1.5vh);
+  overflow: hidden;
+  line-height: normal;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-style: none;
+}
+
+.e-user-btn2 {
+  font-family: Aleo, serif;
+  border-radius: 50px;
+  width: 28%;
+  height: 55%;
   font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
@@ -1802,7 +1814,21 @@ p::-webkit-scrollbar {
     font-family: Aleo, serif;
     border-radius: 50px;
     width: 32%;
-    height: 68%;
+    height: 60%;
+    font-size: calc(1.5vh);
+    overflow: hidden;
+    line-height: normal;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-style: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .e-user-btn2 {
+    font-family: Aleo, serif;
+    border-radius: 50px;
+    width: 32%;
+    height: 60%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -1814,7 +1840,7 @@ p::-webkit-scrollbar {
 .user-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
-  width: 32%;
+  width: 28%;
   height: 25%;
   font-size: calc(1.5vh);
   overflow: hidden;
@@ -1828,7 +1854,7 @@ p::-webkit-scrollbar {
     font-family: Aleo, serif;
     border-radius: 50px;
     width: 32%;
-    height: 30%;
+    height: 25%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -1892,7 +1918,8 @@ p::-webkit-scrollbar {
   cursor: pointer;
   overflow: hidden;
   height: auto;
-  width: 50%;
+  width: 45%;
+  margin-bottom: calc(4vh);
 }
 
 @media (max-width: 767px) {
@@ -2079,8 +2106,8 @@ p::-webkit-scrollbar {
 .edit-middle-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
-  width: 90%;
-  height: 60%;
+  width: 80%;
+  height: 55%;
   font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
@@ -2093,8 +2120,8 @@ p::-webkit-scrollbar {
     font-family: Aleo, serif;
     border-radius: 50px;
     width: 90%;
-    height: 95%;
-    font-size: calc(1vh);
+    height: 80%;
+    font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
     background-color: rgba(255, 255, 255, 0.2) !important;
@@ -2117,8 +2144,8 @@ p::-webkit-scrollbar {
 .edit-up-btn {
   font-family: Aleo, serif;
   border-radius: 50px;
-  width: 90%;
-  height: 60%;
+  width: 70%;
+  height: 55%;
   font-size: calc(1.5vh);
   overflow: hidden;
   line-height: normal;
@@ -2149,8 +2176,8 @@ p::-webkit-scrollbar {
   .edit-up-btn {
     font-family: Aleo, serif;
     border-radius: 50px;
-    width: 90%;
-    height: 70%;
+    width: 30%;
+    height: 60%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -2179,8 +2206,8 @@ p::-webkit-scrollbar {
   .edit12-up-btn {
     font-family: Aleo, serif;
     border-radius: 50px;
-    width: 90%;
-    height: 70%;
+    width: 80%;
+    height: 60%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -2248,6 +2275,12 @@ p::-webkit-scrollbar {
   font-weight: bold;
 }
 
+.music-score-display {
+  margin: 0px;
+  font-size: calc(2.8VH);
+  font-weight: bold;
+}
+
 @media (max-width: 767px) {
   .music-time-display {
     margin: 0px;
@@ -2255,8 +2288,21 @@ p::-webkit-scrollbar {
   }
 }
 
+@media (max-width: 767px) {
+  .music-score-display {
+    margin: 0px;
+    font-size: calc(2.8VH);
+  }
+}
+
 .music-icon-display {
   width: calc(2VH);
+}
+
+.music-score-icon-display {
+  width: calc(2.8VH);
+  position: relative;
+  top: -0.2vh;
 }
 
 @media (max-width: 767px) {
@@ -2265,17 +2311,23 @@ p::-webkit-scrollbar {
   }
 }
 
+@media (max-width: 767px) {
+  .music-score-icon-display {
+    width: calc(2.8VH);
+  }
+}
+
 .songify-button {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
   background-color: #e99d42;
   font-size: 3vh;
 }
 
 @media (max-width: 767px) {
   .songify-button {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     background-color: #e99d42;
     font-size: 2vh;
   }
@@ -2327,7 +2379,7 @@ p::-webkit-scrollbar {
 }
 
 .e-heading {
-  font-size: calc(6vh);
+  font-size: calc(5vh);
 }
 
 @media (max-width: 767px) {
@@ -2338,7 +2390,7 @@ p::-webkit-scrollbar {
 
 .e-input-key-p {
   margin: 0px;
-  font-size: calc(2vh);
+  font-size: calc(1.5vh);
 }
 
 @media (max-width: 767px) {
@@ -2351,6 +2403,8 @@ p::-webkit-scrollbar {
 
 .e-collapse-back {
   background: rgba(255, 255, 255, 0.1);
+  margin: 0.2vh;
+  border-radius: 10px;
 }
 
 .e-collapse-style {
@@ -2370,5 +2424,17 @@ p::-webkit-scrollbar {
   overflow: hidden;
   color: var(--bs-white);
   /*display: none;*/
+}
+
+.e-set-name {
+  margin: 0px;
+  font-size: calc(2.5vh);
+  /*font-weight: bold;*/
+  font-weight: 900;
+}
+
+.e-all-container {
+  height: 100%;
+  width: 98%;
 }
 
