@@ -38,10 +38,12 @@ twq('config','oflly');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiko&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri&amp;display=swap">
     <link rel="stylesheet" href="assets/css/audio.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/loading.css">
     <link rel="stylesheet" href="assets/css/metro-all.min.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
 </head>
 
 <body style="background: url(&quot;assets/img/4k_back.webp&quot;) center / cover repeat-y, black;height: 100VH;width: 100%;font-family: Aleo, serif;color: white;">
@@ -88,24 +90,12 @@ twq('config','oflly');
                 </div>
                 <div class="row d-flex d-md-none">
                     <div class="col" style="padding: 0px;">
-                        <div id="carouselExampleFade" class="carousel slide" style="background: transparent;">
-                            <div class="carousel-inner" style="color: var(--bs-black);">
-                                <div class="carousel-item active" style="color: var(--bs-black);">
-                                    <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                        <div class="col d-flex d-sm-flex flex-row justify-content-evenly align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Advanced Tools</button><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg"><br>Remix<br><br></button></div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                        <div class="col d-flex d-sm-flex flex-row justify-content-evenly align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><br><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse4" aria-expanded="false" aria-controls="#e-collapse4"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                        <div class="col d-flex d-sm-flex flex-row justify-content-evenly align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse5" aria-expanded="false" aria-controls="#e-collapse5"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioVisualizer</button><button class="btn btn-primary edit-up-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse6" aria-expanded="false" aria-controls="#e-collapse6"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
-                                    </div>
-                                </div>
-                            </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                        <div class="swiper mySwiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Tools</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="16" height="16">HotTrackRater</button></div>
+                                <div class="swiper-slide"><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse4" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse5" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioViz</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse6" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
+                            </div>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -114,39 +104,25 @@ twq('config','oflly');
                         <div id="e-collapse-parent">
                             <div id="e-collapse1" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
                                 <div class="e-collapse-style">
-                                    <div id="carouselExampleFade-1" class="carousel slide" style="background: transparent;">
-                                        <div class="carousel-inner" style="color: var(--bs-black);">
-                                            <div class="carousel-item active" style="color: var(--bs-black);">
-                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">AI corpping</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accompaniment Extraction</button></div>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instrument Extraction</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">Precison Tune</button></div>
-                                                </div>
-                                            </div>
-                                        </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-1" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade-1" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                                    <div class="swiper mySwiper2">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">Smart Trimmer</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accomp Isolate</button></div>
+                                            <div class="swiper-slide"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instru Isolate</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">TuneAdj</button></div>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </div>
                             <div id="e-collapse2" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
                                 <div class="e-collapse-style">
-                                    <div id="carouselExampleFade-2" class="carousel slide" style="background: transparent;">
-                                        <div class="carousel-inner" style="color: var(--bs-black);">
-                                            <div class="carousel-item active" style="color: var(--bs-black);">
-                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-semiDesign-semi-icons-similarity.svg">Harmony</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-go-on.svg">Continuation</button></div>
-                                                </div>
+                                    <div class="swiper mySwiper2">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-semiDesign-semi-icons-similarity.svg">Harmony</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-go-on.svg">Continuation</button></div>
+                                            <div class="swiper-slide"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg" width="20" height="20">Mashup</button>
+                                                <p class="edit-collapse-up-btn" style="background-color: transparent !important;"></p>
                                             </div>
-                                            <div class="carousel-item">
-                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg" width="20" height="20">Mashup</button>
-                                                        <p class="edit-collapse-up-btn" style="background-color: transparent !important;"></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-2" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade-2" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </div>
@@ -155,14 +131,11 @@ twq('config','oflly');
                             </div>
                             <div id="e-collapse4" class="collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
                                 <div class="e-collapse-style">
-                                    <div id="carouselExampleFade-4" class="carousel slide" style="background: transparent;">
-                                        <div class="carousel-inner" style="color: var(--bs-black);">
-                                            <div class="carousel-item active" style="color: var(--bs-black);">
-                                                <div class="row edit-mobile-half-item special d-flex d-md-none">
-                                                    <div class="col d-flex d-sm-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-file-music.svg">MIDI</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-md-queue_music.svg">ScoreGen</button></div>
-                                                </div>
-                                            </div>
-                                        </div><button class="d-flex d-sm-flex flex-row justify-content-start carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-4" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="d-flex flex-row justify-content-end carousel-control-next" type="button" data-bs-target="#carouselExampleFade-4" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                                    <div class="swiper mySwiper2">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-file-music.svg">MIDI</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-md-queue_music.svg">ScoreGen</button></div>
+                                        </div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </div>
@@ -176,11 +149,11 @@ twq('config','oflly');
                     </div>
                 </div>
                 <div class="row mobile-item d-none d-md-flex">
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Advanced Tools</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Tools</button></div>
                     <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-end align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button></div>
                     <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button></div>
                     <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-end align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-end align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioVisualizer</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-end align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioViz</button></div>
                     <div class="col d-flex d-xxl-flex flex-column justify-content-end align-items-center justify-content-sm-end align-items-sm-center justify-content-md-center align-items-md-start justify-content-lg-center align-items-lg-start justify-content-xl-center align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
                 </div>
                 <div class="row edit-item">
@@ -216,11 +189,13 @@ twq('config','oflly');
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/verification.js"></script>
     <script src="assets/js/describe.mjs" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
     <script src="assets/js/loading.js"></script>
     <script src="assets/js/record.mjs" type="module"></script>
+    <script src="assets/js/swiper.js"></script>
     <script src="assets/js/upload.mjs" type="module"></script>
 </body>
 
