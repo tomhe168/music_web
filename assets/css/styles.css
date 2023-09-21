@@ -2176,7 +2176,8 @@ p::-webkit-scrollbar {
   .edit-swiper-btn {
     font-family: Aleo, serif;
     border-radius: 50px;
-    width: calc(15vh);
+    /*width: calc(15vh);*/
+    width: 30%;
     height: calc(4vh);
     font-size: calc(1.5vh);
     overflow: hidden;
@@ -2184,9 +2185,9 @@ p::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0.2) !important;
     border-style: none;
     padding: 0px;
-    margin: calc(1vh);
-    margin-right: calc(0.5vh);
-    margin-left: calc(0.5vh);
+    margin: 0;
+    /*margin-right: calc(0.5vh);*/
+    /*margin-left: calc(0.5vh);*/
   }
 }
 
@@ -2458,5 +2459,16 @@ p::-webkit-scrollbar {
 .e-all-container {
   height: 100%;
   width: 98%;
+}
+
+.custom-collapse.collapsing {
+  opacity: 0 !important;
+  /*transition: opacity 1s ease, max-height 0.1s ease !important;*/
+  transition: none !important;
+  /*transition: opacity 0.5s ease !important;*/
+}
+
+.custom-collapse.show {
+  opacity: 1 !important;
 }
 
