@@ -2202,9 +2202,9 @@ p::-webkit-scrollbar {
     font-family: Aleo, serif;
     border-radius: 50px;
     /*width: calc(15vh);*/
-    width: 30%;
+    width: 31%;
     height: calc(4vh);
-    font-size: calc(1.5vh);
+    font-size: calc(2.5vw);
     overflow: hidden;
     line-height: normal;
     background-color: rgba(255, 255, 255, 0.2) !important;
@@ -2251,7 +2251,7 @@ p::-webkit-scrollbar {
     font-family: Aleo, serif;
     border-radius: 50px;
     width: 80%;
-    height: 60%;
+    height: 80%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -2262,6 +2262,15 @@ p::-webkit-scrollbar {
 }
 
 .e-custom-col {
+  height: 100%;
+}
+
+.e12-custom-col-little {
+  height: 100%;
+  padding: 0px;
+}
+
+.e12-custom-col-big {
   height: 100%;
 }
 
@@ -2279,6 +2288,20 @@ p::-webkit-scrollbar {
   }
 }
 
+@media (max-width: 991px) {
+  .e12-custom-col-big {
+    height: 70%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  .e12-custom-col-little {
+    height: 30%;
+    padding: 0px;
+  }
+}
+
 .e-middle-icon {
   width: calc(0.9vw);
   height: auto;
@@ -2289,9 +2312,9 @@ p::-webkit-scrollbar {
 
 @media (max-width: 991px) {
   .e-middle-icon {
-    width: calc(1.5vh);
+    width: calc(2.5vw);
     height: auto;
-    margin-right: calc(0.5vh);
+    margin-right: calc(0.5vw);
     position: relative;
     top: -0.1vh;
   }
@@ -2458,6 +2481,7 @@ p::-webkit-scrollbar {
     margin: 0px;
     font-size: calc(1.5vh);
     margin-left: 0.5vh;
+    height: calc(1.5vh);
   }
 }
 
@@ -2507,5 +2531,14 @@ p::-webkit-scrollbar {
 
 .custom-collapse.show {
   opacity: 1 !important;
+}
+
+.indented-placeholder::placeholder {
+  text-indent: 1vh;
+  white-space: nowrap;
+}
+
+#row-collapse-move {
+  margin-top: 0;
 }
 

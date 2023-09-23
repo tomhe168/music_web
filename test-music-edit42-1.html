@@ -83,12 +83,12 @@ twq('config','oflly');
                         <div id="mic-1" class="mic-class"></div>
                     </div>
                 </div>
-                <div class="row d-flex d-lg-none edit-item">
+                <div class="row d-flex d-lg-none edit-item" id="row-collapse-above">
                     <div class="col" style="padding: 0px;">
                         <div class="swiper mySwiper1">
                             <div class="swiper-wrapper">
                                 <div class="d-flex flex-row justify-content-between swiper-slide">
-                                    <div class="swiper-container"><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Tools</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="16" height="16">HotTrackRater</button></div>
+                                    <div class="swiper-container"><button class="btn btn-primary edit-swiper-btn" id="move-above" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Tools</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="16" height="16">HotTrackRater</button></div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-container"><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse4" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse5" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioViz</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse6" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
@@ -98,7 +98,7 @@ twq('config','oflly');
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex d-lg-none">
+                <div class="row d-flex d-lg-none" id="row-collapse-move">
                     <div class="col" style="padding: 0px;">
                         <div id="e-collapse-parent">
                             <div id="e-collapse1" class="collapse custom-collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
@@ -173,9 +173,9 @@ twq('config','oflly');
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-2 col-4 e-custom-col d-none d-md-flex"></div>
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-2 col-4 e-custom-col d-none d-md-flex"></div>
                 </div>
-                <div class="row edit-mobile-half-item special">
+                <div class="row edit-mobile-half-item special" id="row-collapse-below">
                     <div class="col d-flex flex-row justify-content-start align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center">
-                        <p style="margin: 0px;">Select Instrument for Download</p>
+                        <p id="move-below" style="margin: 0px;">Select Instrument for Download</p>
                     </div>
                 </div>
                 <div class="row edit-mobile-half-item special">

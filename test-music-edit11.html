@@ -88,12 +88,12 @@ twq('config','oflly');
                         <div id="mic-1" class="mic-class"></div>
                     </div>
                 </div>
-                <div class="row d-flex d-lg-none edit-item">
+                <div class="row d-flex d-lg-none edit-item" id="row-collapse-above">
                     <div class="col" style="padding: 0px;">
                         <div class="swiper mySwiper1">
                             <div class="swiper-wrapper">
                                 <div class="d-flex flex-row justify-content-between swiper-slide">
-                                    <div class="swiper-container"><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Tools</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="16" height="16">HotTrackRater</button></div>
+                                    <div class="swiper-container"><button class="btn btn-primary edit-swiper-btn" id="move-above" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse1" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/st-wrench.svg">Tools</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse2" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/iconPark-shuffle-one.svg">Remix</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse3" aria-expanded="false" aria-controls="#e-collapse3"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="16" height="16">HotTrackRater</button></div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-container"><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse4" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse5" aria-expanded="false" aria-controls="#e-collapse1"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioViz</button><button class="btn btn-primary edit-swiper-btn" type="button" data-bs-toggle="collapse" data-bs-target="#e-collapse6" aria-expanded="false" aria-controls="#e-collapse2"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
@@ -103,7 +103,7 @@ twq('config','oflly');
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex d-lg-none">
+                <div class="row d-flex d-lg-none" id="row-collapse-move">
                     <div class="col" style="padding: 0px;">
                         <div id="e-collapse-parent">
                             <div id="e-collapse1" class="collapse custom-collapse e-collapse-back" data-bs-parent="#e-collapse-parent">
@@ -146,7 +146,7 @@ twq('config','oflly');
                                     <div class="swiper mySwiper2">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <div><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-file-music.svg">MIDI</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-md-queue_music.svg">ScoreGen</button></div>
+                                                <div class="swiper-container"><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-file-music.svg">MIDI</button><button class="btn btn-primary edit-collapse-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-md-queue_music.svg">ScoreGen</button></div>
                                             </div>
                                         </div>
                                         <div class="swiper-pagination"></div>
@@ -178,14 +178,14 @@ twq('config','oflly');
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col"></div>
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col"></div>
                 </div>
-                <div class="row edit-item">
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center justify-content-xxl-start align-items-xxl-center col-lg-2 col-6 e-custom-col" style="padding: 0px;">
+                <div class="row edit-item" id="row-collapse-below">
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center justify-content-xxl-start align-items-xxl-center col-lg-3 col-6 e-custom-col" style="padding: 0px;">
                         <p class="e-input-key-p">Adjust the Selected Duration</p>
                     </div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-3 col-6 e-custom-col" style="padding: 0px;"><input type="text" class="e-duration-input" placeholder="60" pattern="\d*">
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-3 col-6 e-custom-col" style="padding: 0px;"><input type="text" id="move-below" class="e-duration-input" placeholder="60" pattern="\d*">
                         <p class="e-input-key-p" style="/*font-size: calc(2vh);*//*margin: 0px;*/margin-left: 1vh;">seconds</p>
                     </div>
-                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-3 edit-custom-row e-custom-col"></div>
+                    <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-3 col-6 edit-custom-row e-custom-col"></div>
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-3 col-6 edit-custom-row e-custom-col"></div>
                 </div>
                 <div class="row mobile-item">
