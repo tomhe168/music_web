@@ -2270,8 +2270,26 @@ p::-webkit-scrollbar {
   padding: 0px;
 }
 
-.e12-custom-col-big {
+.d12-custom-row-little {
+  height: 50%;
+  padding: 0px;
+}
+
+.d12-custom-col-little {
   height: 100%;
+  padding: 0px;
+}
+
+.d12-custom-col-big {
+  height: 100%;
+}
+
+.e12-custom-col-big {
+  height: 50%;
+}
+
+.d12-custom-row-big {
+  height: 50%;
 }
 
 @media (max-width: 991px) {
@@ -2296,8 +2314,36 @@ p::-webkit-scrollbar {
 }
 
 @media (max-width: 991px) {
+  .d12-custom-row-big {
+    height: 60%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  .d12-custom-col-big {
+    height: 60%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 991px) {
   .e12-custom-col-little {
     height: 30%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  .d12-custom-row-little {
+    height: 40%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  .d12-custom-col-little {
+    height: 40%;
     padding: 0px;
   }
 }
