@@ -1334,6 +1334,11 @@ input[type="text"]::placeholder {
   /*min-width: 7vh;*/
 }
 
+.edit-mobile-half-item.special3 {
+  flex: 3;
+  /*min-width: 7vh;*/
+}
+
 @media (max-width: 991px) {
   .edit-item {
     flex: 1;
@@ -1352,6 +1357,13 @@ input[type="text"]::placeholder {
   .edit-mobile-half-item.special {
     flex: 1;
     min-height: 7vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .edit-mobile-half-item.special3 {
+    flex: 1.5;
+    min-height: 10.5vh;
   }
 }
 
@@ -1719,6 +1731,18 @@ p::-webkit-scrollbar {
   border-style: none;
 }
 
+.r-last-long-btn {
+  font-family: Aleo, serif;
+  border-radius: 15px;
+  width: 70%;
+  height: 40%;
+  font-size: calc(2vh);
+  overflow: hidden;
+  line-height: normal;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-style: none;
+}
+
 @media (max-width: 991px) {
   .e-finish-btn {
     font-family: Aleo, serif;
@@ -1754,6 +1778,20 @@ p::-webkit-scrollbar {
     width: 90%;
     height: 70%;
     font-size: calc(1.5vh);
+    overflow: hidden;
+    line-height: normal;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-style: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .r-last-long-btn {
+    font-family: Aleo, serif;
+    border-radius: 5px;
+    width: 98%;
+    height: 90%;
+    font-size: calc(2.5vw);
     overflow: hidden;
     line-height: normal;
     background-color: rgba(255, 255, 255, 0.2) !important;
@@ -1830,7 +1868,7 @@ p::-webkit-scrollbar {
     font-family: Aleo, serif;
     border-radius: 50px;
     width: 32%;
-    height: 25%;
+    height: 24%;
     font-size: calc(1.5vh);
     overflow: hidden;
     line-height: normal;
@@ -1894,7 +1932,9 @@ p::-webkit-scrollbar {
   cursor: pointer;
   overflow: hidden;
   height: auto;
-  width: 55%;
+  width: 50%;
+  position: relative;
+  top: -20%;
 }
 
 .t-3img-container {
@@ -1947,8 +1987,11 @@ p::-webkit-scrollbar {
     outline: none;
     cursor: pointer;
     overflow: hidden;
-    height: 100%;
+    height: 160%;
     width: auto;
+    position: relative;
+    top: -100%;
+    overflow: visible;
   }
 }
 
@@ -2374,6 +2417,14 @@ p::-webkit-scrollbar {
   top: -0.3vh;
 }
 
+.r-last-icon {
+  width: calc(3vh);
+  height: auto;
+  margin-right: 0.5vh;
+  position: relative;
+  top: -0.3vh;
+}
+
 @media (max-width: 991px) {
   .e-instrument-icon {
     width: calc(2vh);
@@ -2381,6 +2432,16 @@ p::-webkit-scrollbar {
     margin-right: 0.5vh;
     position: relative;
     top: -0.3vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .r-last-icon {
+    width: calc(2.5vw);
+    height: auto;
+    margin-right: 0.2vw;
+    position: relative;
+    top: -0.1vh;
   }
 }
 
@@ -2586,5 +2647,36 @@ p::-webkit-scrollbar {
 
 #row-collapse-move {
   margin-top: 0;
+}
+
+.t-time-display {
+  margin: 0px;
+  font-size: 3vw;
+}
+
+@media (max-width: 991px) {
+  .t-time-display {
+    margin: 0px;
+    font-size: 10vw;
+    /*position: relative;*/
+    /*top: -50%;*/
+    height: 10vw;
+  }
+}
+
+.d-up-heading {
+  font-size: calc(2.5vh);
+  height: 3vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 991px) {
+  .d-up-heading {
+    font-size: calc(2.5vh);
+    height: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+  }
 }
 
