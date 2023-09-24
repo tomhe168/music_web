@@ -2228,7 +2228,7 @@ p::-webkit-scrollbar {
   .edit-collapse-up-btn {
     font-family: Aleo, serif;
     border-radius: 50px;
-    width: calc(15vh);
+    width: calc(45vw);
     height: calc(4vh);
     font-size: calc(1.5vh);
     overflow: hidden;
