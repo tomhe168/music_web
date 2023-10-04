@@ -314,7 +314,7 @@ $(document).ready(function () {
 
 export default function isMobileDevice() {
   // return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  return window.innerWidth <= 768;
+  return window.innerWidth <= 991;
 }
 
 $(document).ready(function () {
@@ -456,7 +456,8 @@ function startCountdown() {
         if (currentTime <= 0) {
             clearInterval(countdown);
             $('#countdownLink').off('click').text('resend code').on('click', function() {
-                send_email();
+                var actionType = $(this).data('action');
+                send_email(actionType);
                 // 这里可以添加其他逻辑，例如向服务器发送请求，重新发送邮件等。
                 startCountdown();
                 return false; // 阻止默认的<a>标签点击行为
@@ -466,17 +467,17 @@ function startCountdown() {
 }
 
 
-function send_email()
+function send_email(type)
 {
   // $('#countdownLink').click(function() {
     $.ajax({
-      url: '/send-email/',  // 请根据实际的URL配置进行调整
+      url: '/send-email/'+type,  // 请根据实际的URL配置进行调整
       method: 'GET',  // 或者其他适当的HTTP方法
       success: function(response) {
           if (response.status === 'success') {
               startCountdown();
           } else {
-              alert("There was an ${response.status} error sending the email.");
+              alert(`There was an ${response.status} error sending the email.`);
           }
       },
       error: function(error) {
