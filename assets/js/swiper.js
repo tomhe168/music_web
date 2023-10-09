@@ -38,11 +38,11 @@ $(document).ready(function() {
         // 检查#elementAbove是否存在
         if ($('#move-above').length > 0 && 
         $('#row-collapse-move').length > 0 &&
-        $('#move-below').length > 0 &&
+        $("[id*='move-below']").length > 0 &&
         $('#row-collapse-below').length > 0)  {
             // 计算上面元素和下面元素之间的距离
             var topElemBottom = $('#move-above').offset().top + $('#move-above').outerHeight();
-            var bottomElemTop = $('#move-below').offset().top;
+            var bottomElemTop = $("[id*='move-below']").offset().top;
             var bottomRowTop = $('#row-collapse-below').offset().top;
             var middleElemTop = $('#row-collapse-move').offset().top;
 

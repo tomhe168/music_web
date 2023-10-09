@@ -8,33 +8,79 @@ import isMobileDevice from'./navbar.js'
 import initLoading from './loading.js'
 
 
+(function() {
+    let g_activeRegion = null
+    // Give regions a random color when they are created
+    const g_random = (min, max) => Math.random() * (max - min) + min
+    const g_randomColor = () => `rgba(${g_random(0, 255)}, ${g_random(0, 255)}, ${g_random(0, 255)}, 0.5)`
+    let g_currentPlayPosition = 0
+    let g_currentSeekPosition = 0
+    let g_waveplaysurfer = null
+    let g_wsRegions = null
 
-let g_activeRegion = null
-// Give regions a random color when they are created
-const g_random = (min, max) => Math.random() * (max - min) + min
-const g_randomColor = () => `rgba(${g_random(0, 255)}, ${g_random(0, 255)}, ${g_random(0, 255)}, 0.5)`
-let g_currentPlayPosition = 0
-let g_currentSeekPosition = 0
-let g_waveplaysurfer = null
-let g_wsRegions = null
+    let g_waverecordsurfer = null
+    let g_record = null
 
-let g_waverecordsurfer = null
-let g_record = null
-
-let g_containerHeight = 0
+    let g_containerHeight = 0
 
 
-let g_record_timerInterval = 0;
-let g_record_totalTime = 0;
+    let g_record_timerInterval = 0;
+    let g_record_totalTime = 0;
 
-let g_record_btn_type = 0;//0初始状态，1录音完成，2截取完成
+    let g_record_btn_type = 0;//0初始状态，1录音完成，2截取完成
 
-if (window.location.href.indexOf('record.html') !== -1){
+    let g_socket;
 
-    window.onload = function() {
-        // 页面加载完成后要执行的代码
-        init()
-    };
+    let g_finish_blob = null;
+
+    // var G_MEDIA_URL = "{{ MEDIA_URL }}"; // 来自Django的模板上下文
+
+    // 将内部函数绑定到 window 对象上
+    window.enterRecordPage = enterRecordPage;
+
+    function enterRecordPage(){
+        var firstRow = $(".first-row");
+        firstRow.removeClass().addClass("edit-item special");
+        firstRow.after(`
+        <div class="row mobile-item"></div>
+        <div class="row edit-mobile-half-item special3">
+            <div class="col d-flex flex-column justify-content-around align-items-center d-none d-lg-block"></div>
+            <div class="col d-flex flex-column justify-content-start align-items-center" style="padding: 0px;height: 100%;"><img id="record" class="r-img-container" src="assets/img/t13.png" width="150" height="150"></div>
+            <div class="col d-flex flex-column justify-content-around align-items-center d-none d-lg-block"></div>
+        </div>
+        <div class="row item">
+            <div class="col d-flex flex-row justify-content-center align-items-start align-items-sm-start align-items-md-start align-items-lg-center align-items-xl-center align-items-xxl-center">
+                <p class="d-flex justify-content-center t-time-display" id="timer">00:00</p>
+            </div>
+        </div>
+        <div class="row item d-lg-none" id="moblie-btn-row" style="display: none;">
+            <div class="col d-flex flex-row justify-content-center align-items-center col-6"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-icon-btn" id="mobile-play-stop">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
+                </svg></div>
+            <div class="col d-flex flex-row justify-content-center align-items-center col-6"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-trash-fill delete-icon-btn" id="mobile-delete-btn">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
+                </svg></div>
+        </div>
+        <div class="row d-flex flex-row justify-content-center item special">
+            <div class="col d-flex flex-row justify-content-start align-items-center item d-none d-lg-block" style="padding: 0px;">
+                <div class="d-flex flex-row justify-content-end align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-icon-btn" id="play-stop">
+                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
+                    </svg></div>
+            </div>
+            <div class="col d-flex d-xl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center item special">
+                <div id="mic" class="mic-class"></div>
+            </div>
+            <div class="col d-flex flex-row justify-content-start align-items-center item d-none d-lg-block" style="padding: 0px;">
+                <div class="d-flex flex-row justify-content-start align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-trash-fill delete-icon-btn" id="delete-btn">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
+                    </svg></div>
+            </div>
+        </div>
+        `);
+        init();
+    
+    }
+
 
 
     function init()
@@ -91,6 +137,25 @@ if (window.location.href.indexOf('record.html') !== -1){
         g_record.on('record-start', () => {
             startRecordTimer()
         })
+
+        g_socket = new WebSocket('ws://127.0.0.1:8001/ws/music_processing');
+
+        g_socket.onopen = function(e) {
+            console.log("[open] Connection established");
+        };
+
+        g_socket.onerror = function(error) {
+            console.error(`[error] ${error.message}`);
+        };
+
+        g_socket.onmessage = function(event) {
+            console.log("g_socket.onmessage");
+            const data = JSON.parse(event.data);
+            if ((data.type === "send_record_update") && (data.status === 'done')) {
+                console.log("g_socket.onmessage done");
+                loadProcessedMusic(data.processed_file_url);
+            }
+        };
     }
 
 
@@ -129,7 +194,7 @@ if (window.location.href.indexOf('record.html') !== -1){
                 if (g_record.isRecording()) {
                     g_record.stopRecording()
                     // recButton.textContent = 'Record'
-                    this.src = 'assets/img/t51x.png';
+                    this.src = "static/music/img/t51x.png"
                     g_record_btn_type = 1
                     return
                 }
@@ -174,7 +239,7 @@ if (window.location.href.indexOf('record.html') !== -1){
                     g_record.startRecording()
                     .then(() => {
                         // recButton.textContent = 'Stop'
-                        this.src = 'assets/img/t14.png';
+                        this.src = "static/music/img/t14.png"
                         // recButton.disabled = false
                     })
                     .catch(err => {
@@ -326,106 +391,188 @@ if (window.location.href.indexOf('record.html') !== -1){
 
         document.getElementById("record").outerHTML = "<h1 id='record'>Uploading</h1>";
         
-        document.getElementById('timer').style.fontSize = "calc(2rem + 2vh)";
+        // document.getElementById('timer').style.fontSize = "calc(2rem + 2vh)";
         document.getElementById('timer').textContent = "0%";
-        upload_progress().then(() => {
-            create_creating().then(() => {
-                create_finish()
-            });
-        });
+
+        let formData = new FormData();
+        // 生成一个随机文件名
+        let randomFileName = 'record_' + new Date().getTime() + "_" + Math.random().toString(36).substr(2, 9) + '.wav';
+        // 创建一个新的 File 对象，并指定文件名
+        let audio_file = new File([newBlob], randomFileName, {type: "audio/wav"});
+
+
+        formData.append("audio", audio_file);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/upload_record/", true);
+        // Set the CSRF token header
+        xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+
+        xhr.upload.onprogress = function(event) {
+            if (event.lengthComputable) {
+                console.error("event.loaded");
+                let percentage = (event.loaded / event.total) * 100;
+                // document.getElementById("uploadProgress").value = percentage;
+                g_waverecordsurfer.seekTo(percentage);
+                // startTime += stepTime;
+                // console.log("upload_progress startTime",startTime);
+                document.getElementById('timer').textContent = `${percentage.toFixed(2)}%`;
+            }
+        };
+
+        xhr.onload = function() {
+            console.error("onload");
+            if (xhr.status == 200) {
+                console.log("Uploaded successfully!");
+                document.getElementById('timer').textContent = "Uploaded successfully!";
+                create_creating()
+            } else {
+                console.error("else onload");
+                let errorMessage
+                try {
+                    let responseObj = JSON.parse(xhr.responseText);
+                    errorMessage = responseObj.message || "Error during upload.";
+                } catch (e) {
+                    // console.error("Failed to parse response as JSON:", xhr.responseText);
+                    errorMessage = xhr.responseText || "Error during upload(json).";
+                }
+                document.getElementById('timer').textContent = errorMessage;
+                console.error(errorMessage);
+            }
+        };
+        xhr.onerror = function() {
+            console.error("Request failed");
+            document.getElementById('timer').textContent = "Network error or request was blocked.";
+        };
+
+        xhr.send(formData);
+
+        // create_creating();
+
+        // upload_progress().then(() => {
+        //     create_creating().then(() => {
+        //         create_finish()
+        //     });
+        // });
         
     }
 
-    async function create_creating(){
-        var allRows = document.querySelectorAll('.row'); 
-        var Row = allRows[allRows.length - 1];  // 删除最后一个元素，注意，索引是从 0 开始的
-        if (Row) {  // 确保元素存在
-            Row.remove();
-        } 
+    function loadProcessedMusic(fileUrl) {
+        var xhr = new XMLHttpRequest();
+        var allFileUrl = G_MEDIA_URL + fileUrl;
+        xhr.open('GET', allFileUrl, true);
+        xhr.responseType = 'arraybuffer';
+        xhr.timeout = 100000; // 设置超时时间为100秒 (10000毫秒)
+        xhr.onload = function(e) {
+            if (this.status == 200) {
+                // Convert array buffer to blob
+                var blob = new Blob([this.response], {type: 'audio/wav'});
+                create_finish(blob);
+            } else {
+                console.error("Failed to fetch audio:", this.statusText);
+                alert("Failed to fetch audio:", this.statusText);
+            }
+        };
+        
+        xhr.onerror = function(e) {
+            console.error("Failed to fetch audio:", e);
+            alert("Failed to fetch audio:", e);
+        };
+        xhr.ontimeout = function() {
+            // 处理超时
+            console.error("timeout to fetch audio:", e);
+            alert("timeout to fetch audio:", e);
+        };
+
+        xhr.send();
+    }
+
+    function create_creating(){
+        var allRows = document.querySelectorAll('.row');     
+        //只保留第一个  
+        for (var i = 1; i < allRows.length; i++) {
+            allRows[i].parentNode.removeChild(allRows[i]);
+        }
 
         allRows = document.querySelectorAll(".row");
         allRows.forEach((row) => {
             //console.log(row); // 这里可以对每个 row 进行操作
             row.classList.add("item");
-            row.classList.remove("special");
+            row.classList.add("special");
         });
 
+        allRows = document.querySelectorAll('.row');  
+        var lastRow = allRows[allRows.length - 1];  
+        // 创建新的 HTML 内容
+        var newRowHTML = `
+            <div class="row item"></div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
         if(isMobileDevice()){
-            document.getElementById("record").outerHTML =  "<div class='loading la-2x la-white'></div>" //"<h1 id='head-p'>Creating</h1>";
+            allRows = document.querySelectorAll('.row');  
+            lastRow = allRows[allRows.length - 1];  
+            // 创建新的 HTML 内容
+            newRowHTML = `
+            <div class="row item special">
+                <div class="col d-flex flex-column justify-content-around align-items-center"></div>
+                <div class="col d-flex flex-column justify-content-around align-items-center">
+                    <div class="loading la-2x la-white"></div>
+                </div>
+                <div class="col d-flex flex-column justify-content-around align-items-center"></div>
+            </div>
+            `;
+            // 在选定的 .row 元素后面插入新的 HTML 内容
+            lastRow.insertAdjacentHTML('afterend', newRowHTML);
         }
         else{
-            document.getElementById("record").outerHTML =  "<div class='loading la-3x la-white'></div>" //"<h1 id='head-p'>Creating</h1>";
+            allRows = document.querySelectorAll('.row');  
+            lastRow = allRows[allRows.length - 1];  
+            // 创建新的 HTML 内容
+            newRowHTML = `
+            <div class="row item special">
+                <div class="col d-flex flex-column justify-content-around align-items-center"></div>
+                <div class="col d-flex flex-column justify-content-around align-items-center">
+                    <div class="loading la-3x la-white"></div>
+                </div>
+                <div class="col d-flex flex-column justify-content-around align-items-center"></div>
+            </div>
+            `;
+            // 在选定的 .row 元素后面插入新的 HTML 内容
+            lastRow.insertAdjacentHTML('afterend', newRowHTML);
         }
         initLoading()
-        document.getElementById("timer").outerHTML =  "<h1 id='timer'>Creating</h1>";
+        allRows = document.querySelectorAll('.row');  
+        lastRow = allRows[allRows.length - 1];  
+        newRowHTML = `
+        <div class="row item"></div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
 
-        // 获取 video 元素
-        // const videoElement = document.querySelector('video');
-        // const pElement = document.getElementById("timer");
-        // const parentElement = pElement.parentNode;
+        allRows = document.querySelectorAll('.row');  
+        lastRow = allRows[allRows.length - 1];  
+        newRowHTML = `
+        <div class="row item special">
+            <div class="col d-flex flex-row justify-content-center align-items-center">
+                <h1>Creating</h1>
+            </div>
+        </div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
 
-        // // 创建一个新的 <video> 元素
-        // const videoElement = document.createElement("video");
-
-        // // 设置各种属性
-        // videoElement.loop = true;
-        // videoElement.muted = true;
-        // videoElement.autoplay = true;
-        // videoElement.style.height = 'auto';
-        // videoElement.style.width = '29%';
-
-        // // 获取或创建 <source> 和 <track> 元素
-        // const sourceElement = videoElement.querySelector('source') || document.createElement('source');
-
-        // // 设置 source 和 track 的属性
-        // sourceElement.setAttribute('src', 'assets/video/creating.webm');
-        // sourceElement.setAttribute('type', 'video/webm');
-
-        // // 如果这些元素是新创建的，需要将它们添加到 video 元素中
-        // if (!videoElement.contains(sourceElement)) {
-        //     videoElement.appendChild(sourceElement);
-        // }
-
-        // // 用新的 <video> 元素替换旧的 <p> 元素
-        // parentElement.replaceChild(videoElement, pElement);
-
-        // document.getElementById("mic").style.display = "none";
-
-        // let startTime = 0.0;  // 初始位置，从 0% 开始
-        // const stepTime = 0.01;  // 步进，每次移动 1%
-        // const interval = 100;  // 每 100 毫秒更新一次
-
-        // const intervalId = setInterval(() => {
-        //     if (startTime >= 1) {  // 如果到达或超过 100%，停止
-        //         clearInterval(intervalId);
-        //         return;
-        //     }
-        //     startTime += stepTime;
-        // }, interval);
-        let startTime = 0;
-        // while (startTime <= 100) {
-        //     // 这里插入你想执行的代码
-        //     startSecondInterval().then(() => {
-        //         // console.log("Interval has finished, do something else now.");
-        //         // 在这里执行其他操作
-        //     });
-        //     startTime++;
-        //   }
-        let stepTime = 0.01;  // 步进，每次移动 1%
-        while (startTime < 3) {
-            // 这里插入你想执行的代码
-            // startSecondInterval().then(() => {
-            //     console.log("upload_progress Interval has finished, do something else now.");
-            //     // 在这里执行其他操作
-            // });
-            await startSecondInterval();
-            startTime += stepTime;
-            // console.log("upload_progress startTime",startTime);
-        }
+        allRows = document.querySelectorAll('.row');  
+        lastRow = allRows[allRows.length - 1];  
+        newRowHTML = `
+        <div class="row item"></div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
         
     }
 
-    function create_finish(){
+    function create_finish(blob){
         // 获取页面上所有的 .row 元素
         var allRows = document.querySelectorAll('.row');  
 
@@ -434,27 +581,25 @@ if (window.location.href.indexOf('record.html') !== -1){
             Row.classList.add("item");
             Row.classList.add("special");
         }
+        //只保留第一个
+        for (var i = 1; i < allRows.length; i++) {
+            allRows[i].parentNode.removeChild(allRows[i]);
+        }
 
-        // 选择第二个 .row 元素
-        Row = allRows[1];  // 注意，索引是从 0 开始的，所以第二个元素是 allRows[1]
-        if (Row) {  // 确保元素存在
-            Row.remove();
-        }
-        Row = allRows[2];  // 注意，索引是从 0 开始的
-        if (Row) {  // 确保元素存在
-            Row.remove();
-        }
-        Row = allRows[3];  // 注意，索引是从 0 开始的
-        if (Row) {  // 确保元素存在
-            Row.remove();
-        }
-        // 选择页面上最后一个 .row 元素
         allRows = document.querySelectorAll('.row');  
         var lastRow = allRows[allRows.length - 1];  
-
         // 创建新的 HTML 内容
         var newRowHTML = `
-        <div id="moblie-btn-row" class="row d-md-none item">
+            <div class="row edit-mobile-half-item d-none d-lg-flex"></div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
+
+        allRows = document.querySelectorAll('.row');  
+        lastRow = allRows[allRows.length - 1];  
+        // 创建新的 HTML 内容
+        newRowHTML = `
+        <div id="moblie-btn-row" class="row d-lg-none item">
             <div class="col d-flex flex-row justify-content-start align-items-end col-12">
                 <div class="d-flex flex-row" style="width: 60%;"><svg id="mobile-play-stop" class="bi bi-play-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="width: 40%;height: auto;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);/*display: none;*/">
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
@@ -466,12 +611,13 @@ if (window.location.href.indexOf('record.html') !== -1){
         `;
         // 在选定的 .row 元素后面插入新的 HTML 内容
         lastRow.insertAdjacentHTML('afterend', newRowHTML);
-        
+
         allRows = document.querySelectorAll('.row');  
         lastRow = allRows[allRows.length - 1];  
+        // 创建新的 HTML 内容
         newRowHTML = `
         <div class="row d-flex flex-row justify-content-center item special">
-            <div class="col d-flex flex-column justify-content-center align-items-center d-none d-md-block col-2">
+            <div class="col d-flex flex-column justify-content-center align-items-center d-none d-lg-block col-2">
                 <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg id="play-stop" class="bi bi-play-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="width: auto;height: 50%;border: none;outline: none;cursor: pointer;overflow: hidden;color: var(--bs-white);/*display: none;*/">
                         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
                     </svg>
@@ -488,22 +634,35 @@ if (window.location.href.indexOf('record.html') !== -1){
 
         allRows = document.querySelectorAll('.row');  
         lastRow = allRows[allRows.length - 1];  
+        // 创建新的 HTML 内容
         newRowHTML = `
-        <div class="row item special">
-            <div class="col">
-                <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;padding: 0px;">
-                    <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/f-refresh.png" style="height: calc(2vh);width: auto;" /> Songify again</button>
-                    <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/f-heart.png" style="height: calc(2vh);width: auto;" /> Add My Music</button>
-                    <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/f-edit.png" style="height: calc(2vh);width: auto;" width="22" height="22" /> Editing</button>
-                    <button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center f-user-btn" type="button" disabled><img class="mr-2" src="assets/img/d-download.png" style="height: calc(2vh);width: auto;" width="22" height="22" /> download</button></div>
-            </div>
+        <div class="row item"></div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
+
+        allRows = document.querySelectorAll('.row');  
+        lastRow = allRows[allRows.length - 1];  
+        // 创建新的 HTML 内容
+        newRowHTML = `
+        <div class="row edit-mobile-half-item special">
+            <div class="col d-flex justify-content-center align-items-center col-3"><button id="r-songify-again-btn" class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center r-last-long-btn" type="button" disabled><img class="r-last-icon" src="f-refresh.png" /> Songify again</button></div>
+            <div class="col d-flex flex-row justify-content-center align-items-center col-3"><button id="r-add-music-btn" class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center r-last-long-btn" type="button" disabled><img class="r-last-icon" src="f-heart.png" /> Add My Music</button></div>
+            <div class="col d-flex flex-row justify-content-center align-items-center col-3"><button id="r-edit-btn" class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center r-last-long-btn" type="button" disabled><img class="r-last-icon" src="f-edit.png" width height /> Editing</button></div>
+            <div class="col d-flex flex-row justify-content-center align-items-center col-3"><button id="r-download-btn" class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center r-last-long-btn" type="button" disabled><img class="r-last-icon" src="d-download.png" width height /> download</button></div>
         </div>
         `;
         // 在选定的 .row 元素后面插入新的 HTML 内容
         lastRow.insertAdjacentHTML('afterend', newRowHTML);
 
-        // var btnElement = document.querySelector("#play-stop");
-        // btnElement.onclick = handlePlayStopClick;
+        allRows = document.querySelectorAll('.row');  
+        lastRow = allRows[allRows.length - 1];  
+        // 创建新的 HTML 内容
+        newRowHTML = `
+        <div class="row item"></div>
+        `;
+        // 在选定的 .row 元素后面插入新的 HTML 内容
+        lastRow.insertAdjacentHTML('afterend', newRowHTML);
         var elements = document.querySelectorAll('[id$="play-stop"]');
         elements.forEach((element) => {
             // 对每个匹配的元素执行操作
@@ -511,7 +670,53 @@ if (window.location.href.indexOf('record.html') !== -1){
         });
 
         g_containerHeight = document.getElementById('mic').offsetHeight;
-        create_play()
+
+        // 使用函数作为点击事件处理程序
+        $("#r-songify-again-btn").click(handleRSongifyAgainBtn);
+
+        $("#r-add-music-btn").click(handleRAddMusicBtn);
+
+        $("#r-edit-btn").click(handleREditBtn);
+
+        $("#r-download-btn").click(handleRDownloadBtn);
+
+        g_finish_blob = blob;
+
+        create_play(blob)
+
+    }
+
+    function handleRSongifyAgainBtn(){
+        g_waveplaysurfer.destroy();
+        leavePage();
+        enterRecordPage();
+    }
+
+    function handleRAddMusicBtn(){
+        // 将当前按钮的背景颜色更改
+        $(this).css("background-color", "red");
+    }
+
+    function handleREditBtn(){
+        leavePage();
+        enterEditPage(g_finish_blob ,"record")
+    }
+
+    function handleRDownloadBtn(){
+        // 创建一个<a>元素用于下载
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(g_finish_blob);
+
+        // 提示用户选择下载目录
+        a.download = g_music_file_name;
+
+        // 将<a>元素添加到页面，然后触发点击事件
+        document.body.appendChild(a);
+        a.click();
+
+        // 清理创建的元素和URL对象
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
 
     }
 
@@ -583,7 +788,7 @@ if (window.location.href.indexOf('record.html') !== -1){
         //     mobile_btn_row_element.style.display = "block";
         // }
         try
-    { 
+        { 
             setStyleDisplay("moblie-btn-row","flex")
             setStyleDisplay("play-stop","block")
             setStyleDisplay("delete-btn","block")
@@ -835,7 +1040,7 @@ if (window.location.href.indexOf('record.html') !== -1){
         init()
         // location.reload();
         var btn = document.getElementById('record');
-        btn.src = 'assets/img/t13.png';
+        btn.src = "static/music/img/t13.png"
         // document.getElementById("play-stop").style.display = "none";
         // document.getElementById("delete-btn").style.display = "none";
         setStyleDisplay("play-stop","none")
@@ -874,7 +1079,10 @@ if (window.location.href.indexOf('record.html') !== -1){
     }
 
 
-}
+})();
+
+
+
 
 
 

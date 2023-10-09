@@ -75,18 +75,18 @@ twq('config','oflly');
                 </div>
                 <div class="row edit-item special" style="/*width: 100%;*/margin: 0px;margin-bottom: 0px;">
                     <div class="col d-flex flex-column justify-content-start align-items-center col-lg-8 col-12 d12-custom-col-big" style="padding: 0px;">
-                        <div class="input-group" style="height: 100%;width: 100%;/*border-radius: 0px;*/"><textarea class="form-control indented-placeholder" style="background: rgba(119,40,245,0.37);border-style: solid;border-color: #6825d7;color: var(--bs-white);resize: none;width: 100%;height: 100%;margin-top: 0px;font-size: calc(2vh);padding: 0px;border-radius: 0px;" placeholder="e.g: Future,PopCorporate,PopDrums"></textarea></div>
+                        <div class="input-group" style="height: 100%;width: 100%;/*border-radius: 0px;*/"><textarea class="form-control indented-placeholder" id="describe-text" style="background: rgba(119,40,245,0.37);border-style: solid;border-color: #6825d7;color: var(--bs-white);resize: none;width: 100%;height: 100%;margin-top: 0px;font-size: calc(2vh);padding: 0px;border-radius: 0px;" placeholder="e.g: Future,PopCorporate,PopDrums" name="describe-text"></textarea></div>
                     </div>
                     <div class="col col-lg-2 col-6 d12-custom-col-little">
                         <div class="d-flex justify-content-center align-items-center" style="background: #A068F8;color: var(--bs-white);margin: 0px;padding: 0px;border-style: none;width: 100%;height: 100%;gap: 5%;font-size: calc(2vh);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-clock" style="color: var(--bs-white);margin-top: -2%;">
                                 <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"></path>
                                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"></path>
-                            </svg><input data-role="timepicker" data-hours="false" data-cls-minutes="bg-transparent fg-white" data-cls-seconds="bg-transparent fg-white" data-show-labels="true"  data-value="00:05:00" data-cls-picker="my-picker" >
+                            </svg><input id="describe-time" name="describe-time" data-role="timepicker" data-hours="false" data-cls-minutes="bg-transparent fg-white" data-cls-seconds="bg-transparent fg-white" data-show-labels="true"  data-value="00:05:00" data-cls-picker="my-picker" >
 
 </div>
                     </div>
                     <div class="col d-flex col-lg-2 col-6 d12-custom-col-little">
-                        <div class="dropdown" style="width: 100%;height: 100%;"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="background: rgba(119,40,245,1);padding: 0px;height: 100%;width: 100%;border-style: none;font-size: calc(2vh);border-radius: 0px;">Loop</button>
+                        <div class="dropdown" id="describe-drop" style="width: 100%;height: 100%;" name="describe-drop"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="background: rgba(119,40,245,1);padding: 0px;height: 100%;width: 100%;border-style: none;font-size: calc(2vh);border-radius: 0px;">Loop</button>
                             <div class="dropdown-menu dropdown-menu-body"><a class="dropdown-item dropdown-item-body" href="#">Track</a><a class="dropdown-item dropdown-item-body" href="#">Mix</a><a class="dropdown-item dropdown-item-body" href="#">Jingle</a></div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ twq('config','oflly');
                 <div class="row item"></div>
                 <div class="row item special">
                     <div class="col d-flex flex-column justify-content-around align-items-center d-none d-lg-block"></div>
-                    <div class="col d-flex flex-column justify-content-around align-items-center"><a class="d-enter-link" href="#"></a></div>
+                    <div class="col d-flex flex-column justify-content-around align-items-center"><a id="d-post-creat" class="d-enter-link" href="#"></a></div>
                     <div class="col d-flex flex-column justify-content-around align-items-center d-none d-lg-block"></div>
                 </div>
                 <div class="row item"></div>
@@ -113,9 +113,10 @@ twq('config','oflly');
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
     <script src="assets/js/loading.js"></script>
+    <script src="assets/js/music_edit.mjs" type="module"></script>
     <script src="assets/js/record.mjs" type="module"></script>
     <script src="assets/js/swiper.js"></script>
-    <script src="assets/js/upload.mjs" type="module"></script>
+    <script src="assets/js/tools.mjs" type="module"></script>
 </body>
 
 </html>

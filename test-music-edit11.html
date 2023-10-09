@@ -85,7 +85,7 @@ twq('config','oflly');
                         <p id="timer-1" class="music-time-display">1:08/3:42</p>
                     </div>
                     <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-9 col-xxl-10 col-12 e-custom-col" style="/*height: 50%;*/">
-                        <div id="mic-1" class="mic-class"></div>
+                        <div id="mic" class="mic-class"></div>
                     </div>
                 </div>
                 <div class="row d-flex d-lg-none edit-item" id="row-collapse-above">
@@ -171,18 +171,18 @@ twq('config','oflly');
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
                 </div>
                 <div class="row mobile-item d-none d-lg-flex">
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">Smart Trimmer</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accomp Isolate</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary d-xxl-flex edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instru Isolate</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">TuneAdj</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" id="e-211-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">Smart Trimmer</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" id="e-212-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-sound-wave-alt.svg" width="20" height="20">Accomp Isolate</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary d-xxl-flex edit-up-btn" id="e-213-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-guiter.svg" width="20" height="20">Instru Isolate</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" id="e-214-btn" type="button"><img class="e-middle-icon" src="assets/img/e-if-ui-record.svg">TuneAdj</button></div>
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col"></div>
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col"></div>
                 </div>
                 <div class="row edit-item" id="row-collapse-below">
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center justify-content-xxl-start align-items-xxl-center col-lg-3 col-6 e-custom-col" style="padding: 0px;">
-                        <p class="e-input-key-p">Adjust the Selected Duration</p>
+                        <p id="move-below" class="e-input-key-p">Adjust the Selected Duration</p>
                     </div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-3 col-6 e-custom-col" style="padding: 0px;"><input type="text" id="move-below" class="e-duration-input" placeholder="60" pattern="\d*">
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-3 col-6 e-custom-col" style="padding: 0px;"><input type="text" id="input-second" class="e-duration-input" placeholder="60" pattern="\d*">
                         <p class="e-input-key-p" style="/*font-size: calc(2vh);*//*margin: 0px;*/margin-left: 1vh;">seconds</p>
                     </div>
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-3 col-6 edit-custom-row e-custom-col"></div>
@@ -192,31 +192,31 @@ twq('config','oflly');
                     <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-lg-4 col-12 e-custom-3col" style="padding: 0px;">
                         <p class="e-input-key-p" style="/*margin: 0px;*//*font-size: calc(2vh);*/">Select the parts to keep (Multiple selection allowed)</p>
                     </div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" type="button">Full</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" type="button">Intro</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" type="button">Main Melody</button></div>
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" type="button">Main Chorus</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" type="button">Outro</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" id="full-btn" type="button">Full</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" id="intro-btn" type="button">Intro</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" id="melody-btn" type="button">Main Melody</button></div>
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" id="chorus-btn" type="button">Main Chorus</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" id="outro-btn" type="button">Outro</button></div>
                 </div>
                 <div class="row mobile-item special">
                     <div class="col d-flex flex-column justify-content-center align-items-center col-lg-2 col-4 e-custom-col" style="padding: 0px;">
-                        <div class="d-flex flex-column justify-content-center align-items-start" style="width: 100%;height: 100%;"><button class="btn btn-primary songify-button" type="button" style="border-style: none;">songify</button></div>
+                        <div class="d-flex flex-column justify-content-center align-items-start" style="width: 100%;height: 100%;"><button class="btn btn-primary songify-button" id="songify-move-below" type="button" style="border-style: none;">songify</button></div>
                     </div>
                     <div class="col d-flex flex-column justify-content-around col-lg-1 col-4 e-custom-col">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-stop-style" id="play-stop">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-stop-style" id="play2-stop">
                                 <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
                             </svg>
-                            <p id="timer" class="music-time-display" style="margin: 0px;">1:08/3:42</p>
+                            <p id="t2imer" class="music-time-display" style="margin: 0px;">1:08/3:42</p>
                         </div>
                     </div>
                     <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-9 col-12 e-custom-col">
-                        <div id="mic-2" class="mic-class"></div>
+                        <div id="m2ic" class="mic-class"></div>
                     </div>
                 </div>
                 <div class="row edit-item special">
-                    <div class="col d-flex d-sm-flex d-xxl-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end justify-content-xxl-center align-items-xxl-end col-4" style="padding: 0px;"><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" type="button" disabled=""><img class="mr-2 e-middle-icon" src="assets/img/f-heart.png" width="22" height="22">&nbsp;Add My Music</button></div>
-                    <div class="col d-flex d-sm-flex d-xxl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end justify-content-xxl-center align-items-xxl-end col-4" style="padding: 0px;"><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-finish-middle-btn" type="button" disabled="">&nbsp;Confirm</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end justify-content-xxl-center align-items-xxl-end col-4" style="padding: 0px;"><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" type="button" disabled=""><img class="mr-2 e-middle-icon" src="assets/img/d-download.png" width="22" height="22">&nbsp;Release</button></div>
+                    <div class="col d-flex d-sm-flex d-xxl-flex flex-column justify-content-center align-items-center flex-sm-row justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end justify-content-xxl-center align-items-xxl-end col-4" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" id="add-music-btn" type="button"><img class="mr-2 e-middle-icon" src="assets/img/f-heart.png" width="22" height="22">&nbsp;Add My Music</button></div>
+                    <div class="col d-flex d-sm-flex d-xxl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end justify-content-xxl-center align-items-xxl-end col-4" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-middle-btn" id="confirm-btn" type="button">&nbsp;Confirm</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-end justify-content-xl-center align-items-xl-end justify-content-xxl-center align-items-xxl-end col-4" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" id="download-btn" type="button"><img class="mr-2 e-middle-icon" src="assets/img/d-download.png" width="22" height="22">&nbsp;Download</button></div>
                 </div>
             </div>
         </div>
@@ -233,9 +233,10 @@ twq('config','oflly');
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
     <script src="assets/js/loading.js"></script>
+    <script src="assets/js/music_edit.mjs" type="module"></script>
     <script src="assets/js/record.mjs" type="module"></script>
     <script src="assets/js/swiper.js"></script>
-    <script src="assets/js/upload.mjs" type="module"></script>
+    <script src="assets/js/tools.mjs" type="module"></script>
 </body>
 
 </html>

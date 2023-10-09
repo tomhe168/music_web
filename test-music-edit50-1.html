@@ -68,23 +68,24 @@ twq('config','oflly');
                         <div class="container d-flex flex-row justify-content-between align-items-center" style="width: 100%;height: 100%;padding: 0px;"><button class="btn btn-primary disabled d-flex d-xxl-flex flex-row justify-content-center align-items-center align-content-center e-user-btn2" type="button" disabled=""><img class="mr-2" src="assets/img/if-light-bulb1.svg" style="height: calc(2vh);width: auto;vertical-align: middle;">&nbsp;Compose</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-user-btn2" type="button" disabled="" style="padding: 0px;"><img class="mr-2" src="assets/img/iconPark-split-branch1.svg" style="height: calc(2vh);width: auto;">&nbsp;Edit</button><button class="btn btn-primary disabled d-flex flex-row justify-content-center align-items-center align-content-center e-user-btn2" type="button" disabled=""><img class="mr-2" src="assets/img/md-publish1.svg" style="height: calc(2vh);width: auto;">&nbsp;Release</button></div>
                     </div>
                 </div>
+                <div class="row edit-item">
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center justify-content-xxl-start align-items-xxl-center">
+                        <p class="e-set-name">成都大运会主题曲</p><img src="assets/img/e-antFill-edit.svg" style="width: calc(2.5vh);">
+                    </div>
+                </div>
                 <div class="row d-xxl-flex justify-content-xxl-center align-items-xxl-center mobile-item special">
-                    <div class="col" style="height: 100%;">
-                        <div class="row d-flex flex-row justify-content-start justify-content-sm-start justify-content-md-start justify-content-lg-center justify-content-xl-center justify-content-xxl-center" style="height: 100%;">
-                            <div class="col d-flex flex-column justify-content-center align-items-center col-lg-1 col-4 e-custom-col" style="/*height: 50%;*/">
-                                <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg class="edit-img-container" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 16 16">
+                    <div class="col d-flex flex-column justify-content-center align-items-center col-lg-1 col-4 e-custom-col" style="/*height: 50%;*/">
+                        <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg class="edit-img-container" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 16 16">
     <circle cx="8" cy="8" r="8" fill="#e99d42" />
     <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" fill="white" />
 </svg></div>
-                            </div>
-                            <div class="col d-flex flex-column justify-content-around col-lg-2 col-xxl-1 col-4 e-custom-col" style="/*height: 50%;*/">
-                                <p class="music-score-display"><img class="music-score-icon-display" src="assets/img/semiDesign-semi-icons-tiktok_logo.svg">72.5</p>
-                                <p id="timer-1" class="music-time-display">1:08/3:42</p>
-                            </div>
-                            <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-9 col-xxl-10 col-12 e-custom-col" style="/*height: 50%;*/">
-                                <div id="mic-1" class="mic-class"></div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-around col-lg-2 col-xxl-1 col-4 e-custom-col" style="/*height: 50%;*/">
+                        <p class="music-score-display"><img class="music-score-icon-display" src="assets/img/semiDesign-semi-icons-tiktok_logo.svg">72.5</p>
+                        <p id="timer-3" class="music-time-display">1:08/3:42</p>
+                    </div>
+                    <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-9 col-xxl-10 col-12 e-custom-col" style="/*height: 50%;*/">
+                        <div id="mic-2" class="mic-class"></div>
                     </div>
                 </div>
                 <div class="row d-flex d-lg-none edit-item">
@@ -182,7 +183,7 @@ twq('config','oflly');
                 </div>
                 <div class="row edit-mobile-half-item special">
                     <div class="col d-flex d-xxl-flex flex-row justify-content-center align-items-start">
-                        <p style="margin: 0px;">Coming Soon</p>
+                        <p id="p-coming" style="margin: 0px;">Coming Soon</p>
                     </div>
                 </div>
                 <div class="row edit-item special">
@@ -207,9 +208,10 @@ twq('config','oflly');
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/record.esm.js"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js"></script>
     <script src="assets/js/loading.js"></script>
+    <script src="assets/js/music_edit.mjs" type="module"></script>
     <script src="assets/js/record.mjs" type="module"></script>
     <script src="assets/js/swiper.js"></script>
-    <script src="assets/js/upload.mjs" type="module"></script>
+    <script src="assets/js/tools.mjs" type="module"></script>
 </body>
 
 </html>
