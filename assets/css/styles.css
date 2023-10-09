@@ -2844,8 +2844,8 @@ p::-webkit-scrollbar {
 }
 
 .t-enter-link {
-  width: 100%;
-  height: 65%;
+  width: 80%;
+  height: 50%;
   background: url("../../assets/img/t1x.png") top / contain no-repeat;
   margin-bottom: 2vh;
 }
