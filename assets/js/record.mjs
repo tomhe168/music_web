@@ -115,9 +115,10 @@ import initLoading from './loading.js'
 
         g_waverecordsurfer = WaveSurfer.create({
             container: '#mic',
-            waveColor: 'rgb(200, 0, 200)',
-            progressColor: 'rgb(100, 0, 100)',
-            height: g_containerHeight  // 例如
+            waveColor: 'rgb(255, 255, 255)',
+            progressColor: 'rgb(255, 255, 255)',
+            height: g_containerHeight,  // 例如
+            loop: false
         })
         // Initialize the Record plugin
         g_record = g_waverecordsurfer.registerPlugin(RecordPlugin.create())
@@ -382,9 +383,10 @@ import initLoading from './loading.js'
 
         g_waverecordsurfer = WaveSurfer.create({
             container: '#mic',
-            waveColor: 'rgb(200, 0, 200)',
-            progressColor: 'rgb(100, 0, 100)',
-            height: g_containerHeight  // 例如
+            waveColor: 'rgb(255, 255, 255)',
+            progressColor: 'rgb(255, 255, 255)',
+            height: g_containerHeight,  // 例如
+            loop: false
         })
 
         g_waverecordsurfer.loadBlob(newBlob);
@@ -807,7 +809,8 @@ import initLoading from './loading.js'
                 waveColor: 'rgb(200, 100, 0)',
                 progressColor: 'rgb(100, 50, 0)',
                 url: recordedUrl,
-                height: g_containerHeight
+                height: g_containerHeight,
+                loop: false
             })
 
             g_waveplaysurfer = waveplaysurfer

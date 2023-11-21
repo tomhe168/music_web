@@ -178,19 +178,9 @@ twq('config','oflly');
                     <div class="col d-xxl-flex align-items-md-start align-items-lg-start align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col d-none d-md-flex"></div>
                     <div class="col d-xxl-flex align-items-md-start align-items-lg-start align-items-xl-start justify-content-xxl-center align-items-xxl-start col-md-2 col-4 e-custom-col d-none d-md-flex"></div>
                 </div>
-                <div class="row mobile-item special" id="row-collapse-below">
-                    <div class="col d-flex flex-column justify-content-center align-items-center col-lg-2 col-4 e-custom-col" style="padding: 0px;">
-                        <div class="d-flex flex-column justify-content-center align-items-start" style="width: 100%;height: 100%;"><button class="btn btn-primary songify-button" id="midi-move-below" type="button" style="border-style: none;">to MIDI</button></div>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-around col-lg-2 col-xxl-1 col-4 e-custom-col">
-                        <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-stop-style" id="play2-stop">
-                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
-                            </svg>
-                            <p id="t2imer" class="music-time-display" style="margin: 0px;">1:08/3:42</p>
-                        </div>
-                    </div>
-                    <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-8 col-xxl-9 col-12 e-custom-col">
-                        <div id="m2ic" class="mic-class"></div>
+                <div class="row item special" id="row-collapse-below">
+                    <div class="col d-flex flex-row justify-content-start align-items-center">
+                        <p id="p-move-below" style="margin: 0px;">Select Instrument for Download</p>
                     </div>
                 </div>
                 <div class="row edit-mobile-half-item special">
@@ -200,9 +190,9 @@ twq('config','oflly');
                     <div class="col d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-md-3" style="padding: 0px;"><button class="btn btn-primary e-last2-long-btn" id="drum-btn" type="button"><img class="e-instrument-icon" src="assets/img/e-drums.svg" width="32" height="32">Drum</button></div>
                 </div>
                 <div class="row edit-item special">
-                    <div class="col d-flex d-sm-flex d-xxl-flex flex-column justify-content-center align-items-center flex-sm-row" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" id="add-music-btn" type="button"><img class="mr-2 e-middle-icon" src="assets/img/f-heart.png" width="22" height="22" style="width: calc(2vh);">&nbsp;Add My Music</button></div>
-                    <div class="col d-flex d-sm-flex d-xxl-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-middle-btn" id="confirm-btn" type="button">&nbsp;Confirm</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" id="download-btn" type="button"><img class="mr-2 e-middle-icon" src="assets/img/d-download.png" width="22" height="22" style="width: calc(2vh);">&nbsp;Download</button></div>
+                    <div class="col d-flex d-sm-flex d-xxl-flex flex-column justify-content-center align-items-center flex-sm-row" style="padding: 0px;"></div>
+                    <div class="col d-flex d-sm-flex d-xxl-flex flex-row justify-content-center align-items-center" style="padding: 0px;"><button class="btn btn-primary d-flex flex-row justify-content-center align-items-center align-content-center e-finish-btn" id="download_midi_btn" type="button">Download MiDI</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-center align-items-center" style="padding: 0px;"></div>
                 </div>
             </div>
         </div>
@@ -223,6 +213,7 @@ twq('config','oflly');
     <script src="assets/js/record.mjs" type="module"></script>
     <script src="assets/js/swiper.js"></script>
     <script src="assets/js/tools.mjs" type="module"></script>
+    <script src="assets/js/user_info.mjs" type="module"></script>
 </body>
 
 </html>

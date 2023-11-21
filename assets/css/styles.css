@@ -1833,8 +1833,32 @@ p::-webkit-scrollbar {
   font-size: calc(2vh);
   overflow: hidden;
   line-height: normal;
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255, 255, 255, 0.2);
   border-style: none;
+}
+
+.r-last-long-btn:hover {
+  /*font-family: Aleo, serif;*/
+  /*border-radius: 15px;*/
+  /*width: 70%;*/
+  /*height: 40%;*/
+  /*font-size: calc(2vh);*/
+  /*overflow: hidden;*/
+  /*line-height: normal;*/
+  background-color: rgba(255, 255, 255, 0.5);
+  /*border-style: none;*/
+}
+
+.r-last-long-btn:active {
+  /*font-family: Aleo, serif;*/
+  /*border-radius: 15px;*/
+  /*width: 70%;*/
+  /*height: 40%;*/
+  /*font-size: calc(2vh);*/
+  /*overflow: hidden;*/
+  /*line-height: normal;*/
+  background-color: rgba(255, 255, 255, 0.5)!important;
+  /*border-style: none;*/
 }
 
 @media (max-width: 991px) {
@@ -1885,10 +1909,10 @@ p::-webkit-scrollbar {
     border-radius: 5px;
     width: 98%;
     height: 90%;
-    font-size: calc(2.5vw);
+    font-size: calc(4vw);
     overflow: hidden;
     line-height: normal;
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.2);
     border-style: none;
   }
 }
@@ -1903,6 +1927,20 @@ p::-webkit-scrollbar {
   line-height: normal;
   background-color: rgba(255, 255, 255, 0.2);
   border-style: none;
+  /*position: fixed;*/
+  /*top: 13vh;*/
+}
+
+.e-user-btn:hover {
+  /*font-family: Aleo, serif;*/
+  /*border-radius: 50px;*/
+  /*width: 28%;*/
+  /*height: 4vh;*/
+  /*font-size: calc(1.5vh);*/
+  /*overflow: hidden;*/
+  /*line-height: normal;*/
+  background-color: rgba(255, 255, 255, 0.5);
+  /*border-style: none;*/
 }
 
 .e-user-btn2 {
@@ -2011,6 +2049,16 @@ p::-webkit-scrollbar {
   width: 95%;
 }
 
+.edit-upload-status {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+  width: 95%;
+  background: url("../../assets/img/t1x.png") top / contain no-repeat;
+}
+
 .t-img-container {
   border: none;
   outline: none;
@@ -2061,6 +2109,18 @@ p::-webkit-scrollbar {
     overflow: hidden;
     height: auto;
     width: 45%;
+  }
+}
+
+@media (max-width: 991px) {
+  .edit-upload-status {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    height: 60%;
+    width: 45%;
+    background: url("../../assets/img/t1x.png") top / contain no-repeat;
   }
 }
 
@@ -2154,7 +2214,7 @@ p::-webkit-scrollbar {
 
 @media (max-width: 991px) {
   .mic-class {
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 4px;
     margin: 0px;
     /*margin-top: 1rem;*/
@@ -2207,6 +2267,26 @@ p::-webkit-scrollbar {
   /*transform: translate(-50%, -50%);*/
 }
 
+#edit-upload-progress {
+  /*position: absolute;*/
+  width: 95%;
+  height: 100%;
+  object-fit: cover;
+  color: #e99d42;
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+}
+
+@media (max-width: 991px) {
+  #edit-upload-progress {
+    width: 45%;
+    height: 60%;
+    object-fit: cover;
+    color: #e99d42;
+  }
+}
+
 @media (max-width: 991px) {
   #upload-progress {
     width: auto;
@@ -2226,8 +2306,29 @@ p::-webkit-scrollbar {
   color: var(--bs-white);
 }
 
+#edit-u-progressText {
+  position: absolute;
+  height: 100%;
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%,-50%);*/
+  font-size: calc(2rem + 2vh);
+  color: var(--bs-white);
+}
+
 @media (max-width: 991px) {
   #u-progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: calc(2rem + 2vh);
+    color: var(--bs-white);
+  }
+}
+
+@media (max-width: 991px) {
+  #edit-u-progressText {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2574,7 +2675,7 @@ p::-webkit-scrollbar {
 
 @media (max-width: 991px) {
   .r-last-icon {
-    width: calc(2.5vw);
+    width: calc(4vw);
     height: auto;
     margin-right: 0.2vw;
     position: relative;
@@ -2594,7 +2695,7 @@ p::-webkit-scrollbar {
 
 .music-time-display {
   margin: 0px;
-  font-size: calc(2VH);
+  font-size: calc(1.8VH);
   font-weight: bold;
 }
 
@@ -2649,10 +2750,12 @@ p::-webkit-scrollbar {
 }
 
 .songify-button {
-  width: 95%;
+  width: 70%;
   height: 95%;
+  border-radius: 10px;
   background-color: #e99d42;
   font-size: 3vh;
+  font-weight: 700;
   border-style: none;
 }
 
@@ -2769,11 +2872,13 @@ p::-webkit-scrollbar {
   font-size: calc(2.5vh);
   /*font-weight: bold;*/
   font-weight: 900;
+  margin-right: 1vw;
 }
 
 .e-all-container {
   height: 100%;
   width: 98%;
+  margin-top: 2vh;
 }
 
 .custom-collapse.collapsing {
@@ -2844,10 +2949,19 @@ p::-webkit-scrollbar {
 }
 
 .t-enter-link {
-  width: 80%;
+  width: 50%;
   height: 50%;
   background: url("../../assets/img/t1x.png") top / contain no-repeat;
   margin-bottom: 2vh;
+}
+
+.record-link {
+  width: 20vw;
+  height: 25vh;
+  background: url("../../assets/img/t13.png") top / contain no-repeat;
+  margin-bottom: 2vh;
+  top: -5vh;
+  position: relative;
 }
 
 @media (max-width: 991px) {
@@ -2856,6 +2970,17 @@ p::-webkit-scrollbar {
     height: 40%;
     background: url("../../assets/img/t1x.png") top / contain no-repeat;
     margin-bottom: 1vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .record-link {
+    width: 45vw;
+    height: 25vh;
+    background: url("../../assets/img/t13.png") top / contain no-repeat;
+    top: calc(-3vh);
+    position: relative;
+    margin-bottom: 0;
   }
 }
 
@@ -2878,5 +3003,28 @@ p::-webkit-scrollbar {
 .mr-2 {
   height: calc(2vh);
   width: auto;
+  margin-bottom: 0.5vh;
+}
+
+.e-user-btn:active {
+  /*font-family: Aleo, serif;*/
+  /*border-radius: 50px;*/
+  /*width: 28%;*/
+  /*height: 4vh;*/
+  /*font-size: calc(1.5vh);*/
+  /*overflow: hidden;*/
+  /*line-height: normal;*/
+  background-color: rgba(255, 255, 255, 0.5);
+  /*border-style: none;*/
+}
+
+.t-enter-link-left {
+  margin-left: 5vw;
+  /*margin-bottom: 0px;*/
+}
+
+.t-enter-link-right {
+  margin-right: 5vw;
+  /*margin-bottom: 0px;*/
 }
 

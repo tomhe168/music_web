@@ -70,7 +70,7 @@ twq('config','oflly');
                 </div>
                 <div class="row edit-item">
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center justify-content-xxl-start align-items-xxl-center">
-                        <p class="e-set-name">成都大运会主题曲</p><img src="assets/img/e-antFill-edit.svg" style="width: calc(2.5vh);">
+                        <p class="e-set-name">成都大运会主题曲</p><img src="assets/img/e-antFill-edit.svg" style="width: calc(2.5vh);margin-bottom: 0.5vh;">
                     </div>
                 </div>
                 <div class="row d-xxl-flex justify-content-xxl-center align-items-xxl-center mobile-item special">
@@ -82,7 +82,7 @@ twq('config','oflly');
                     </div>
                     <div class="col d-flex flex-column justify-content-around col-lg-2 col-xxl-1 col-4 e-custom-col" style="/*height: 50%;*/">
                         <p class="music-score-display"><img class="music-score-icon-display" src="assets/img/semiDesign-semi-icons-tiktok_logo.svg">72.5</p>
-                        <p id="timer-1" class="music-time-display">1:08/3:42</p>
+                        <p id="timer-1" class="music-time-display">00:00 / 00:00</p>
                     </div>
                     <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-9 col-xxl-10 col-12 e-custom-col" style="/*height: 50%;*/">
                         <div id="mic" class="mic-class"></div>
@@ -168,7 +168,7 @@ twq('config','oflly');
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-star-one.svg" width="11" height="11">HotTrackRater</button></div>
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/iconPark-file-conversion.svg">Conversion</button></div>
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-video.svg">AudioViz</button></div>
-                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
+                    <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-lg-2 col-4" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" type="button" style="background: rgba(189, 49, 36, 0.8);"><img class="e-middle-icon" src="assets/img/if-ui-love-remove.svg">Delete</button></div>
                 </div>
                 <div class="row mobile-item d-none d-lg-flex">
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-center col-md-2 col-4 e-custom-col" style="padding: 0px;"><button class="btn btn-primary edit-up-btn" id="e-211-btn" type="button"><img class="e-middle-icon" src="assets/img/e-iconPark-cutting-one.svg">Smart Trimmer</button></div>
@@ -189,7 +189,7 @@ twq('config','oflly');
                     <div class="col d-xxl-flex justify-content-xxl-center align-items-xxl-center col-lg-3 col-6 edit-custom-row e-custom-col"></div>
                 </div>
                 <div class="row mobile-item">
-                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-lg-4 col-12 e-custom-3col" style="padding: 0px;">
+                    <div class="col d-flex d-xxl-flex flex-column justify-content-start align-items-start col-lg-3 col-12 e-custom-3col" style="padding: 0px;">
                         <p class="e-input-key-p" style="/*margin: 0px;*//*font-size: calc(2vh);*/">Select the parts to keep (Multiple selection allowed)</p>
                     </div>
                     <div class="col d-flex d-xxl-flex flex-row justify-content-start align-items-start col-4 col-lg e-custom-3col" style="padding: 0px;"><button class="btn btn-primary edit-middle-btn" id="full-btn" type="button">Full</button></div>
@@ -206,7 +206,7 @@ twq('config','oflly');
                         <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;height: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-play-fill play-stop-style" id="play2-stop">
                                 <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"></path>
                             </svg>
-                            <p id="t2imer" class="music-time-display" style="margin: 0px;">1:08/3:42</p>
+                            <p id="t2imer" class="music-time-display" style="margin: 0px;">00:00 / 00:00</p>
                         </div>
                     </div>
                     <div class="col d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center col-lg-9 col-12 e-custom-col">
@@ -237,6 +237,7 @@ twq('config','oflly');
     <script src="assets/js/record.mjs" type="module"></script>
     <script src="assets/js/swiper.js"></script>
     <script src="assets/js/tools.mjs" type="module"></script>
+    <script src="assets/js/user_info.mjs" type="module"></script>
 </body>
 
 </html>

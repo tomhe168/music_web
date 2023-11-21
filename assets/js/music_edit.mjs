@@ -906,7 +906,8 @@ import initLoading from './loading.js'
                     waveColor: 'rgb(200, 100, 0)',
                     progressColor: 'rgb(100, 50, 0)',
                     url: recordedUrl,
-                    height: g_containerHeight
+                    height: g_containerHeight,
+                    loop: false
                 })
 
                 g_waveplaysurfer = waveplaysurfer
@@ -974,7 +975,8 @@ import initLoading from './loading.js'
                     waveColor: 'rgb(200, 100, 0)',
                     progressColor: 'rgb(100, 50, 0)',
                     url: recordedUrl,
-                    height: g_containerHeight
+                    height: g_containerHeight,
+                    loop: false
                 })
 
                 g_waveplaysurfer2 = waveplaysurfer
