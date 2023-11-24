@@ -393,6 +393,14 @@ p {
   }
 }
 
+.player-hr {
+  background: var(--bs-white);
+  opacity: 1;
+  width: 100%;
+  height: 2px;
+  margin: 0px;
+}
+
 .footer-hr {
   background: var(--bs-white);
   opacity: 1;
@@ -894,8 +902,8 @@ a {
 .blog-aero-img {
   margin-top: 5px;
   /*transform: scale(0.50);*/
-  width: 50%;
-  height: auto;
+  height: 20vh;
+  width: auto;
 }
 
 @media (max-width: 767px) {
